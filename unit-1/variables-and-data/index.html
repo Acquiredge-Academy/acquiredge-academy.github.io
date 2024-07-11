@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Variables and Data - AcquirEdge Academy</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Variables and Data";
+        var mkdocs_page_input_path = "unit-1\\variables-and-data.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> AcquirEdge Academy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/starting-an-assignment/">Starting an Assignment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/submitting-an-assignment/">Submitting an Assignment</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Units</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Unit 0</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-0/example/">Example</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Unit 1</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Variables and Data</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#variables-and-data-assignment">Variables and Data Assignment</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#variables-and-data-values-background">Variables and Data Values Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#values-and-variables-exercise">Values and Variables Exercise</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#strings-and-numbers-background">Strings and Numbers Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#strings-and-numbers-exercise">Strings and Numbers Exercise</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#booleans-and-comparison-operators-background">Booleans and Comparison Operators Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#booleans-and-comparison-operators-exercise">Booleans and Comparison Operators Exercise</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#null-and-undefined-background">Null and Undefined Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#primitive-data-types">Primitive Data Types</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#submitting">Submitting</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../conditional-logic/">Conditional Logic</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 2</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-2/arrays/">Arrays</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-2/loops-and-iteration/">Loops and Iteration</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 3</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-3/objects/">Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-3/functions/">Functions</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 4</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/higher-order-programming/">Higher Order Programming</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/variable-scope/">Variable Scope</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 5</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/html-and-css/">HTML and CSS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/dom-querying/">Dom Querying</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 6</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/dynamic-content/">Dynamic Content</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/json-apis/">JSON APIs</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Capstone Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capstone/top9/">Top 9 Movies</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bonus</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bonus/PREP/">PREP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../bonus/css-layouts.md">CSS Layouts</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AcquirEdge Academy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Units</li>
+          <li class="breadcrumb-item">Unit 1</li>
+      <li class="breadcrumb-item active">Variables and Data</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="variables-and-data">Variables and Data</h1>
+<h2 id="objectives">Objectives</h2>
+<p>After completing this assignment, you will be able to:</p>
+<ul>
+<li>
+<p><strong>Understand the difference between variable declaration and variable assignment</strong></p>
+</li>
+<li>
+<p><strong>Assign and re-assign values to variables</strong></p>
+</li>
+<li>
+<p><strong>Describe the differences between strings, numbers, and booleans</strong></p>
+</li>
+<li>
+<p><strong>Understand the difference between null and undefined</strong></p>
+</li>
+<li>
+<p><strong>Use JavaScript to find a data value's type</strong></p>
+</li>
+<li>
+<p><strong>Convert a string into a number</strong></p>
+</li>
+<li>
+<p><strong>Perform arithmetic on a number</strong></p>
+</li>
+<li>
+<p><strong>Use comparison operators to create booleans in a program</strong></p>
+</li>
+</ul>
+<h2 id="key-terms">Key Terms</h2>
+<p><strong>data</strong></p>
+<p>information stored digitally on a computer</p>
+<p><strong>value</strong></p>
+<p>one specific piece of data, like a name or a number</p>
+<p><strong>variable</strong></p>
+<p>a labeled reference to a data value</p>
+<p><strong>operator</strong></p>
+<p>a symbol or word that performs an action on one or more values, like adding numbers or comparing them</p>
+<p><strong>expression</strong></p>
+<p>a piece of code that calculates to a value, typically involving one or more operators</p>
+<p><strong>variable assignment</strong></p>
+<p>an expression that attaches a value to a variable</p>
+<pre><code>x = 5
+</code></pre>
+<p><strong>variable declaration</strong></p>
+<p>the creation of a variable</p>
+<pre><code>let x
+</code></pre>
+<p><strong>type</strong></p>
+<p>the classification of a data value</p>
+<p><strong>typeof operator</strong></p>
+<p>a JavaScript operator that finds out the data type of a value or variable</p>
+<pre><code>typeof "this is a string"
+typeof x
+</code></pre>
+<p><strong>string</strong></p>
+<p>data type used for values that contains text</p>
+<pre><code>"hello world"
+</code></pre>
+<p><strong>number</strong></p>
+<p>data type used for values that contain numbers</p>
+<pre><code>5
+</code></pre>
+<p><strong>concatenate</strong></p>
+<p>joining together multiple strings using the <code>+</code> operator.</p>
+<pre><code>"hello" + "world!"
+</code></pre>
+<p><strong>parseInt()</strong></p>
+<p>built-in function to convert a string value to a number value</p>
+<pre><code>parseInt("5")
+</code></pre>
+<p><strong>boolean</strong></p>
+<p>data type used to represent a condition. Can only have the values <code>true</code> or <code>false</code></p>
+<pre><code>true
+</code></pre>
+<p><strong>null</strong></p>
+<p>data type used to represent nothing or no value. Has only one value <code>null</code></p>
+<pre><code>null
+</code></pre>
+<p><strong>undefined</strong></p>
+<p>data type used for values that haven't been set yet or don't exist yet. Has only one value <code>undefined</code></p>
+<pre><code>undefined
+</code></pre>
+<p><strong>comparison operator</strong></p>
+<p>produces a boolean value based on the relationship between two values</p>
+<pre><code>x &gt;= 5
+</code></pre>
+<p><strong>equality operator</strong></p>
+<p>The triple <code>===</code> sign; produces a boolean value based on if two values are exactly the same</p>
+<pre><code>x === 5
+</code></pre>
+<p><strong>assignment operator</strong></p>
+<p>The single <code>=</code> sign, used for assigning values to variables</p>
+<pre><code>name = "Alice"
+</code></pre>
+<p><strong>primitive data types</strong></p>
+<p>The most basic types of data values that can't be broken down into simpler parts. These include numbers, strings (text), booleans (condition), null (nothing), or undefined (no value set)</p>
+<h2 id="variables-and-data-assignment">Variables and Data Assignment</h2>
+<p>In this assignment, we'll go over the basics of variables and data types in JavaScript</p>
+<h3 id="variables-and-data-values-background">Variables and Data Values Background</h3>
+<p>A variable is a label you can reference in your code that points to a value.</p>
+<p>In this first set of examples all of our values are going to be strings. We'll talk more about strings shortly, but for now just know that strings are sets of characters contained by quotes.</p>
+<pre><code>"Hello World"
+</code></pre>
+<p>You can shoose just about any name you like for variables in your program by <strong>declaring</strong> them. For example, you could declare a variable called <code>firstName</code> like this:</p>
+<pre><code>let firstName;
+</code></pre>
+<p>All we're doing here is: "a variable called firstName now exists" in the program.</p>
+<p><strong>Rules and Conventions for variable naming:</strong></p>
+<ul>
+<li>
+<p>The first character must be a letter or underscore(<code>_</code>)</p>
+</li>
+<li>
+<p>variable names can not contain spaces, symbols, or punctuation marks</p>
+</li>
+<li>
+<p>variable names are case sensitive;</p>
+</li>
+<li>
+<p>variables can not be named certain "reserved keywords" that are a part of the JavaScript language, such as "let", "for", or "if"</p>
+</li>
+<li>
+<p>the convention for naming variables is to use <strong>camelCase</strong>, which means the first letter of the first word in the variable is <em>lowercase</em>, and any following words are <em>capitalized</em></p>
+</li>
+</ul>
+<p>After you have declared a variable, you can assign it to any value you'd like by using the <code>=</code> operator.</p>
+<pre><code>let firstName;
+firstName = "Allan";
+</code></pre>
+<p>The above example declares the variable on the first line and assigns it to the value "Allan" on the second line.</p>
+<p>The declaration and assignment can also be done together in a single line:</p>
+<pre><code>let firstName = "Allan";
+</code></pre>
+<p>If we were to now <code>console.log</code> the variable called "firstName", our output would say "Allan"</p>
+<pre><code>let firstName = "Allan";
+// This will log "Allan" to the console
+console.log(firstName);
+</code></pre>
+<p>Using <code>console.log()</code> is a handy way to "look into" our program and see what values our variables are holding while the program is running. You'll be using this trick a lot.</p>
+<blockquote>
+<p><strong>Note:</strong> You only need to use the <code>let</code> reserved keyword when you are initially declaring a variable. After a variable has been declared, you can re-assign it to a different value at any point and no longer need to use the <code>let</code> keyword.</p>
+</blockquote>
+<pre><code>// Declares firstName and assigns it to "Allan"
+let firstName = "Allan";
+// Logs "Allan"
+console.log(firstName);
+
+// Re-assigns firstName to "Chris"
+firstName = "Chris";
+// Logs "Chris" now
+console.log(firstName);
+</code></pre>
+<p>Now, complete the <strong>Values and Variables Exercise</strong> before moving forward.</p>
+<h3 id="values-and-variables-exercise">Values and Variables Exercise</h3>
+<h3 id="strings-and-numbers-background">Strings and Numbers Background</h3>
+<p>Every value in JavaScript has an associated data type. You can see a value's type by using the <code>typeof</code> operator like this.</p>
+<pre><code>console.log(typoef "Hello World"); // logs "string"
+</code></pre>
+<p>So far, all the values we've worked with have been of the type <strong>string</strong>.</p>
+<p>Strings are great when we want to keep track of text as values, but what about when we're dealing with numbers?</p>
+<pre><code>let x = "10";
+let y = "3";
+
+console.log(x + y); // logs "103"
+</code></pre>
+<p>You might expect the program above to log <code>13</code>, but it actually logs <code>"103"</code>. This is because the variables <code>x</code> and <code>y</code> point to string values, which we've indicated with the quotes <code>""</code>.</p>
+<p>For string values, using the <code>+</code> operator between them will simply combine them together like two words. In programming, this is called string <strong>concatenation</strong>.</p>
+<p>IF we want to actually treat these two values like numbers, we need to remove the quotes:</p>
+<pre><code>let x = 10;
+let y = 3;
+
+console.log(x + y); // logs 13
+console.log(x - y); // logs 7
+console.log(x * y); // logs 30
+console.log(x / y); // logs 3.333333...
+console.log(x % y); // logs 1
+console.log(x ** y) // logs 1000
+</code></pre>
+<p>The symbols between <code>x</code> and <code>y</code> above are called <strong>operators</strong>.</p>
+<p>The full statements <code>x + y</code> or <code>x / y</code> are called <strong>expressions</strong>, which calculate to a value when they are <strong>evaluated</strong>.</p>
+<p>Specifically, the ones I used above are called <strong>arithmetic operators</strong>, since they do math operations. Here's a table of all the arithmetic operators in JavaScript and what they do:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td><strong>Addition</strong>: Adds two numbers or concatenates two strings</td>
+<td>x + y</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td><strong>Subtraction</strong>: Subtracts the second number from the first</td>
+<td>x - y</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td><strong>Multiplication</strong>: Multiplies two numbers</td>
+<td>x * y</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td><strong>Division</strong>: Divides the first number by the second</td>
+<td>x / y</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td><strong>Modulus</strong>: Calculates the remainder when the first number is divided by the second</td>
+<td>x % y</td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td><strong>Exponentiation</strong>: Takes the first number to the power of the second number</td>
+<td>x ** y</td>
+</tr>
+<tr>
+<td><code>++</code></td>
+<td><strong>Increment</strong>: Adds 1 to a number</td>
+<td>x++</td>
+</tr>
+<tr>
+<td><code>--</code></td>
+<td><strong>Decrement</strong>: Subtracts 1 from a number</td>
+<td>y--</td>
+</tr>
+</tbody>
+</table>
+<p>Sometimes you will need to convert a value from one type to another. For example, consider the below example:</p>
+<pre><code>let age = "60";
+let laterAge = age + 4;
+
+console.log("In 4 years, you will be " + laterAge);
+</code></pre>
+<p>This program would log a statement that says "In 4 years, you will be 604"</p>
+<p>Clearly, this is not what we intended here. If we want JavaScript to actually add our two numbers, we need to convert our string to a number using the <code>parseInt()</code> function like this:</p>
+<pre><code>let age = "60";
+let laterAge = parseInt(age) + 4;
+
+console.log("In 4 years, you will be " + laterAge);
+</code></pre>
+<p>This time, we log the correct statement that says "In 4 years, you will be 64"</p>
+<p>Complete the <strong>Strings and Numbers Exercise</strong> before moving forward.</p>
+<h3 id="strings-and-numbers-exercise">Strings and Numbers Exercise</h3>
+<p>(want to introduce toUpperCase, toLowerCase)</p>
+<h3 id="booleans-and-comparison-operators-background">Booleans and Comparison Operators Background</h3>
+<p>A 3rd type we haven't discussed yet is the <strong>boolean</strong>.</p>
+<p>A boolean type represents a condition of some sort, like whether it's raining outside, or whether a number is even.</p>
+<p>A boolean data type can only hold one of two values: <code>true</code> or <code>false</code>.</p>
+<p>We can assign a variable to a boolean like this:</p>
+<pre><code>let isRaining = true;
+let is Snowing = false;
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> We do NOT use quotations like we do with strings.</p>
+</blockquote>
+<p>Booleans are often used to describe "binary" states of being, meaning there are only two possible choices. Either it is raining, or it is not at any given moment. Either a number is even, or it is odd.</p>
+<p>Comparison operators are symbols that are used for comparing two values, and they <strong>evaluate</strong>, or calculate, to boolean values.</p>
+<p>Here's a partial list, assuming that <code>x = 5</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Comparing</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td><strong>equal to</strong></td>
+<td><code>x == 8</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>x == 5</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>x == "5"</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>===</code></td>
+<td><strong>equal value and equal type</strong></td>
+<td><code>x === 5</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>x === "5"</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td><strong>not equal to</strong></td>
+<td><code>x != 8</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>!==</code></td>
+<td><strong>not equal value OR not equal type</strong></td>
+<td><code>x !== 5</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>x !== "5"</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>x !== 8</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td><strong>greater than</strong></td>
+<td><code>x &gt; 8</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td><strong>less than</strong></td>
+<td><code>x &lt; 8</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td><strong>greater than or equal to</strong></td>
+<td><code>x &gt;= 8</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td><strong>less than or equal to</strong></td>
+<td><code>x &lt;= 8</code></td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note</strong>: Notice that <code>===</code> has a completely different meaning from <code>=</code> by itself. <code>===</code> is a comparison operator that evaluates to <code>true</code> or <code>false</code> based on if two values are exactly equal, while <code>=</code> is used for assignment to a variable only, as you've seen so far.</p>
+</blockquote>
+<p><strong>IMPORTANT</strong>: Take note of the difference between <code>==</code> and <code>===</code>. <code>==</code> checks just the data value, whereas <code>===</code> checks both the data type and the data value. For our course, and when you code beyond this course, it's recommended to ONLY USE THE <code>===</code> operator. It's much safer and more precise to use.</p>
+<p>Using these comparison operators, we can define boolean variables like this:</p>
+<pre><code>let x = 1;
+let y = 2;
+
+let areEqual = (x === y);
+console.log(areEqual); // false
+
+let xGreater = (x &gt; y);
+console.log(areEqual); // false
+
+let xLesser = (x &lt; y);
+console.log(areEqual); // true
+</code></pre>
+<p>Booleans also concatenate onto strings just like numbers do:</p>
+<pre><code>let isFriday = false;
+console.log("Is today Friday? " + isFriday); // Logs "Is today Friday? false"
+</code></pre>
+<p>Complete the <strong>Booleans and Comparison Operators Exercise</strong> before moving forward.</p>
+<h3 id="booleans-and-comparison-operators-exercise">Booleans and Comparison Operators Exercise</h3>
+<h3 id="null-and-undefined-background">Null and Undefined Background</h3>
+<p>There are <strong>2 more</strong> data types that we will go over today: <strong>null</strong> and <strong>undefined</strong>. Both of these data types have only one associated value, <code>null</code>, and <code>undefined</code>, respectively. These two data types are often confused with one another, since they mean close to the same thing, but not exactly.</p>
+<p><code>null</code> represents nothing or an empty value. It is used when we want to specifically assign the value "nothing" to a variable. For example, this is how you would use null to represent someone with no middle name:</p>
+<pre><code>let middleName = null;
+console.log(middleName); // Logs "null
+</code></pre>
+<p><code>undefined</code> represents a data value that hasn't been set yet or doesn't exist. It could be set later or not. Because of the uncertainty of <code>undefined</code>, it's best to avoid this data type whenever possible. This is the default value a variable holds when it is <strong>declared</strong>, but not <strong>assigned</strong> any data:</p>
+<pre><code>let middleName;
+console.log(middleName); // Logs "undefined"
+</code></pre>
+<h4 id="analogy-for-null-vs-undefined">Analogy for Null vs Undefined</h4>
+<p>Let's say that you're in a public library, and you're searching for a book to check out. You ask the librarian where the book you're looking for is, and he points you to a spot in the back of the library.</p>
+<p>When you get there, you see a book in the spot that the librarian pointed you to. You pick it up, open it, and realize that the book is empty. There's no title, no table of contents, and it's filled with empty pages. This is like the <code>null</code> data type. There's a book there, but it's clearly been filled with nothing on purpose.</p>
+<p>Now, let's say that when you get to where the book is supposed to be, you see that the shelf is empty. There's no book. You can see that there is <em>supposed</em> to be a book there, but there's no book in sight. You can't be sure what happened to the book. Did someone check it out already? Will it be returned later? Did it never exist in the first place? This is more like <code>undefined</code>. There's no book at all, and you can't be sure if it was on purpose or not.</p>
+<p>Answer the questions in <code>quiz.md</code> about <code>null</code> and <code>undefined</code>.</p>
+<h3 id="primitive-data-types">Primitive Data Types</h3>
+<p>In the above sections, we discussed 5 different data types: <code>string</code>, <code>number</code>, <code>boolean</code>, <code>null</code>, and <code>undefined</code>. These are known as JavaScript's <strong>primitive data types</strong>.</p>
+<p>There are also 3 more data types known as <strong>reference data types</strong>, which we will discuss in our later assignments.</p>
+<h2 id="submitting">Submitting</h2>
+<p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../introduction/" class="btn btn-neutral float-left" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../conditional-logic/" class="btn btn-neutral float-right" title="Conditional Logic">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../introduction/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../conditional-logic/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

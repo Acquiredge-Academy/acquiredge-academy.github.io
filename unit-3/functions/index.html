@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Functions - AcquirEdge Academy</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Functions";
+        var mkdocs_page_input_path = "unit-3\\functions.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> AcquirEdge Academy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/starting-an-assignment/">Starting an Assignment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/submitting-an-assignment/">Submitting an Assignment</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Units</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Unit 0</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-0/example/">Example</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/variables-and-data/">Variables and Data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/conditional-logic/">Conditional Logic</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 2</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-2/arrays/">Arrays</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-2/loops-and-iteration/">Loops and Iteration</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Unit 3</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../objects/">Objects</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Functions</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#dry">D.R.Y.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function">function</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-definition">function definition</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-name">function name</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#invoke-call">invoke / call</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parameter">parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#argument">argument</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value">return value</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#stringsplitdelimiter">string.split(delimiter)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#functions-assignment">Functions Assignment</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#functions-background">Functions Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#functions-exercise">Functions Exercise</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#submitting">Submitting</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 4</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/higher-order-programming/">Higher Order Programming</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/variable-scope/">Variable Scope</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 5</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/html-and-css/">HTML and CSS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/dom-querying/">Dom Querying</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 6</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/dynamic-content/">Dynamic Content</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/json-apis/">JSON APIs</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Capstone Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capstone/top9/">Top 9 Movies</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bonus</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bonus/PREP/">PREP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../bonus/css-layouts.md">CSS Layouts</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AcquirEdge Academy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Units</li>
+          <li class="breadcrumb-item">Unit 3</li>
+      <li class="breadcrumb-item active">Functions</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="functions">Functions</h1>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li><strong>Use a function to write D.R.Y. code</strong></li>
+<li><strong>Diagram the anatomy of a function, including each of these parts: parameters, arguments, name, and return value</strong></li>
+<li><strong>Describe the difference between a function definition and a function invocation</strong></li>
+<li><strong>Use for loops inside of functions that return or print data</strong></li>
+<li><strong>Utilize the string <code>split()</code> function</strong></li>
+</ul>
+<h2 id="key-terms">Key Terms</h2>
+<h4 id="dry">D.R.Y.</h4>
+<p>stands for "Don't Repeat Yourself", a core axiom behind writing good code. Using functions can help you write DRYer code</p>
+<h4 id="function">function</h4>
+<p>reusable sequence of code that typically processes a set of inputs to provide a particular output (return value)</p>
+<pre><code>function doubleIt(someNumber){
+    return someNumber * 2;
+}
+</code></pre>
+<h4 id="function-definition">function <em>definition</em></h4>
+<p>the written name, parameters, and body of the function; defining a function makes it possible for other code to invoke the method</p>
+<pre><code>function doubleIt(someNumber){
+    return someNumber * 2;
+}
+</code></pre>
+<h4 id="function-name">function <em>name</em></h4>
+<p>the name of our function. This is what we use to invoke or call our function after we define it</p>
+<h4 id="invoke-call">invoke / call</h4>
+<p>using the functions name, followed by <code>( )</code> with any required parameters to cause the function to execute</p>
+<pre><code>function doubleIt(someNumber){
+    return someNumber * 2;
+}
+doubleIt(5) // =&gt; returns 10
+</code></pre>
+<h4 id="parameter">parameter</h4>
+<p>a named "input" variable for a function; written in parenthesis on the function definition line</p>
+<p><code>someNumber</code> in the example above</p>
+<h4 id="argument">argument</h4>
+<p>value provided to "fill in" a parameter during a function's invocation</p>
+<p><code>5</code> in the example above</p>
+<h4 id="return-value">return value</h4>
+<p>data that a given function gives back to the invoker</p>
+<p><code>10</code> in the example above</p>
+<h4 id="stringsplitdelimiter">string.split(delimiter)</h4>
+<p>returns an array of different parts of broken up string based on a provided delimiter (separator) string that it should be broken on</p>
+<h2 id="functions-assignment">Functions Assignment</h2>
+<h3 id="functions-background">Functions Background</h3>
+<h4 id="what-is-a-function">What is a Function?</h4>
+<p>You can imagine a function as a box with two holes on opposing sides.</p>
+<p><img alt="Function Image" src="../img/function-image.png" /></p>
+<p>The first hole in the box is for accepting an input of some kind. In the example above, our input is a number.</p>
+<p>On the other side of the box, we get an output based on our input.</p>
+<p>In this case, our input was the number 3, so our output was the number 9, since this function's job is simply to square our input.</p>
+<h4 id="built-in-functions">Built-in functions</h4>
+<p>JavaScript comes with many common functions already built for you. For example, Math.round() is a function that:</p>
+<ul>
+<li>Accepts a decimal number as an input</li>
+<li>Returns an rounded integer as an output</li>
+</ul>
+<p>Let's try using it for a few values.</p>
+<pre><code>let result = Math.round(5.333);
+console.log(result); // 5
+
+result = Math.round(7.89);
+console.log(result); // 8
+</code></pre>
+<p>Can you think of other built-in functions you've already used? (Hint: One of them is used in the example above)</p>
+<h4 id="writing-our-own-function">Writing our own function</h4>
+<p>Let's write our own function for squaring a number like in the image at the top.</p>
+<pre><code>function square(x){
+    let output = x * x;
+    return output;
+}
+</code></pre>
+<p>There are a few very important terms to classify:</p>
+<ul>
+<li>"square" is the <a href="#function-name">function name</a></li>
+<li><code>x</code> is our input for the function, which is formally called a <a href="#parameter">parameter</a></li>
+<li>The <a href="#return-value">return statement</a> is where we say <code>return ___;</code> Whatever the <code>___</code> is will be the output of our function. In this case, we are returning/outputting the square of <code>x</code>.</li>
+</ul>
+<h4 id="invoking-a-function">Invoking a function</h4>
+<p>If you just paste in the above function to a program and run it, you won't see any result.</p>
+<p>This is because all we have done so far is written the <a href="#function-definition">function definition</a>. Defining a function is like writing a recipe: it doesn't give you anything to chew on until you actually "use" it!</p>
+<p>We use our functions by <a href="#invoke-call">invoking</a> them. Here is a program that invokes our square function 3 times and logs each result.</p>
+<pre><code>function square(x){
+    let output = x * x;
+    return output;
+}
+
+let result = square(5);
+console.log(result); // 25
+
+console.log(square(6)); // 36
+
+console.log(square(7)); // 49
+</code></pre>
+<p>Try running the above code, and notice that the three separate results logged to the screen.</p>
+<h4 id="returning-from-a-function">Returning from a Function</h4>
+<p>Whenever we reach a <code>return</code> statement inside of a function, a function will stop executing immediately. <code>return</code> statements are instructions to "immediately stop the function and return this value". It's important to remember this because you don't want to be adding any code statements after writing a <code>return</code> statement.</p>
+<pre><code>function square(x){
+    let output = x * x;
+    return output;
+    console.log("The output is " + output); // This line of code will never run
+}
+</code></pre>
+<h4 id="why-functions">Why functions?</h4>
+<p>Our example above is a short two-line function, but often in the real world, functions will invoke other functions that will perform complex calculations and potentially execute thousands of lines of code.</p>
+<p>For example, if we were writing the code for Amazon, we might have a function called <code>processPayment()</code>. Amazon needs to process payments in many different contexts, but by having a function that wraps this functionality, it's like a magic "black box" that can be do it all for us by simply invoking it.</p>
+<p>Being able to perform complex sequences of activities by simple invoking a function allows us to avoid repeating ourselves. Not repeating yourself is <em>such</em> an important part of writing good code that there's a popular acronym called <a href="#dry">DRY</a> that programmers are taught to follow. DRY stands for <strong>Don't Repeat Yourself</strong>.</p>
+<h4 id="processing-arrays-with-functions">Processing Arrays with Functions</h4>
+<p>Functions can accept any type of value as a parameter.</p>
+<p>Depending on what we need, we might write a function that accepts a number, a string, an object, or even an array as an argument.</p>
+<p>Once you're "inside" the function, remember that you can treat your parameters exactly like you would any other variable.</p>
+<p>Suppose we are tasked with writing a function that accepts an array of numbers as input and returns the sum of all those numbers. Our solution might look like the following:</p>
+<pre><code>function addAll(numbersArray){
+    // We'll use this variable to keep track of the total as we add everything.
+    let total = 0;
+
+    // Add each number in the array to the total
+    for (let i = 0; i &lt; numbersArray.length; i++){
+        total = total + numbersArray[i];
+    }
+
+    // Return the total we've built up at the end.
+    return total;
+}
+</code></pre>
+<h4 id="split-function-for-strings">split() function for Strings</h4>
+<p><code>split()</code> is a handy built-in function you can use to divide a single string up into an array of strings.</p>
+<p>We can learn the details by reading the MDN documentation. The easiest way to get there is to Google "MDN string split". The first result should lead you <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split">here</a>.</p>
+<pre><code>The split() method splits a string into an array of strings by separating the string into substrings. MDN also tells us we can pass in a separator parameter that specifies what String we want to divide the string based on.
+</code></pre>
+<p>Try out each these examples to get a feel for how <code>split()</code> works.</p>
+<pre><code>let list = "bread, peanut butter, jelly".split(",");
+console.log(list);
+</code></pre>
+<hr />
+<pre><code>let newList = "eggs, avocados, salsa, chorizo".split(", ");
+console.log(newList);
+</code></pre>
+<hr />
+<pre><code>let numberOfWords = "eggs, avocados, salsa, chorizo".split(", ").length;
+console.log(numberOfWords);
+</code></pre>
+<hr />
+<pre><code>let secondWord = "eggs, avocados, salsa, chorizo".split(", ")[1];
+console.log(secondWord);
+</code></pre>
+<hr />
+<pre><code>let words = "once upon a time".split(" ");
+console.log(words);
+</code></pre>
+<p>Complete the <strong>Functions Exercise</strong> before moving forward.</p>
+<h3 id="functions-exercise">Functions Exercise</h3>
+<h2 id="submitting">Submitting</h2>
+<p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../objects/" class="btn btn-neutral float-left" title="Objects"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../unit-4/higher-order-programming/" class="btn btn-neutral float-right" title="Higher Order Programming">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../objects/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../unit-4/higher-order-programming/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

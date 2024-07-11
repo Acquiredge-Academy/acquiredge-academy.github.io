@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Arrays - AcquirEdge Academy</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Arrays";
+        var mkdocs_page_input_path = "unit-2\\arrays.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> AcquirEdge Academy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/starting-an-assignment/">Starting an Assignment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/submitting-an-assignment/">Submitting an Assignment</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Units</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Unit 0</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-0/example/">Example</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/variables-and-data/">Variables and Data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/conditional-logic/">Conditional Logic</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Unit 2</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Arrays</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#arrays-assignment">Arrays Assignment</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#arrays-background">Arrays Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#array-documentation-and-methods-background">Array Documentation and Methods Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#arrays-exercise">Arrays Exercise</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#submitting">Submitting</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../loops-and-iteration/">Loops and Iteration</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 3</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-3/objects/">Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-3/functions/">Functions</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 4</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/higher-order-programming/">Higher Order Programming</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/variable-scope/">Variable Scope</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 5</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/html-and-css/">HTML and CSS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/dom-querying/">Dom Querying</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 6</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/dynamic-content/">Dynamic Content</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/json-apis/">JSON APIs</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Capstone Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capstone/top9/">Top 9 Movies</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bonus</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bonus/PREP/">PREP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../bonus/css-layouts.md">CSS Layouts</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AcquirEdge Academy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Units</li>
+          <li class="breadcrumb-item">Unit 2</li>
+      <li class="breadcrumb-item active">Arrays</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="arrays">Arrays</h1>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>
+<p><strong>Learn what an array is and how it works.</strong></p>
+</li>
+<li>
+<p><strong>Read MDN documentation to learn how to use pre-built array functions and access common properties.</strong></p>
+</li>
+<li>
+<p><strong>Use an array to store a list of items.</strong></p>
+</li>
+<li>
+<p><strong>Learn how to retrieve and change items in an array.</strong></p>
+</li>
+</ul>
+<h2 id="key-terms">Key Terms</h2>
+<p><strong>array</strong></p>
+<p>a data structure used to store an ordered list of data.</p>
+<pre><code>let colors = ["red", "yellow", "green"];
+</code></pre>
+<p><strong>array index</strong></p>
+<p>a numeric position an item is located at in an array; can be used to access that item</p>
+<pre><code>let colors = ["red", "yellow", "green"];
+console.log( colors[0] ); // Output =&gt; "red"
+</code></pre>
+<p><strong>array.length</strong></p>
+<p>property available on arrays that returns the number of items in the array</p>
+<pre><code>let colors = ["red", "yellow", "green"];
+console.log( colors.length ); // Output =&gt; 3
+</code></pre>
+<p><strong>square brackets</strong></p>
+<p><code>[]</code> symbols used to declare an array or access an item in an array by index</p>
+<p><strong>Mozilla Developer Network</strong></p>
+<p>resource for documentation on available built-in JavaScript functions (methods)</p>
+<p>You can learn about all the functions available for arrays <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">here on MDN</a></p>
+<p><strong>array.push()</strong></p>
+<p>function that adds an item to the <strong>end</strong> of an array</p>
+<p><strong>array.pop()</strong></p>
+<p>function that removes the <strong>last</strong> item from an array</p>
+<p><strong>mutating function</strong></p>
+<p>particular type of function that modifies the object it is called on, rather than simply returning a value</p>
+<p>e.g. push and pop are both mutating functions</p>
+<p><strong>return value</strong></p>
+<p>data that a function "gives back" to the invoker, which can optionally be assigned to a variable</p>
+<p>e.g. the item previously at the end of an array if provided as a <em>return value</em> from the pop function</p>
+<h2 id="arrays-assignment">Arrays Assignment</h2>
+<p>In this assignment, you will learn about the basics of JavaScript arrays.</p>
+<h3 id="arrays-background">Arrays Background</h3>
+<p>Arrays are used for storing <strong>ordered lists of items</strong>.</p>
+<h4 id="initializing">Initializing</h4>
+<p>This will create an array of three restaurants.</p>
+<pre><code>let restaurants = ["State Bird", "House of Prime Rib", "McDonalds"];
+</code></pre>
+<h4 id="length">Length</h4>
+<p>To see how many items are in an array, we can use the length property.</p>
+<pre><code>let restaurants = ["State Bird", "House of Prime Rib", "McDonalds"];
+console.log(restaurants.length);
+</code></pre>
+<h4 id="accessing">Accessing</h4>
+<p>Every item in an array has an <a href="#key-terms">index</a> it can be accessed at.</p>
+<p>The first item is at index 0, the second is at index 1, and the third is at index 2.</p>
+<p>You can access an item by index using <a href="#key-terms">square brackets</a>.</p>
+<pre><code>let restaurants = ["State Bird", "House of Prime Rib", "McDonalds"];
+console.log("first item: " + restaurants[0]);
+console.log("second item: " + restaurants[1]);
+</code></pre>
+<h4 id="changing-items">Changing Items</h4>
+<p>We can also use square brackets to update an item in an array.</p>
+<pre><code>let restaurants = ["State Bird", "House of Prime Rib", "McDonalds"];
+restaurants[0] = "Burger King";
+console.log("first item: " + restaurants[0]);
+</code></pre>
+<p>The first item has been changed to "Burger King" (sorry, foodies).</p>
+<h3 id="array-documentation-and-methods-background">Array Documentation and Methods Background</h3>
+<p>After doing some coding, you'll start to notice that many times you are performing the same tasks in your programs.</p>
+<p>Languages try to make your life easier by packaging these common tasks into functions or methods you can then use in your programs.</p>
+<p>You've already used at least two built-in functions already: <code>console.log()</code> and <code>prompt()</code></p>
+<p>You also may have already noticed that when you are using (<strong>invoking</strong>) functions, parentheses are part of the syntax, and sometimes you put provide data between the parentheses as an input (<strong>argument</strong>) to the function.</p>
+<p>But how do you know if there is already a built-in function for what you want to do?</p>
+<p>The best way is to start getting comfortable reading the language documentation. For JavaScript, Mozilla Developer Network (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN</a>) is going to be your best resource.</p>
+<p>Let's take a look at two functions from the documentation that work specifically for arrays.</p>
+<h4 id="push">push()</h4>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push">push()</a> is a convenient way add a single item to the end of an array. As the documentation shows, it must be called on an existing array (not out in the open like you can with console.log() or prompt()).</p>
+<pre><code>let fruits = ["Apple", "Banana"];
+fruits.push("Mango");
+
+console.log(fruits);
+</code></pre>
+<p>Previously, we had an array of two items. By calling fruits.push("Mango"), we have added a third item to the end of the array.</p>
+<h4 id="pop">pop()</h4>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">pop()</a> is the opposite of push(). Instead of adding a new item, pop() will remove the top item from the array.</p>
+<p>Note that push() and pop() will both actually modify the array you invoke them on. When a function modifies the object it's used on, we say that this is a <a href="#key-terms">mutating function</a>.</p>
+<pre><code>let fruits = ["Apple", "Banana"];
+fruits.pop();
+
+console.log(fruits);
+console.log(fruits.length);
+</code></pre>
+<p>After running the code above, the mutated fruits array now has only 1 item left in it.</p>
+<p>In addition to mutating the array, you can also capture the result of the pop() function and assign it to a variable.</p>
+<pre><code>let fruits = ["Apple", "Banana"];
+let poppedItem = fruits.pop();
+
+console.log(poppedItem);
+</code></pre>
+<p>The value that a function gives you back (in this case, the popped item), is referred to as that function's return value.</p>
+<h3 id="arrays-exercise">Arrays Exercise</h3>
+<h2 id="submitting">Submitting</h2>
+<p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../unit-1/conditional-logic/" class="btn btn-neutral float-left" title="Conditional Logic"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../loops-and-iteration/" class="btn btn-neutral float-right" title="Loops and Iteration">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../unit-1/conditional-logic/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../loops-and-iteration/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

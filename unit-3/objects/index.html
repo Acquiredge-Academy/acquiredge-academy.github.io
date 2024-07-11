@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Objects - AcquirEdge Academy</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Objects";
+        var mkdocs_page_input_path = "unit-3\\objects.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> AcquirEdge Academy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/starting-an-assignment/">Starting an Assignment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/submitting-an-assignment/">Submitting an Assignment</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Units</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Unit 0</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-0/example/">Example</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/variables-and-data/">Variables and Data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/conditional-logic/">Conditional Logic</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 2</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-2/arrays/">Arrays</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-2/loops-and-iteration/">Loops and Iteration</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Unit 3</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Objects</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#object">object</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#object-property">(object) property</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#object-value">(object) value</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#object-dot-notation">(object) dot notation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#object-bracket-notation">(object) bracket notation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#objects-assignment">Objects Assignment</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#objects-background">Objects Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#objects-exercise">Objects Exercise</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#arrays-of-objects-background">Arrays of Objects Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#arrays-of-objects-exercise">Arrays of Objects Exercise</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#searching-arrays-of-objects-background">Searching Arrays of Objects Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#searching-arrays-of-objects-exercise">Searching Arrays of Objects Exercise</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#submitting">Submitting</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../functions/">Functions</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 4</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/higher-order-programming/">Higher Order Programming</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/variable-scope/">Variable Scope</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 5</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/html-and-css/">HTML and CSS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/dom-querying/">Dom Querying</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 6</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/dynamic-content/">Dynamic Content</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/json-apis/">JSON APIs</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Capstone Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capstone/top9/">Top 9 Movies</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bonus</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bonus/PREP/">PREP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../bonus/css-layouts.md">CSS Layouts</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AcquirEdge Academy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Units</li>
+          <li class="breadcrumb-item">Unit 3</li>
+      <li class="breadcrumb-item active">Objects</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="objects">Objects</h1>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li><strong>Utilize objects to store lists of properties connected to values</strong></li>
+<li><strong>Initialize an object</strong></li>
+<li><strong>Set properties on an object with both dot and bracket notation</strong></li>
+<li><strong>List instances in which bracket syntax should be used instead of dot syntax</strong></li>
+<li><strong>Iterate through an array of objects</strong></li>
+<li><strong>Compare and contrast objects and arrays</strong></li>
+<li><strong>Code an algorithm to search through an array of objects to locate a particular value</strong></li>
+</ul>
+<h2 id="key-terms">Key Terms</h2>
+<h4 id="object">object</h4>
+<p>a collection of associated properties and values; similar to array, except the indexes are string-based instead of integer-based</p>
+<pre><code>let animal = {
+    name: "dog",
+    legs: 4
+};
+</code></pre>
+<h4 id="object-property">(object) property</h4>
+<p>string-based index that is linked to some value</p>
+<p><code>name</code> and <code>legs</code> are both <em>properties</em> of the object in the above example</p>
+<h4 id="object-value">(object) value</h4>
+<p>value of some type that is linked to a property</p>
+<p>in the above animal example, <code>"dog"</code> is a value associated with the <code>legs</code> property</p>
+<h4 id="object-dot-notation">(object) dot notation</h4>
+<p>syntax for looking up a value in an object that places the property after a dot; can only be used when the exact name of the key is used (i.e. not a variable); preferred way to access a value, as long as the literal value of the key is known</p>
+<pre><code>let animal = {
+    name: "dog",
+    legs: 4
+};
+console.log(animal.legs); // =&gt; 4
+</code></pre>
+<h4 id="object-bracket-notation">(object) bracket notation</h4>
+<p>syntax for looking up a value in an object that places the property after brackets; strings or variables can be placed between the brackets</p>
+<pre><code>let animal = {
+    name: "dog",
+    legs: 4
+};
+console.log(animal['legs`]); // =&gt; 4
+</code></pre>
+<h2 id="objects-assignment">Objects Assignment</h2>
+<p>In this assignment, you will learn about how to create, change, and use JavaScript objects.</p>
+<h3 id="objects-background">Objects Background</h3>
+<p>Objects in JS are similar to Arrays, except the indexes are strings instead of integers. You can think of JavaScript objects as <strong>collections of related data</strong>.</p>
+<h4 id="initialization">Initialization</h4>
+<p>The following code will initialize a new object representing a cat.</p>
+<pre><code>let myAnimal = {
+    name: "cat",
+    legs: 4,
+    genus: "felis",
+    species: "catus",
+    sound: "meow"
+};
+</code></pre>
+<p>The <code>myAnimal</code> object has these five properties (sometimes called keys): <code>name</code>, <code>legs</code>, <code>genus</code>, <code>species</code>, <code>sound</code>.</p>
+<p>Each property name also has an associated value. For example:</p>
+<ul>
+<li>The <code>name</code> property is associated with the <code>"cat"</code> value.</li>
+<li>The <code>legs</code> property is associated with the <code>4</code> value.</li>
+</ul>
+<h4 id="accessing-properties">Accessing Properties</h4>
+<p>We can look up the value of a particular property in two different ways: <a href="#object-dot-notation">dot notation</a> or <a href="#object-bracket-notation">bracket notation</a>.</p>
+<pre><code>let myAnimal = {
+    name: "cat",
+    legs: 4,
+    genus: "felis",
+    species: "catus",
+    sound: "meow"
+};
+
+// Dot notation
+console.log( myAnimal.name ); // "cat"
+
+// Bracket notation
+console.log( myAnimal["name"]); // "cat"
+
+// Also bracket notation
+var propName = "genus";
+console.log( myAnimal[propName] ); // "felis"
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> when we use bracket notation, we need to use either a string (enclosed in quotes), or a variable that points to a string (not enclosed in quotes).</p>
+</blockquote>
+<p>JavaScript syntax does not allow the following.</p>
+<pre><code>console.log( myAnimal."species" ) // ILLEGAL / ERROR!
+</code></pre>
+<h4 id="updating-properties">Updating Properties</h4>
+<p>You can also use dot or bracket notation to add new property-value pairs after the initialization, or to update existing ones.</p>
+<pre><code>let myAnimal = {
+    name: "cat",
+    legs: 4,
+    genus: "felis",
+    species: "catus",
+    sound: "meow"
+};
+
+// Dot notation
+myAnimal.personality = "Strange"; // Adds a new property
+myAnimal.sound = "purr"; // Updates an existing property
+
+// Bracket notation
+myAnimal["tail"] = true; // Adds a new property
+
+console.log( myAnimal );
+</code></pre>
+<h3 id="objects-exercise">Objects Exercise</h3>
+<h3 id="arrays-of-objects-background">Arrays of Objects Background</h3>
+<p>Often times, we want to process a list of similar objects in our program.</p>
+<p>We can group our objects together by including them all in an array.</p>
+<p>For example, let's pretend that we're doing some programming for a phone, and we need to keep track of a list of contacts.</p>
+<p>Here are four properties we might want to track about each contact:</p>
+<ul>
+<li>firstName</li>
+<li>lastName</li>
+<li>phoneNumber</li>
+<li>momsName (so we can ask about her)</li>
+</ul>
+<h4 id="initialization_1">Initialization</h4>
+<pre><code>let contacts = [
+    {
+        firstName:  "John",
+        lastName: "Lennon",
+        phoneNumber: "555-777-2222",
+        momsName: "Julia"
+    },
+    {
+        firstName:  "George",
+        lastName: "Harrison",
+        phoneNumber: "555-777-3333",
+        momsName: "Louise"
+    },
+    {
+        firstName:  "Paul",
+        lastName: "McCartney",
+        phoneNumber: "555-777-4444",
+        momsName: "Mary"
+    },
+    {
+        firstName:  "Ringo",
+        lastName: "Starr",
+        phoneNumber: "555-777-5555",
+        momsName: "Elsie"
+    }
+];
+</code></pre>
+<h4 id="adding-to-arrays-of-objects">Adding to arrays of objects</h4>
+<p>Our list of contacts is just like any other array, except it happens to contain objects. To add a new item, we can simply use the <code>push</code> function like we always would.</p>
+<pre><code>let otherContact = {
+    firstName: "Pete",
+    lastName: "Best",
+    phoneNumber: "555-777-2233",
+    momsName: "Mona"
+};
+
+contacts.push( otherContact );
+</code></pre>
+<h4 id="iteration-and-property-acccess">Iteration and property acccess</h4>
+<p>Suppose now we want to "text" each of our contacts and ask about their mothers (since we're a considerate friend).</p>
+<p>Since our contacts array is just like any other array, we can iterate through our items just like we would with any other array:</p>
+<pre><code>let contacts = [
+    {
+        firstName:  "John",
+        lastName: "Lennon",
+        phoneNumber: "555-777-2222",
+        momsName: "Julia"
+    },
+    {
+        firstName:  "George",
+        lastName: "Harrison",
+        phoneNumber: "555-777-3333",
+        momsName: "Louise"
+    },
+    {
+        firstName:  "Paul",
+        lastName: "McCartney",
+        phoneNumber: "555-777-4444",
+        momsName: "Mary"
+    },
+    {
+        firstName:  "Ringo",
+        lastName: "Starr",
+        phoneNumber: "555-777-5555",
+        momsName: "Elsie"
+    }
+];
+
+let otherContact = {
+    firstName: "Pete",
+    lastName: "Best",
+    phoneNumber: "555-777-2233",
+    momsName: "Mona"
+};
+contacts.push( otherContact );
+
+for (let i=0; i&lt;contacts.length; i++){
+    let currentContact = contacts[i];
+    console.log("Hi " + currentContact.firstName + ". How is " + currentContact.momsName + "?");
+}
+</code></pre>
+<p>Please complete the <strong>Arrays of Objects Exercise</strong> before moving forward.</p>
+<h3 id="arrays-of-objects-exercise">Arrays of Objects Exercise</h3>
+<h3 id="searching-arrays-of-objects-background">Searching Arrays of Objects Background</h3>
+<p>Let's return to our list of contacts from the previous section.</p>
+<pre><code>let contacts = [
+    {
+        firstName:  "John",
+        lastName: "Lennon",
+        phoneNumber: "555-777-2222",
+        momsName: "Julia"
+    },
+    {
+        firstName:  "George",
+        lastName: "Harrison",
+        phoneNumber: "555-777-3333",
+        momsName: "Louise"
+    },
+    {
+        firstName:  "Paul",
+        lastName: "McCartney",
+        phoneNumber: "555-777-4444",
+        momsName: "Mary"
+    },
+    {
+        firstName:  "Ringo",
+        lastName: "Starr",
+        phoneNumber: "555-777-5555",
+        momsName: "Elsie"
+    }
+];
+</code></pre>
+<p>We have a relatively small list in this example, but in the real world, we might have thousands of contacts.</p>
+<p>Rather than scrolling through thousands of people, it would more efficient to be able to search for a particular person.</p>
+<p>Searching is a common coding problem, and we can do it with simple for loop and some conditional logic.</p>
+<pre><code>let contacts = [
+    {
+        firstName:  "John",
+        lastName: "Lennon",
+        phoneNumber: "555-777-2222",
+        momsName: "Julia"
+    },
+    {
+        firstName:  "George",
+        lastName: "Harrison",
+        phoneNumber: "555-777-3333",
+        momsName: "Louise"
+    },
+    {
+        firstName:  "Paul",
+        lastName: "McCartney",
+        phoneNumber: "555-777-4444",
+        momsName: "Mary"
+    },
+    {
+        firstName:  "Ringo",
+        lastName: "Starr",
+        phoneNumber: "555-777-5555",
+        momsName: "Elsie"
+    }
+];
+
+// Collect a search string from a user
+let searchString = prompt("Who do you want to find?");
+
+// Create a variable to eventually point to the person we want to find.
+let foundContact = null;
+
+// Iterate over contacts
+for (let i = 0; i &lt; contacts.length; i++){
+    let currentContact = contacts[i]j;
+
+    // Check if this contact's firstName matches our search
+    if( currentContact.firstName === searchString ){
+        foundContact = currentContact;
+        break;
+    }
+}
+
+// We are now outside of our for loop.
+
+// if the foundContact variable is still null, we know we have NOT found this person.
+if (foundContact === null){
+    console.log("No matching record was found for " + searchString)
+} else {
+    console.log("We found a matching contact:")
+    console.log(foundContact.firstName + "'s number is " + foundContact.phoneNumber)
+}
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong>, you may notice a <code>break;</code> statement in the <code>for</code> loop above. A <code>break;</code> statement ends a loop early. You can read about 2 special reserved keywords <code>break</code> and <code>continue</code> <a href="https://www.w3schools.com/js/js_break.asp">here</a>.</p>
+</blockquote>
+<p><strong>Questions for consideration</strong></p>
+<ul>
+<li>Does capitalization matter in the example above?</li>
+<li>If so, how can we make it not matter?</li>
+</ul>
+<h3 id="searching-arrays-of-objects-exercise">Searching Arrays of Objects Exercise</h3>
+<h2 id="submitting">Submitting</h2>
+<p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../unit-2/loops-and-iteration/" class="btn btn-neutral float-left" title="Loops and Iteration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../functions/" class="btn btn-neutral float-right" title="Functions">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../unit-2/loops-and-iteration/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../functions/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

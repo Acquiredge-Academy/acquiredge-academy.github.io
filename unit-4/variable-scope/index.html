@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Variable Scope - AcquirEdge Academy</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Variable Scope";
+        var mkdocs_page_input_path = "unit-4\\variable-scope.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> AcquirEdge Academy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/starting-an-assignment/">Starting an Assignment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/submitting-an-assignment/">Submitting an Assignment</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Units</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Unit 0</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-0/example/">Example</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/variables-and-data/">Variables and Data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/conditional-logic/">Conditional Logic</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 2</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-2/arrays/">Arrays</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-2/loops-and-iteration/">Loops and Iteration</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 3</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-3/objects/">Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-3/functions/">Functions</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Unit 4</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../higher-order-programming/">Higher Order Programming</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Variable Scope</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#variable-scope">variable scope</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#global-scope">global scope</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#block-scope">block scope</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#code-block">code block</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#referenceerror">ReferenceError</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#variable-scope-assignment">Variable Scope Assignment</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#variable-scope-background">Variable Scope Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#variable-scope-exercise">Variable Scope Exercise</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#submitting">Submitting</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 5</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/html-and-css/">HTML and CSS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/dom-querying/">Dom Querying</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 6</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/dynamic-content/">Dynamic Content</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/json-apis/">JSON APIs</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Capstone Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capstone/top9/">Top 9 Movies</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bonus</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bonus/PREP/">PREP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../bonus/css-layouts.md">CSS Layouts</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AcquirEdge Academy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Units</li>
+          <li class="breadcrumb-item">Unit 4</li>
+      <li class="breadcrumb-item active">Variable Scope</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="scope">Scope</h1>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li><strong>Identify when a variable is in the global scope or block scope</strong></li>
+<li><strong>Identify the scope of any variable you are using in your code</strong></li>
+<li><strong>Know the difference between declaring variables with <code>var</code> and <code>let</code>, and why we use <code>let</code> in modern JavaScript</strong></li>
+</ul>
+<h2 id="key-terms">Key Terms</h2>
+<h4 id="variable-scope">variable scope</h4>
+<p>refers to where a variable can be accessed or used within the code. A variable's scope is determined by where it is <em>declared</em>, not <em>assigned</em>.</p>
+<h4 id="global-scope">global scope</h4>
+<p>a variable in the global scope means that it is accessible from anywhere in the code. Variables declared outside of any function or code block are in the global scope.</p>
+<h4 id="block-scope">block scope</h4>
+<p>a variable in block scope means that it is declared inside of a <strong>code block</strong> (between a set of <code>{}</code>) and is only accessible within the code block that it was declared in</p>
+<h4 id="code-block">code block</h4>
+<p>a section of code enclosed in curly braces <code>{}</code>. It is used to group statements together, such as in functions, loops, and conditionals</p>
+<h4 id="referenceerror">ReferenceError</h4>
+<p>an error that occurs in JavaScript when you try to use a variable that hasn't been declared or is outside of its scope.</p>
+<h2 id="variable-scope-assignment">Variable Scope Assignment</h2>
+<h3 id="variable-scope-background">Variable Scope Background</h3>
+<p>We learned earlier that every data value in JavaScript has an associated type.</p>
+<p>We also learned that variables are like labels for associated values. We can think of a variable kind of like a named sticky note with its associated value written on the note. Whenever our code mentions the name of that particular sticky note, the JavaScript interpreter basically inserts the associated value into the code in place of the variable when that line executes.</p>
+<p>Up to this point in time, we've assumed that after we've declared a variable we can simply use it wherever we want. The reality is that this is not the case. <strong>Every variable has an associated scope.</strong> That scope is determined by where the variable is declared (not assigned).</p>
+<p>Scope is a topic that runs deep, but we're just going to focus on the two most common types of scope in this course: global scope and block scope.</p>
+<h4 id="global-scope_1">Global Scope</h4>
+<p>Consider the following code snippet.</p>
+<pre><code>function doStuff(){
+    console.log("entering doStuff function.");
+    console.log(globalMessage);
+    console.log("exiting doStuff function.");
+}
+
+let globalMessage = "Hello from global scope";
+console.log(globalMessage);
+doStuff();
+</code></pre>
+<p><code>globalMessage</code> is a <strong>global variable</strong> because it was declared outside of any code block. The fact that <code>globalMessage</code> is "global" means that the variable can be referenced "globally" - either outside of a function OR within a function like it is here.</p>
+<h4 id="global-scope-quick-exercise">Global Scope Quick Exercise</h4>
+<p>Try to guess what will be logged to the console from the above snippet and write it down. Then, run this code and see if you guessed correctly.</p>
+<h4 id="block-scope_1">Block Scope</h4>
+<p>Block Scope is different from Global Scope because it limits from where a variable can be accessed from. Specifcally, a variable with block scope is only accessible from within the block of code it was declared in. Usually, this is either a function, loop, or conditional statement.</p>
+<p>Consider the following code snippet.</p>
+<pre><code>function doStuff(){
+    console.log("entering doStuff function.");
+
+    let localMessage = "Hello from doStuff local scope";
+    console.log(globalMessage);
+    console.log(localMessage);
+
+    console.log("exiting doStuff function.");
+}
+
+let globalMessage = "Hello from global scope";
+console.log(globalMessage);
+doStuff();
+console.log(localMessage);
+</code></pre>
+<p><code>localMessage</code> is a <strong>local variable</strong>, simply because it was declared inside of a code block -- in this case a function. The fact that <code>localMessage</code> is "local" means that the variable can be referenced "locally" within this particular function it was declared in.</p>
+<h4 id="block-scope-exercise">Block Scope Exercise</h4>
+<p>Try to guess what will be logged to the console from the above snippet and write it down. Then, paste the above code into a JavaScript Replit and see if you guessed correctly.</p>
+<p>Did you notice that the last line caused an error? That is what happens when you try to access a variable outside of its associated scope.</p>
+<p><strong>Whenever a line of code references a variable that does not exist or outside of its scope, a ReferenceError is thrown.</strong></p>
+<h3 id="variable-scope-exercise">Variable Scope Exercise</h3>
+<p>Consider the following code snippet:</p>
+<pre><code>function makeSounds(){
+    let dogSound = "Bark";
+    let catSound = "Meow";
+    humanSound = "Hi";
+
+    console.log(humanSound);
+    console.log(dogSound);
+    console.log(catSound);
+}
+
+let humanSound = "Hello";
+let birdSound = "Chirp";
+console.log(birdSound);
+makeSounds();
+console.log(humanSound);
+console.log(dogSound);
+</code></pre>
+<p>Answer the following questions in your <code>quiz.md</code>:</p>
+<ol>
+<li>Without actually running this code yet, write down what you think will be logged to the console.</li>
+<li>Now, run this code snippet and note the output. What differed from your guess if anything at all? Can you see why?</li>
+</ol>
+<h2 id="submitting">Submitting</h2>
+<p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../higher-order-programming/" class="btn btn-neutral float-left" title="Higher Order Programming"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../unit-5/html-and-css/" class="btn btn-neutral float-right" title="HTML and CSS">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../higher-order-programming/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../unit-5/html-and-css/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

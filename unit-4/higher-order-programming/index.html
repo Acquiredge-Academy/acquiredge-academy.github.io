@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Higher Order Programming - AcquirEdge Academy</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Higher Order Programming";
+        var mkdocs_page_input_path = "unit-4\\higher-order-programming.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> AcquirEdge Academy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/starting-an-assignment/">Starting an Assignment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/submitting-an-assignment/">Submitting an Assignment</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Units</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Unit 0</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-0/example/">Example</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/variables-and-data/">Variables and Data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-1/conditional-logic/">Conditional Logic</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 2</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-2/arrays/">Arrays</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-2/loops-and-iteration/">Loops and Iteration</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 3</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-3/objects/">Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-3/functions/">Functions</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Unit 4</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Higher Order Programming</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#higher-order-programming_1">higher order programming</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-expression">function expression</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#callback">callback</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#foreach">forEach()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#map">map()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#higher-order-programming-assignment">Higher Order Programming Assignment</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#higher-order-programming-background">Higher Order Programming Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#higher-order-programming-exercise">Higher Order Programming Exercise</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#submitting">Submitting</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../variable-scope/">Variable Scope</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 5</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/html-and-css/">HTML and CSS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/dom-querying/">Dom Querying</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 6</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/dynamic-content/">Dynamic Content</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/json-apis/">JSON APIs</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Capstone Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capstone/top9/">Top 9 Movies</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bonus</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bonus/PREP/">PREP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../bonus/css-layouts.md">CSS Layouts</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AcquirEdge Academy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Units</li>
+          <li class="breadcrumb-item">Unit 4</li>
+      <li class="breadcrumb-item active">Higher Order Programming</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="higher-order-programming">Higher Order Programming</h1>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li><strong>Describe what qualifies a function as "higher order"</strong></li>
+<li><strong>Assign functions to variables</strong></li>
+<li><strong>Utilize callback functions as arguments to other functions</strong></li>
+<li><strong>Use forEach() as an alternative to a standard for loop</strong></li>
+<li><strong>Use anonymous functions</strong></li>
+<li><strong>Apply the map() function to solve algorithmic problems</strong></li>
+</ul>
+<h2 id="key-terms">Key Terms</h2>
+<h4 id="higher-order-programming_1">higher order programming</h4>
+<p>treating functions like data; use of functions that include functions as parameters</p>
+<h4 id="function-expression">function expression</h4>
+<p>a way to define a function and assign it to a variable</p>
+<pre><code>let greet = function(name) {
+    console.log("Hello, " + name + "!");
+};
+</code></pre>
+<h4 id="callback">callback</h4>
+<p>a function provided as an argument to another function; will be invoked at a future point in time, often after a specific action has been performed</p>
+<h4 id="foreach">forEach()</h4>
+<p>higher order array method for iterating over items and invoking a common function for each item in the array</p>
+<pre><code>let people = [ 'Alice', 'Bob', 'Candice'];
+let greetFunction = function(person) {
+    console.log('Hi ' + person);
+}
+people.forEach(greetFunction);
+</code></pre>
+<h4 id="map">map()</h4>
+<p>higher order array method that returns a new array with each item transformed by a provided transformation function</p>
+<pre><code>let people = [ 'Alice', 'Bob', 'Candice'];
+let capitalizer = function(person) {
+    return person.toUpperCase();
+}
+let capitalizedPeople = people.map(capitalizer) // ['ALICE', 'BOB', 'CANDICE'];
+</code></pre>
+<h2 id="higher-order-programming-assignment">Higher Order Programming Assignment</h2>
+<h3 id="higher-order-programming-background">Higher Order Programming Background</h3>
+<p>Recall that a function is simply a block of code.</p>
+<pre><code>// Definition
+function doubleIt(num){
+    return num * 2;
+}
+</code></pre>
+<p>It can optionally accept some parameters, and it returns a value when we invoke it.</p>
+<pre><code>// Invocation
+doubleIt(2); // returns 4
+</code></pre>
+<p>Up to this point, there has been a clear distinction between our functions and our data.</p>
+<p>Our data has always been numbers, strings, and objects that we have sometimes assigned to variables.</p>
+<pre><code>let dataNum = 6;
+console.log(typeof dataNum); // number
+
+let dataStr = 'Everest';
+console.log(typeof dataStr); // string
+</code></pre>
+<p>Higher order programming, also called functional programming, involves treating our functions themselves like data.</p>
+<pre><code>let tripleIt = function(num){
+    return num * 3;
+}
+
+console.log(typeof tripleIt); // function
+tripleIt(33);
+</code></pre>
+<p>Notice how we can assign our function to a variable, and we use the variable name as the function's name. This syntax is called a <strong>Function Expression</strong>.</p>
+<h4 id="arrayforeach">Array.forEach()</h4>
+<p>We won't go into all of the possible ways we can use Higher Order Programming in our code, but one of the most common places to use higher order programming is with arrays.</p>
+<p>Let's pretend we're a bit of a cat hoarder, so decide it's best to store our entire collection of cats in an array.</p>
+<pre><code>let cats = ["Sylvester", "Tigger", "Mr. Bigglesworth", "Felix", "Simba"];
+</code></pre>
+<p>When it's dinner time, we need to yell for each of our kitties by name. Up to now, the way we might handle this is with a standard for loop:</p>
+<pre><code>let cats = ["Sylvester", "Tigger", "Mr. Bigglesworth", "Felix", "Simba"];
+
+for (let i =0; i &lt; cats.length; i++){
+    console.log(cats[i].toUpperCase() + ", IT'S DINNER TIME!");
+}
+</code></pre>
+<p>This solution will certainly get the job done. For loops like this are hopefully becoming second nature to us by now, but there are a few details that make our code a bit "wordy". When we're reading this code, we have to manage the <code>i</code> counter ourselves. It's a bit distracting to look at.</p>
+<p>Whenever we are referencing the current cat with an iteration, we have to constantly remind ourselves that we're inside of a loop, and we need to use our counter to say <code>cats[i]</code>.</p>
+<p>Needing to "process" every item in an array is so common that JavaScript includes a built-in function called <a href="#foreach"><code>forEach</code></a> to make this easier for you.</p>
+<p><code>forEach</code> is a <strong>higher order function</strong> that requires a single parameter called a <a href="#callback">callback function</a>.</p>
+<p>The callback function works like a "hint" to <code>forEach</code> to tell it how to process a SINGLE item. In our case, we might use a function like this one to describe how to process a single cat.</p>
+<pre><code>let forOne = function(cat){
+    console.log(cat.toUpperCase() + ", IT'S DINNER TIME!");
+}
+</code></pre>
+<p>Notice that we're not saying <code>cats[i]</code> here. We're simply writing our function to accept a single parameter called <code>cat</code>, and we're processing that single cat in the function.</p>
+<p>Now that we've set the rule for how to handle a single cat, the <code>forEach</code> function can do the rest of the work for us!</p>
+<pre><code>let cats = ["Sylvester", "Tigger", "Mr. Bigglesworth", "Felix", "Simba"];
+
+let forOne = function(cat){
+    console.log(cat.toUpperCase() + ", IT'S DINNER TIME!");
+}
+
+cats.forEach(forOne);
+</code></pre>
+<p>Try running the above code, and you'll notice that it does exactly what our earlier for loop did for us. It just happens to be more concise and readable.</p>
+<p>Complete the <strong>Higher Order Programming Exercise</strong> before continuing.</p>
+<h3 id="higher-order-programming-exercise">Higher Order Programming Exercise</h3>
+<h2 id="submitting">Submitting</h2>
+<p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../unit-3/functions/" class="btn btn-neutral float-left" title="Functions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../variable-scope/" class="btn btn-neutral float-right" title="Variable Scope">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../unit-3/functions/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../variable-scope/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

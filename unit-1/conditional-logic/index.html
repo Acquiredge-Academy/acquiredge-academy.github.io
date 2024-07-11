@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Conditional Logic - AcquirEdge Academy</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Conditional Logic";
+        var mkdocs_page_input_path = "unit-1\\conditional-logic.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> AcquirEdge Academy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/starting-an-assignment/">Starting an Assignment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guides/submitting-an-assignment/">Submitting an Assignment</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Units</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Unit 0</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-0/example/">Example</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Unit 1</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../variables-and-data/">Variables and Data</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Conditional Logic</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#conditional-logic-assignment">Conditional Logic Assignment</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#conditionals-and-prompts-background">Conditionals and Prompts Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#conditional-logic-exercise">Conditional Logic Exercise</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#logical-operators-background">Logical Operators Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#logical-operators-and-prompts-exercise">Logical Operators and Prompts Exercise</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#submitting">Submitting</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 2</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-2/arrays/">Arrays</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-2/loops-and-iteration/">Loops and Iteration</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 3</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-3/objects/">Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-3/functions/">Functions</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 4</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/higher-order-programming/">Higher Order Programming</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/variable-scope/">Variable Scope</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 5</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/html-and-css/">HTML and CSS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-5/dom-querying/">Dom Querying</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Unit 6</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/dynamic-content/">Dynamic Content</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-6/json-apis/">JSON APIs</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Capstone Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capstone/top9/">Top 9 Movies</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bonus</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bonus/PREP/">PREP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../bonus/css-layouts.md">CSS Layouts</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AcquirEdge Academy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Units</li>
+          <li class="breadcrumb-item">Unit 1</li>
+      <li class="breadcrumb-item active">Conditional Logic</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="conditional-logic">Conditional Logic</h1>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>
+<p>Use a prompt to collect input from a user</p>
+</li>
+<li>
+<p>Write a simple program that accepts user input and provides a response based on the user's input</p>
+</li>
+<li>
+<p>Utilize AND (<strong>&amp;&amp;</strong>), OR (<strong>||</strong>), and NOT(<strong>!</strong>) Logical Operators</p>
+</li>
+<li>
+<p>Describe what is meant by a "code block"</p>
+</li>
+</ul>
+<h2 id="key-terms">Key Terms</h2>
+<p><strong>prompt()</strong></p>
+<p>a built-in function that asks the user to enter some text.</p>
+<pre><code>let answer = prompt("What is your favorite color?");
+</code></pre>
+<p><strong>if...else statement</strong></p>
+<p>a conditional statement to help you make decisions in code. It lets you run one code block if an if condition is true, or another code block if the if condition is false</p>
+<p><strong>if condition</strong></p>
+<p>an expression that evaluates to truthy or falsy, used to determine if a code block will be executed afterwards or not.</p>
+<pre><code>if( skyColor === "blue")
+</code></pre>
+<p><strong>code block</strong></p>
+<p>code between a <code>{</code> and <code>}</code>. One place where these are used are after an if condition, where a code block is executed if the preceding condition was truthy.</p>
+<pre><code>if( skyColor === "blue") {
+    console.log("no rain today");
+}
+</code></pre>
+<p><strong>&amp;&amp; (AND) logical operator</strong></p>
+<p>performs an AND operation between two boolean expressions and returns either <code>true</code> or <code>false</code></p>
+<p><strong>|| (OR) logical operator</strong></p>
+<p>performs an OR operation between two boolean expressions and returns either <code>true</code> or <code>false</code></p>
+<p><strong>! (NOT) logical operator</strong></p>
+<p>performs a NOT operation on a boolean expression and inverts it</p>
+<h2 id="conditional-logic-assignment">Conditional Logic Assignment</h2>
+<h3 id="conditionals-and-prompts-background">Conditionals and Prompts Background</h3>
+<p>Most programs are designed to perform different actions based on data.</p>
+<p>These "conditional" actions can be defined by <strong>if...else statements</strong>.</p>
+<p>The general format of these statements look like this:</p>
+<pre><code>if ( FIRST CONDITION ) {
+    FIRST CODE BLOCK
+} else if ( SECOND CONDITION ) {
+    SECOND CODE BLOCK
+} else {
+    DEFAULT CODE BLOCK IF ALL ABOVE CONDITIONS ARE FALSE
+}
+</code></pre>
+<p>Each <code>if</code> or <code>else if</code> expression is made up of 2 parts:</p>
+<ol>
+<li>
+<p>The if condition: The condition will contain a value or expression that evaluates to a boolean value. Often times, this will contain comparison or equality operators.</p>
+</li>
+<li>
+<p>The code block: Each if condition is associated with a code block, enclosed by curly braces <code>{}</code>.</p>
+</li>
+</ol>
+<p><strong>IMPORTANT: only one condition in an if...else block will be executed when your program runs. Even if multiple conditions are true, only the FIRST condition that returns true will execute its associated code block.</strong></p>
+<p><strong>ALSO IMPORTANT: notice that the <code>else</code> section is different because it doesn't include an associated condition. This is because the <code>else</code> clause acts like a "catch-all" so that when none of the conditions are true, the <code>else</code> code block will be executed.</strong></p>
+<p>Let's take a look at an example. This code snippet will make one of 3 animal sounds based on the <code>animal</code> variable:</p>
+<pre><code>let animal = "cat";
+
+if (animal === "dog"){
+    console.log("WOOF!");
+}
+else if (animal === "cat"){
+    console.log("MEOW!");
+}
+else {
+    console.log("...oink?");
+}
+</code></pre>
+<p>Since we set the <code>animal</code> variable to "cat" this time, we're going to only see "MEOW!" on the console.</p>
+<p>If we had set the <code>animal</code> variable to "frog", there's no condition that matches <code>"frog"</code>, so the <code>else</code> clause would execute as the "catch-all" or default, and we'd see <code>"...oink?"</code> logged to the console.</p>
+<h4 id="prompts">Prompts</h4>
+<p>Sometimes, we will want to ask for input from the user instead of <strong>hard-coding</strong> data into our programs.</p>
+<p>To get input from the user, we can use the <code>prompt()</code> function. The <code>prompt()</code> function takes a question in the form of a <strong>string</strong>, which we provide between the parentheses <code>()</code>, just like the <code>console.log()</code> function.</p>
+<p>Generally, we want to capture the user's response to a prompt, and we can do this by assigning the prompt call to a variable like this:</p>
+<pre><code>let answer = prompt("Hi. What is your name?");
+console.log("Hello " + answer + "!");
+</code></pre>
+<p>If the user responds with "Bill", then our console would log "Hello Bill!" in this case.</p>
+<blockquote>
+<p><strong>Note:</strong> Prompts will ALWAYS return a <strong>string</strong> value for the user's answer, so sometimes if you want a <strong>number</strong> value, you would need to call <code>parseInt</code> to convert the string to a number.</p>
+</blockquote>
+<p>Combining this with what we know about <strong>conditional logic</strong>, we can now execute different code based on a user's input:</p>
+<pre><code>// Prompt the user to enter their age
+let age = prompt("Please enter your age:");
+
+// Convert the input to a number
+age = parseInt(age);
+
+// Check the age and log the appropriate message
+if (age &gt;= 65) {
+    console.log("You are a senior.");
+} else if (age &gt;= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a minor.");
+}
+</code></pre>
+<p>In the above example, we store the user's response in <code>age</code>, and then convert <code>age</code> to a number using <code>parseInt</code> with the next code statement.</p>
+<p>Then, based on the age of the user, we print whether they are a <strong>senior</strong>, <strong>adult</strong>, or <strong>minor</strong>.</p>
+<blockquote>
+<p><strong>Note:</strong> Notice how we convert <code>age</code> to a <strong>number</strong> type using <code>parseInt</code> in this example, since <code>prompt()</code> will by default return a <strong>string</strong> type.</p>
+<p><strong>Note:</strong> Try running this code and inputting 70 to the prompt. What do you see in the console? Although the number <code>70</code> is both greater than or equal to <code>65</code> and greater than or equal to <code>18</code>, you only see <code>"You are a senior."</code> in the output because only the FIRST true condition executes it's code block.</p>
+</blockquote>
+<h3 id="conditional-logic-exercise">Conditional Logic Exercise</h3>
+<h3 id="logical-operators-background">Logical Operators Background</h3>
+<p>Often times in our code, we will want to take an action based on more than one boolean condition. We can accomplish this by using <strong>Logical Operators</strong>.</p>
+<h4 id="and-operator">AND Operator</h4>
+<p>For example, we can guess what type of animal we've encountered based on a combination of how many feet it stands on <strong>AND</strong> whether or not it can jump high. The logical AND (<code>&amp;&amp;</code>) operator can help us here.</p>
+<p>Let's start by asking the user a question and storing their response.</p>
+<pre><code>let twoFeetAnswer = prompt("Does this animal usually stand on two feet? Enter true or false");
+let standsOnTwoFeet = (twoFeetAnswer === "true");
+</code></pre>
+<p><code>standsOnTwoFeet</code> will be a <strong>boolean</strong> with the value of <code>true</code> if the user's string response was <code>"true"</code> and <code>false</code> otherwise.</p>
+<p>Now, let's add a second question.</p>
+<pre><code>let twoFeetAnswer = prompt("Does this animal usually stand on two feet? Enter true or false");
+let standsOnTwoFeet = (twoFeetAnswer === "true");
+
+let jumpAnswer = prompt("Can this animal jump high? Enter true of false");
+let canItJumpHigh = (jumpAnswer === "true");
+</code></pre>
+<p>After the user responds to these prompts, we'll have two boolean values.</p>
+<p>If we use the <code>&amp;&amp;</code> operator on these two values, we'll get a boolean result. The table below diagrams all the possibilities, as well as the what the result of performing a logical <code>AND</code> would give us.</p>
+<table>
+<thead>
+<tr>
+<th>standsOnTwoFeet</th>
+<th>canItJumpHigh</th>
+<th>standsOnTwoFeet &amp;&amp; canItJumpHigh</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p>As we can see in the table, <strong>we will only get a value of <code>true</code> for <code>standsOnTwoFeet &amp;&amp; canItJumpHigh</code> if both of these variable are <code>true</code></strong>.</p>
+<p>Knowing this, let's extend our code a bit.</p>
+<pre><code>let twoFeetAnswer = prompt("Does this animal usually stand on two feet? Enter true or false");
+let standsOnTwoFeet = (twoFeetAnswer === "true");
+
+let jumpAnswer = prompt("Can this animal jump high? Enter true of false");
+let canItJumpHigh = (jumpAnswer === "true");
+
+if (standsOnTwoFeet &amp;&amp; canItJumpHigh){
+    console.log("This might be a KANGAROO!");
+} else {
+    console.log("This is definitely not a kangaroo.");
+}
+</code></pre>
+<p>Using conditional logic, we're able to make an educated guess! But, what if we wanted to make this a bit more sophisticated?</p>
+<h4 id="not-operator">NOT Operator</h4>
+<p>The <strong>NOT</strong> operator takes the form of <code>!</code> in code, and it works slightly different than the <strong>AND</strong> operator, because it's used on only a single value at a time.</p>
+<p>For example, if we wanted to only concern ourselves with animals that <strong>do NOT</strong> stand on two feet, we could make another boolean value like this:</p>
+<pre><code>let doesNotStandOnTwoFeet = !standsOnTwoFeet;
+</code></pre>
+<p>Here is a table that shows possibilities of what <code>doesNotStandOnTwoFeet</code> will be, based on what <code>standsOnTwoFeet</code> is to start with.</p>
+<table>
+<thead>
+<tr>
+<th>standsOnTwoFeet</th>
+<th>!standsOnTwoFeet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>NOT</strong> operator just "flips" the boolean value to the opposite of what it was before.</p>
+<p>So, here's a version of our program that is now a bit more sophisticated:</p>
+<pre><code>let twoFeetAnswer = prompt("Does this animal usually stand on two feet? Enter true or false");
+let standsOnTwoFeet = (twoFeetAnswer === "true");
+
+let jumpAnswer = prompt("Can this animal jump high? Enter true of false");
+let canItJumpHigh = (jumpAnswer === "true");
+
+let doesNotStandOnTwoFeet = !standsOnTwoFeet;
+
+if (standsOnTwoFeet &amp;&amp; canItJumpHigh) {
+    console.log("This might be a KANGAROO!");
+} else if (doesNotStandOnTwoFeet &amp;&amp; canItJumpHigh) {
+    console.log("This might be a FROG!");
+} else {
+    console.log("This is definitely not a frog or a kangaroo.");
+}
+</code></pre>
+<h4 id="or-operator">OR Operator</h4>
+<p>The third and final logical operator we'll cover is the logical <strong>OR</strong> operator. Like the <strong>AND</strong> operatir, it requires two values, and it gives us a <code>true</code> value if <strong>at least one of the input values is true.</strong></p>
+<p>The <strong>OR</strong> operator takes the form of <code>||</code> in our code.</p>
+<p>Let's imagine we wanted to write a slightly different program that would tell us whether or not an animal could jump high, based on the name of the animal:</p>
+<pre><code>let animal = prompt("What is the name of your animal?");
+
+let isKangaroo = (animal === "kangaroo");
+let isFrog = (animal === "frog");
+
+if (isKangaroo || isFrog){
+    console.log("Your animal can definitely jump high!");
+} else {
+    console.log("I am not sure if this animal can jump high or not.");
+}
+</code></pre>
+<p>Here is a table showing all of the possibilities:</p>
+<table>
+<thead>
+<tr>
+<th>isKangaroo</th>
+<th>isFrog</th>
+<th>isKangaroo OR isFrog</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+</tr>
+<tr>
+<td>true</td>
+<td>false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>false</td>
+<td>true</td>
+<td>true</td>
+</tr>
+<tr>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>As you can see, we'll get a value of <code>true</code> for <code>isKangaroo || isFrog</code> as long as <strong>at least one of the input values is true.</strong></p>
+<h4 id="truth-table">Truth Table</h4>
+<p>The rules for these 3 boolean operators are often described in a standard <strong>Truth Table</strong>. In this table, simply consider <code>p</code> and <code>q</code> to be two boolean values.</p>
+<table>
+<thead>
+<tr>
+<th>p</th>
+<th>q</th>
+<th>!p</th>
+<th>p OR q</th>
+<th>p AND q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p>Complete the <strong>Logical Operators and Prompts Exercise</strong> before moving forward.</p>
+<h3 id="logical-operators-and-prompts-exercise">Logical Operators and Prompts Exercise</h3>
+<h4 id="truth-table-exercise">Truth Table Exercise</h4>
+<p>Fill in the blanks in the following truth table yourself.</p>
+<blockquote>
+<p><strong>Note:</strong> Operations in parentheses have priority, so they should be evaluated first, and then the final result should come from combining the inner results.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>p</th>
+<th>q</th>
+<th>!p</th>
+<th>p OR q</th>
+<th>p AND q</th>
+<th>(!p) OR (p AND q)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td>?</td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td>?</td>
+<td><code>false</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+<td>?</td>
+<td><code>false</code></td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<h2 id="submitting">Submitting</h2>
+<p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../variables-and-data/" class="btn btn-neutral float-left" title="Variables and Data"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../unit-2/arrays/" class="btn btn-neutral float-right" title="Arrays">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../variables-and-data/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../unit-2/arrays/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
