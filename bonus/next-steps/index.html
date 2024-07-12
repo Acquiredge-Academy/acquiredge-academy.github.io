@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>PREP - AcquirEdge Academy</title>
+    <title>Next Steps - AcquirEdge Academy</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "PREP";
-        var mkdocs_page_input_path = "bonus\\PREP.md";
+        var mkdocs_page_name = "Next Steps";
+        var mkdocs_page_input_path = "bonus\\next-steps.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -118,27 +118,13 @@
               </ul>
               <p class="caption"><span class="caption-text">Bonus</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">PREP</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#prep">PREP</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#p-is-for-parameters">"P" is for Parameters</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#r-is-for-return">"R" is for Return</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#e-is-for-example">"E" is for Example</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#last-p-is-for-pseudocode">Last "P" is for Pseudocode</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#youve-finished-prep-now-you-can-code">You've finished PREP. Now you can code!</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../PREP/">PREP</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="../css-layouts.md">CSS Layouts</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../next-steps/">Next Steps</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Next Steps</a>
+    <ul class="current">
+    </ul>
                   </li>
               </ul>
       </div>
@@ -156,7 +142,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Bonus</li>
-      <li class="breadcrumb-item active">PREP</li>
+      <li class="breadcrumb-item active">Next Steps</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -165,107 +151,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="problem-solving-and-algorithms-with-prep">Problem Solving and Algorithms with PREP</h1>
-<h2 id="prep">PREP</h2>
-<p>Many coding problems you encounter will involve writing functions to perform specific tasks.</p>
-<p><strong>PREP</strong> is a mnemonic to guide you through methodically tackling these problems.</p>
-<p>The letters in P.R.E.P. stand for <strong>Parameters, Return, Example, Pseudocode.</strong></p>
-<p>Let's practice using PREP through this example problem:</p>
-<pre><code>Write a function that accepts a sentence and returns the longest word.
-</code></pre>
-<h3 id="p-is-for-parameters">"P" is for Parameters</h3>
-<p>In this step we are thinking about our function's inputs:</p>
-<ul>
-<li>What parameters will our function accept?</li>
-<li>What type will each of our parameters have?</li>
-<li>What are meaningful names for our parameters?</li>
-</ul>
-<p>Look for keywords like "accepts" or "takes in" in the problem description to guide you.</p>
-<p>The statement “accepts a sentence” tells you that the function should accept a single String parameter.</p>
-<p>You could name this parameter <code>sentenceString</code> to make the type crystal clear, but it's pretty obvious that just <code>sentence</code> implies a String, and it's more concise.</p>
-<p>Since this is your first step, you also need to think of a meaningful name for your function itself. In your case, <code>longestWord</code> is both concise and descriptive. Now that you've decided this, you can write the shell for your function like this:</p>
-<pre><code>function longestWord(sentence){
-
-}
-</code></pre>
-<h3 id="r-is-for-return">"R" is for Return</h3>
-<p>What <strong>data type</strong> does this function return? Is it a number? A boolean? A string?</p>
-<p>Remember: the value a function returns is not the same as what it might display in a print/log statement. Once again, you can look at the problem statement for clarification.</p>
-<p>"Returns the longest word" tells you that you're returning a word, and you know that words are strings. Let's make this crystal clear by creating a variable to represent this return value and rigging up your function to return it. Even though you aren't returning the correct answer yet, you're set up to return the correct type. You have created a placeholder that will make the next steps easier.</p>
-<pre><code>function longestWord(sentence){
-    let word = 'placeholder';
-    return word;
-}
-</code></pre>
-<h3 id="e-is-for-example">"E" is for Example</h3>
-<p>Even for expert developers, static code is harder to understand than running code. You want to make your code runnable and “alive” as soon as possible. You can breathe life into your function with an example test invocation.</p>
-<p>You know that if your function accepts the sentence, 'I saw a hippopotamus', it should return the string 'hippopotamus' once it's properly working. But for now, you just want to see your placeholder value from the last step to confirm your code is runnable and setup correctly.</p>
-<pre><code>function longestWord(sentence){
-    let word = 'placeholder';
-    return word;
-}
-
-console.log(longestWord('I saw a hippopotamus'));
-</code></pre>
-<h3 id="last-p-is-for-pseudocode">Last "P" is for Pseudocode</h3>
-<p>While it's tempting to just dive in and start coding now, it would be too easy to get caught up in a detail that could distract you from the bigger picture. You need to devise a strategy first, and pseudocoding is just the tactic for this.</p>
-<p><strong>Pseudocode is a series of precise statements written in spoken language comments that describe what you need to do.</strong></p>
-<pre><code>function longestWord(sentence){
-    // Use a variable to keep track of the longest word so far.
-    let word = 'placeholder';
-
-    // Convert the sentence into an array of words, so we can easily
-    // iterate over each word.
-
-    // Loop through each of the words.
-
-    // If the length of the current word is greater than the longest
-    // so far, update our variable tracking the longest word.
-
-    // After we've looked at every word, return the tracking variable.
-    return word;
-}
-
-// This should log "hippopotamus" once our function is working
-// correctly. Currently, it logs "placeholder"
-console.log(longestWord('I saw a hippopotamus'));
-</code></pre>
-<h3 id="youve-finished-prep-now-you-can-code">You've finished PREP. Now you can code!</h3>
-<p>The four steps in PREP helped you clearly frame the problem and think about how to solve it. In truth, accurate framing is half the battle. At this point, your goal is to just write code that will make your examples and tests pass. You'll do this by encoding each of your pseudocode steps.</p>
-<p>You know you've got a working solution when you can run your code and see the correct output.</p>
-<pre><code>function longestWord(sentence){
-    // Use a variable to keep track of the longest word so far.
-    let longestWordSoFar = "";
-
-    // Convert the sentence into an array of words, so we can easily
-    // iterate over each word.
-    let wordArray = sentence.split(" ");
-    let currentWord;
-
-    // Loop through each of the words.
-    for (let i = 0; i &lt; wordArray.length; i++){
-        currentWord = wordArray[i];
-        // If the length of the current word is greater than the longest
-        // so far, update our variable tracking the longest word.
-        if (currentWord.length &gt; longestWordSoFar.length){
-            longestWordSoFar = currentWord;
-        }
-    }
-
-    // after we've looked at every word, return the tracking variable
-    return longestWordSoFar;
-}
-
-// This should log "hippopotamus" once our function is working
-// correctly.
-console.log(longestWord('I saw a hippopotamus'));
-</code></pre>
+                <h1 id="next-steps">Next Steps</h1>
+<p>If you've made it this far and successfully completed the program, congratulations! At this point you can call yourself "Code Literate" and "Project Ready" but there is much, much more to learn in the world of programming if you want to take your skills further.</p>
+<p>The good news is that there are tons of resources available for you to keep learning.</p>
+<p>Your next steps from this point depend on your goals. Here are a few recommendations:</p>
+<ol>
+<li>
+<p><strong>Keep coding!</strong> Coding is very much a "use it or lose it" skill, so it's extremely important to keep up the practice. <a href="https://www.codewars.com/">CodeWars</a> is a free site loaded with programming challenges, and it's an amazing resources for keeping up the practice. Challenges range from easy to extremely difficult, and when you solve a problem you'll be shown solutions from the community - studying these solutions is an excellent way to sharpen your skills.</p>
+</li>
+<li>
+<p><strong>Customize your Visual Studio Code.</strong> Take a deep dive on the settings and tools made available to you through this tool. It's an extremely popular code editor for both personal and professional purposes, so investing time into understanding VS Code better is a worthwhile endeavor.</p>
+</li>
+<li>
+<p><strong>Learn React.</strong> If front-end development is feeling more interesting to you so far, you should consider learning React. React is an extremely popular framework for building front-end applications, and there are lot of great tutorials. <a href="https://reactjs.org/tutorial/tutorial.html">This one</a> is a nice place to start.</p>
+</li>
+<li>
+<p><strong>Learn Node.</strong> If you're fascinated by back-end development, you've got a lot of options. You'll inevitably need to learn SQL for interfacing with databases, and you'll be well poised to start working with Node (server-side JavaScript). <a href="https://expressjs.com/">Express</a> is a node-based API for building APIs.</p>
+</li>
+<li>
+<p><strong>Build your own project!</strong> One of the most rewarding ways to learn is through building an application you are excited about. The key is to start with small attainable goals and incrementally work up from there. For inspiration, <a href="https://github.com/toddmotto/public-apis">here is a list of free APIs</a> you can leverage to incorporate real data into your project.</p>
+</li>
+<li>
+<p><strong>Consider joining a coding school!</strong> There are plenty of options, and not all of them are equal, but having a structured curriculum and community of similar learners and instructors around you can accelerate your learning process. Of course, self-learning programming is still a great option. If you want to go down the self-learning route, find a structured curriculum to stick to, such as the <a href="https://www.theodinproject.com/">Odin Project</a>.</p>
+</li>
+<li>
+<p><strong>Don't stop learning!</strong> The field of programming is constantly evolving. You will never run out of new things to learn, and this is a good thing! Becoming a developer opens you up to a world of opportunity -- as long as you're constantly learning new things.</p>
+</li>
+</ol>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../capstone/creative-opportunities/" class="btn btn-neutral float-left" title="Creative Opportunities"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../next-steps/" class="btn btn-neutral float-right" title="Next Steps">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../PREP/" class="btn btn-neutral float-left" title="PREP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -288,10 +205,8 @@ console.log(longestWord('I saw a hippopotamus'));
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../capstone/creative-opportunities/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../PREP/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../next-steps/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

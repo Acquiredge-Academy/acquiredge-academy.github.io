@@ -95,6 +95,56 @@
                   <li class="toctree-l1 current"><a class="reference internal current" >Unit 5</a>
     <ul class="current">
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">HTML and CSS</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#client">client</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#server">server</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#front-end-development">front end development</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#back-end-development">back end development</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#full-stack-development">full stack development</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#html-attribute">HTML attribute</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#element-id">element id</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parent">parent</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#child">child</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#css-selector">CSS selector</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#element-selector">element selector</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#class-selector">.class selector</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#id-selector">#id selector</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#html-and-css-assignment">HTML and CSS Assignment</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#web-development-background">Web Development Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#html-background">HTML Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#css-background">CSS Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#html-and-css-exercise-about-me-page">HTML and CSS Exercise: About Me Page</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#final-note-web-design-vs-web-development">Final Note: Web Design vs Web Development</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#submitting">Submitting</a>
+    </li>
+    </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../dom-querying/">Dom Querying</a>
                 </li>
@@ -113,12 +163,16 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../capstone/top9/">Top 9 Movies</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capstone/creative-opportunities/">Creative Opportunities</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Bonus</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../bonus/PREP/">PREP</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="../../bonus/css-layouts.md">CSS Layouts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bonus/next-steps/">Next Steps</a>
                   </li>
               </ul>
       </div>
@@ -146,7 +200,141 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="html-and-css">HTML and CSS</h1>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li><strong>Describe the different types of web development</strong></li>
+<li><strong>Describe client-server relationships</strong></li>
+<li><strong>Use HTML and SCS to build a web page and customize the styling</strong></li>
+<li><strong>Understand how CSS Selectors work</strong></li>
+<li><strong>Identify parent-child relationships in an HTML document</strong></li>
+</ul>
+<h2 id="key-terms">Key Terms</h2>
+<h4 id="client">client</h4>
+<h4 id="server">server</h4>
+<h4 id="front-end-development">front end development</h4>
+<h4 id="back-end-development">back end development</h4>
+<h4 id="full-stack-development">full stack development</h4>
+<h4 id="html-attribute">HTML attribute</h4>
+<h4 id="element-id">element id</h4>
+<h4 id="parent">parent</h4>
+<h4 id="child">child</h4>
+<h4 id="css-selector">CSS selector</h4>
+<h4 id="element-selector">element selector</h4>
+<h4 id="class-selector">.class selector</h4>
+<h4 id="id-selector">#id selector</h4>
+<h2 id="html-and-css-assignment">HTML and CSS Assignment</h2>
+<h3 id="web-development-background">Web Development Background</h3>
+<p>Now that we've built a foundation in JavaScript, we can take a step back and look at web development. Before we jump straight into building websites, let's go over some background knowledge of how websites work.</p>
+<p>To get a good idea of what websites are made of, take a look at this video <a href="https://www.youtube.com/watch?v=tWslE3uejuI">here</a>.</p>
+<h4 id="client-server-relationship">Client Server Relationship</h4>
+<p>In the video, you may have heard the word "server" a few times. In the context of websites, a <strong>server</strong> is a computer that stores a webstite's files. A web browser reads and displays these web files, making it a <strong>client</strong>.</p>
+<p>For a website to display on your browser, the browser first connects to a server via the internet. Then the server "serves" the website files (HTML, CSS, and JavaScript) to the browser, which displays them as a website to you, the <strong>end user</strong>. This <strong>client-server relationship</strong> makes up the basis of the internet.</p>
+<p><img alt="client-server-relationship diagram" src="../img/client-server-relationship.png" /></p>
+<h4 id="types-of-web-developers">Types of Web Developers</h4>
+<p>Being a web developer typically falls within 3 categories: <strong>front-end</strong>, <strong>back-end</strong>, and <strong>full stack</strong>. These terms represent which part of the client-server relationship you're currently working with.</p>
+<p><strong><em>Front End development</em></strong> means that you're primarily dealing with the client side. It's referred to as the front end because it's what the user can see. In the context of web applications, this typically refers to a website, but it can also refer to the front-end of mobile applications, as well, such as IOS or Andoid development.</p>
+<p><strong><em>Back End development</em></strong> deals primarily with the server side. Even though users can't see it, it deals with a lot of logic and computations that are required for many websites to work properly. Many times, the front end will need to communicate with the backend by using APIs, or <strong>Application Programming Interfaces</strong>. We will work with these in the last half of our program.</p>
+<p><strong><em>Full Stack development</em></strong> simply means that you work with both the front-end and the back-end sides of web development. A "<strong>stack</strong>" is a set of technologies used to develop an application, so full stack developers typically work with almost all of the technologies used to make a website work.</p>
+<p>This course is mainly focused on front-end web development, which is going to focus on the 3 types of files mentioned in the video: HTML, CSS, and JavaScript.</p>
+<p>You've already learned the fundamentals of JavaScript, so in our next section we will go into HTML and CSS.</p>
+<h3 id="html-background">HTML Background</h3>
+<p>In our first assignment, you created a basic HTML Skeleton, demonstrating that you know the basics of HTML. In this lesson, we'll focus on getting you familiar with the fundamentals of HTML, as well as some common elements.</p>
+<p>We won't go in-depth on HTML itself here. There are many excellent tutorials online that do a great job of teaching the fundamentals, and HTML is not the focus of this class.</p>
+<p>Before moving on, make sure you are comfortable with the fundamentals of HTML by going through the list of documentation below. Each link is to <strong>W3Schools</strong>, which has interactive examples for you to try out as you go. Make sure to try these examples out, as they will allow you to practice as you go.</p>
+<h4 id="html-attributes">HTML Attributes</h4>
+<p>Attributes are pieces of information in the start tag of an HTML element. They provide additional information about that element.</p>
+<p><a href="https://www.w3schools.com/html/html_attributes.asp">HTML Attributes</a></p>
+<h4 id="headings-and-paragraphs">Headings and Paragraphs</h4>
+<p>Every website needs text, such as headings, subheadings, and text content. HTML Heading elements take care of headings and subheadings.</p>
+<p><a href="https://www.w3schools.com/html/html_headings.asp">HTML Headings</a></p>
+<p>The HTML paragraph element <strong><code>&lt;p&gt;</code></strong> takes care of most text content in your HTML document.</p>
+<p><a href="https://www.w3schools.com/html/html_paragraphs.asp">HTML Paragraphs</a></p>
+<blockquote>
+<p><strong>NOTE</strong>: Some of these pages have a <strong>"Tag Reference"</strong> section at the bottom, which will give you a small description of all the HTML tags that are used in the page. You can reference that section instead of googling the tags you don't recognize.</p>
+</blockquote>
+<h4 id="links">Links</h4>
+<p>Links in HTML are represented by <strong><code>&lt;a&gt;</code></strong> tags, otherwise known as <strong>anchor tags</strong>. This is the first element we're seeing that <em>requires</em> attributes to work properly. HTML Links do not need to be text. They can be placed on things like images and buttons, as well.</p>
+<p><a href="https://www.w3schools.com/html/html_links.asp">HTML Links Hyperlinks</a></p>
+<blockquote>
+<p><strong>Note</strong>: You might notice a few subsections for "<strong>Link Colors</strong>" and "<strong>Link Bookmarks</strong>". You can skip these subsections, since we'll touch more on that when we get to CSS.</p>
+</blockquote>
+<h4 id="lists">Lists</h4>
+<p>Typically, you’ll use two types of lists: ordered lists (<strong><code>&lt;ol&gt;</code></strong>) and unordered lists (<strong><code>&lt;ul&gt;</code></strong>), which are basically numbered and bulleted lists, respectively. Other than that, there aren’t many inherent differences between the two types of lists until we incorporate CSS into our website. We use unordered lists to list out things where order doesn’t matter, like shopping lists. Ordered lists are for when order does matter, like a set of instructions.</p>
+<p><a href="https://www.w3schools.com/html/html_lists.asp">HTML Lists</a></p>
+<h4 id="images">Images</h4>
+<p>Images in HTML are represented by <strong><code>&lt;img&gt;</code></strong> tags. <strong><code>&lt;img&gt;</code></strong> elements are empty elements, so they take no text.</p>
+<p><a href="https://www.w3schools.com/html/html_images.asp">HTML Images</a></p>
+<blockquote>
+<p><strong>Note</strong>: You only need to read the "<strong>Images</strong>" section. The "<strong>Image Map</strong>", "<strong>Background Images</strong>", and "<strong>The Picture Element</strong>" sections aren't required.</p>
+</blockquote>
+<h4 id="block-vs-inline-elements">Block vs Inline Elements</h4>
+<p>By default, HTML elements are displayed as either block-level elements, or inline-level elements. <strong>Block-level elements</strong> always start on a new line and take up an entire line in your HTML document, so it will always take up the entire width of the website. <strong>Inline-level elements</strong>, on the other hand, will only take up as much width as it requires.</p>
+<p><a href="https://www.w3schools.com/html/html_blocks.asp">HTML Block and Inline Elements</a></p>
+<p><strong><code>&lt;div&gt;</code></strong> and <strong><code>&lt;span&gt;</code></strong> are container elements. <strong><code>&lt;div&gt;</code></strong> is a block-level container, while <strong><code>&lt;span&gt;</code></strong> is a inline-level container. These container elements are mainly used as parent elements to group together related elements and apply CSS styles to them.</p>
+<p>The <strong><code>&lt;div&gt;</code></strong> element is a very flexible element that is used very often in many websites. If you inspect the HTML of most web pages, they’ll be filled with tons of <strong><code>&lt;div&gt;</code></strong> elements with different class attributes.</p>
+<p>For example, check out the screenshot below:</p>
+<p><img alt="screenshot full of divs" src="../img/full-of-divs.png" /></p>
+<h4 id="contratulations-you-now-know-html-lets-move-on-to-css">Contratulations! You now know HTML! Let's move on to CSS.</h4>
+<h3 id="css-background">CSS Background</h3>
+<p>By the end of the previous section, you were able to use HTML to create the basic structure and content of your "About Me" page: Headings, text, lists, and images.</p>
+<p>But there's still one big issue:</p>
+<p><strong><em>It looks ugly.</em></strong></p>
+<p>This is because HTML has very little control over what elements look like. The main purpose of HTML is to control <em>what</em> appears on a web page, but not <em>how</em> they appear. For that, we use CSS, or <strong><em>Cascading Style Sheets</em></strong>, to style our HTML elements.</p>
+<p>Similar to HTML, I’ll give you a list of links to read through for CSS — mainly to go over the basics. Once you get through the links below, we'll do a mini-project: An About Me page using HTML and styled with CSS.</p>
+<blockquote>
+<p><strong>Note</strong>: You <strong>should not</strong> try to memorize or master every CSS propery out there. You only need to grasp basic concepts since you'll always have the option to read up on specific properties needed when you want to use them in your projects.</p>
+</blockquote>
+<h4 id="css-basics">CSS Basics</h4>
+<p>To get started, go over this link to get a basic idea of how CSS works:</p>
+<p><a href="https://www.w3schools.com/css/css_intro.asp">CSS Introduction</a></p>
+<p>There are 3 ways to include CSS in your HTML files:</p>
+<ol>
+<li>External: By using a separate <code>.css</code> file.</li>
+<li>Internal: By using a <code>&lt;style&gt;</code> tag in your HTML document.</li>
+<li>Inline: By including a <code>style</code> attribute inside of your HTML element</li>
+</ol>
+<p>You can read more about them here:</p>
+<p><a href="https://www.w3schools.com/css/css_howto.asp">How to add CSS</a></p>
+<p>The majority of the time, you will be using <strong>external CSS</strong>.</p>
+<h4 id="css-syntax-and-selectors">CSS Syntax and Selectors</h4>
+<p>Now, let's get into how we can write CSS. Visit the following 2 links, and read about how CSS Syntax and Selectors work:</p>
+<ol>
+<li><a href="https://www.w3schools.com/css/css_syntax.asp">CSS Syntax</a></li>
+<li><a href="https://www.w3schools.com/css/css_selectors.asp">CSS Selectors</a></li>
+</ol>
+<h4 id="the-box-model">The Box Model</h4>
+<p>In CSS, one of the most important concepts is The Box Model. It's very important to understand because it determines how much space your elements take up, which affects the layout and design of your entire page.</p>
+<p>Fundamentally, every element on your web page is treated as a box, and the box model allows us to control the sizing, spacing, and bordering of these boxes.</p>
+<p><img alt="Box Model Image" src="../img/BoxModelExample.png" /></p>
+<p>You can read about it here:</p>
+<p><a href="https://www.w3schools.com/css/css_boxmodel.asp">CSS Box Model</a></p>
+<p><strong>And that's all you need to know about CSS for now!</strong></p>
+<p>Complete the <strong>About Me Exercise</strong> before moving forward.</p>
+<h3 id="html-and-css-exercise-about-me-page">HTML and CSS Exercise: About Me Page</h3>
+<h4 id="optional-advanced-styling">Optional Advanced Styling</h4>
+<p>The following tasks were not covered in this Reading, use Google, or a CSS reference such as <a href="http://www.w3schools.com/css/css_reference.asp">W3Schools</a> to figure it out!</p>
+<ol>
+<li>
+<p>Your hyperlinks should not have an underline by default. When a user hovers over the link, the underline should appear.
+    <em>Hint</em>: The property you are looking for is a type of CSS "pseudo-class".</p>
+<p>Example:</p>
+<p><img alt="Links No Underline Example" src="../img/Links%20No%20Underline%20Example.png" /></p>
+</li>
+<li>
+<p>Every paragraph should start with a drop-caps that is 1.5 times the size of the normal paragraph font size.
+    <em>Hint</em>: The property you are looking for is a type of CSS "pseudo-element".</p>
+<p>Example:</p>
+<p><img alt="DropCap Example" src="../img/DropCap%20Example.png" /></p>
+</li>
+</ol>
+<h2 id="final-note-web-design-vs-web-development">Final Note: Web Design vs Web Development</h2>
+<p>One thing to keep in mind is that Web Design and Web Development are 2 different fields.</p>
+<p>Web design focuses on designing a websites look and feel, going into colors, fonts, images, and how to make a website visually appealing.</p>
+<p>Web Development, which is what you're learning with HTML and CSS, focuses on bringing a website's design to life using code, making sure it works properly and effectively.</p>
+<p>All of this to say: <strong>Don't worry if your website doesn't look perfect after learning CSS! That's not your job as a developer.</strong></p>
+<h2 id="submitting">Submitting</h2>
+<p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
               
             </div>
           </div><footer>

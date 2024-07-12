@@ -103,6 +103,26 @@
                   <li class="toctree-l1 current"><a class="reference internal current" >Unit 6</a>
     <ul class="current">
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Dynamic Content</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#elementcss">element.css()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dynamic-content-assignment">Dynamic Content Assignment</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#dynamic-content-background">Dynamic Content Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dynamic-content-exercise">Dynamic Content Exercise</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#submitting">Submitting</a>
+    </li>
+    </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../json-apis/">JSON APIs</a>
                 </li>
@@ -113,12 +133,16 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../capstone/top9/">Top 9 Movies</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capstone/creative-opportunities/">Creative Opportunities</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Bonus</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../bonus/PREP/">PREP</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="../../bonus/css-layouts.md">CSS Layouts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bonus/next-steps/">Next Steps</a>
                   </li>
               </ul>
       </div>
@@ -146,7 +170,97 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="dynamic-content">Dynamic Content</h1>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li><strong>Dynamically modify the style of elements using the DOM API</strong></li>
+<li><strong>Explain the relationship between an event dispatcher to an event listener</strong></li>
+<li><strong>Connect the click of a button to executing a JavaScript function</strong></li>
+</ul>
+<h2 id="key-terms">Key Terms</h2>
+<h3 id="elementcss">element.css()</h3>
+<p>JQuery function that can be used to set a CSS property dynamically on a wrapped</p>
+<pre><code>$("p").css("color", "blue") // changes font color in all paragraphs to blue
+</code></pre>
+<h4 id="dom-elements">DOM elements</h4>
+<h4 id="synchronous">synchronous</h4>
+<p>a process that completes its work and returns before the next line of code is executed; this is the common scenario we've seen so far</p>
+<h4 id="event">event</h4>
+<p>an occurrence that can be programmatically "listened" and trigger actions; e.g. when a button is clicked</p>
+<h4 id="dispatcher">dispatcher</h4>
+<p>the element that broadcasts an event</p>
+<h4 id="event-type">event type</h4>
+<p>a named used to categorize different events</p>
+<pre><code>"click", "keydown", "change",...
+</code></pre>
+<h4 id="event-listener">event listener</h4>
+<p>a function that will be called after a specific event has occurred; listeners are registered to dispatchers to establish the connection</p>
+<h4 id="elementoneventtype-listener">element.on(eventType, listener)</h4>
+<p>a function JQuery provides for attaching event listeners</p>
+<pre><code>function handleButtonClicked(){
+    console.log("A button was clicked!");
+}
+$("button").on("click", handleButtonClicked);
+</code></pre>
+<h2 id="dynamic-content-assignment">Dynamic Content Assignment</h2>
+<h3 id="dynamic-content-background">Dynamic Content Background</h3>
+<h4 id="modifying-css-properties-dynamically">Modifying CSS Properties Dynamically</h4>
+<p>In the previous lesson you learned about querying the DOM for HTML elements.</p>
+<p>Once you've looked up an element and have it assigned to a variable, it's possible to dynamically edit CSS properties via JavaScript.</p>
+<p>For example, let's say we have the following html:</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;This is the Main Header&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>If we wanted to turn the h1 tag blue, we could do it like this:</p>
+<pre><code>// Query for the element
+let h1Element = $("h1");
+
+// Alter the styling
+h1Element.css("color", "blue") // or "#0000ff" works too
+</code></pre>
+<h4 id="modifying-html-dynamically">Modifying HTML Dynamically</h4>
+<h4 id="event-handling">Event Handling</h4>
+<p>Up to this point in our lessons, our programs have been <a href="#synchronous">synchronous</a>. This just means that they have executed from one line to the next through to the end of the program when we ran it.</p>
+<p>In a real-world web application, much of what the application does is actually in response to <a href="#event">events</a>. To name a few example events:</p>
+<ul>
+<li>The user clicked a button.</li>
+<li>The webpage has finished loading.</li>
+<li>5 seconds has passed.</li>
+</ul>
+<p>Two important things to know about events:</p>
+<ul>
+<li>They are <a href="#dispatcher">dispatched</a> by particular objects. E.g. a button element on the page will dispatch a <code>"click"</code> event when it's clicked.</li>
+<li>Events have <a href="#event-type">event types</a>. An event type is just a string label that categorizes what type of event has occurred. <code>"click"</code> is the event type we'll be working with in this exercise.</li>
+</ul>
+<p><strong>A helpful metaphor is that an event is like a sound.</strong></p>
+<p>We can programmatically "hook in" to events by listening for them.</p>
+<p>Let's say we have a button defined in our HTML like this:</p>
+<pre><code>&lt;input class="main-button" type="button" value="Main Button"/&gt;
+</code></pre>
+<p>We'd like to listen for clicks on this button and then respond by showing an alert. Here's how we could do it:</p>
+<pre><code>// Create the listener function that we want to be called when the button is clicked.
+function afterClicked(event){
+    alert("The main button was clicked.");
+}
+
+// Look up the target element
+var mainButton = $(".main-button");
+
+// Listen for clicks on mainButton, and call our listener function when they happen.
+mainButton.on("click", afterClicked );
+</code></pre>
+<p>You won't see an immediate result when you run the above code, but if you click the button, the afterClicked() function will be invoked, and then you'll see an <a href="https://www.w3schools.com/jsref/met_win_alert.asp">alert</a>. This is called <strong>event-driven programming</strong>.</p>
+<p>Does the concept of <em>listeners</em> remind you of anything we encountered before?</p>
+<p>Remember <strong>callbacks</strong> from when the section on higher order programming? <strong>A listener is really just a callback function that gets invoked after an event.</strong></p>
+<p>Complete the <strong>Dynamic Content Exercise</strong> before continuing.</p>
+<h3 id="dynamic-content-exercise">Dynamic Content Exercise</h3>
+<h2 id="submitting">Submitting</h2>
+<p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
               
             </div>
           </div><footer>

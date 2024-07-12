@@ -112,6 +112,24 @@
               <p class="caption"><span class="caption-text">Capstone Project</span></p>
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Top 9 Movies</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#prerequisite-api-key-from-tmdb">Prerequisite: API key from TMDB</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#api-reference">API Reference</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#initial-state">Initial State</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#expected-result">Expected Result</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#instructions">Instructions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#part-0-inspect-the-provided-starter-files-and-add-your-api-key">Part 0: Inspect the provided starter files and add your API Key</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../creative-opportunities/">Creative Opportunities</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Bonus</span></p>
@@ -119,6 +137,8 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../bonus/PREP/">PREP</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="../../bonus/css-layouts.md">CSS Layouts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bonus/next-steps/">Next Steps</a>
                   </li>
               </ul>
       </div>
@@ -145,13 +165,216 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="project-top-nine-movies">Project: Top Nine Movies</h1>
+<p>For this project, we will be building a website that finds and displays the 9 most popular movies for a specific category and year.</p>
+<p>It would be a good idea to be familiar with:</p>
+<ul>
+<li>Reading and Understanding HTML and CSS files.</li>
+<li>Implementing and Calling functions that return values.</li>
+<li>Getting and editing elements using the DOM.</li>
+<li>Event handling with forms using the DOM.</li>
+<li>Calling APIs using <code>fetch</code> and the standard API Promise Chain.</li>
+<li>Constructing API URLs with multiple query parameters.</li>
+<li><em>Authenticating API Calls with an API Key</em></li>
+</ul>
+<h2 id="prerequisite-api-key-from-tmdb">Prerequisite: API key from TMDB</h2>
+<p>This project will require that you have a working API key from TMDB. If you don't currently have one, you can follow this <a href="https://kb.synology.com/en-global/DSM/tutorial/How_to_apply_for_a_personal_API_key_to_get_video_info">guide</a> to get one.</p>
+<p>To authenticate your API calls, we will add the API key in your API URL as a query parameter.</p>
+<h2 id="api-reference">API Reference</h2>
+<p>Check out this <a href="https://developer.themoviedb.org/reference/discover-movie">documentation</a> for the TMDB API that you will be using. You don't need to look at all the possible query parameters, but try to take note on how you can filter by <code>genre</code> and <code>year</code>.</p>
+<h2 id="initial-state">Initial State</h2>
+<ul>
+<li>
+<p>Initially appears with a grid of 9 placeholder images in 3 rows.</p>
+</li>
+<li>
+<p>Above the grid, there is a dropdown (select) menu for selecting a Genre. This dropdown defaults to "Action".</p>
+</li>
+<li>
+<p>Above the grid, there is also a text input for entering a Release Year. This is an optional input with no default value.</p>
+</li>
+<li>
+<p>There is also a button labeled "Search!", which will trigger the search.</p>
+</li>
+</ul>
+<p><img alt="" src="../img/initial.png" /></p>
+<h2 id="expected-result">Expected Result</h2>
+<ul>
+<li>
+<p>After a user enters search criteria and clicks the "Search!" button, the application should query TMDB's Discover API for movies that match the criteria.</p>
+</li>
+<li>
+<p>The movies should be returned in order of decreasing popularity, with the most popular movies returned first.</p>
+</li>
+<li>
+<p>The 9 placeholder images in the grid should be replaced with cover images of the top 9 movies matching the provided criteria.</p>
+</li>
+</ul>
+<p><img alt="" src="../img/result.png" /></p>
+<h2 id="instructions">Instructions</h2>
+<h3 id="part-0-inspect-the-provided-starter-files-and-add-your-api-key">Part 0: Inspect the provided starter files and add your API Key</h3>
+<p>The first step in any project where there is starter code is to make sure you understand what the current code contains and what it is doing.</p>
+<ol>
+<li>
+<p>Read through <code>index.html</code> and <code>styles.css</code> and get a good idea of what they contain.</p>
+</li>
+<li>
+<p>Pay special attention to the HTML elements in the "movies" <code>&lt;div&gt;</code>, the "genre" <code>&lt;select&gt;</code>, and the "year" text <code>&lt;input&gt;</code>.</p>
+</li>
+<li>
+<p>Inspect <code>script.js</code> and look at the unimplemented functions. Take note that at the top, the <code>BASE_URL</code> for the API is given to you.</p>
+</li>
+<li>
+<p>Read through all of the comments that explain what each function should do.</p>
+</li>
+<li>
+<p>Replace the <code>apiKey="PASTE_API_KEY_HERE"</code> with your actual API key from your TMDB account. The <code>BASE_URL</code> is built with this <code>apiKey</code>, so you won't have to do this with each API call yourself.</p>
+</li>
+<li>
+<p>Open <code>index.html</code> in Live Server, and move on to Part 1.</p>
+</li>
+</ol>
+<h1 id="need-to-change-up-the-instructions-below-to-use-jquery">Need to change up the instructions below to use JQuery</h1>
+<h3 id="part-1-calling-the-api">Part 1: Calling the API</h3>
+<p>We want to incrementally add functionality so that we can test and make sure everything works as we go. The first thing that we will do is make sure that our API calls are working before doing things like adding event listeners and query parameters.</p>
+<ol>
+<li>
+<p>Implement the <code>getMovies</code> function with the standard API Promise Chain. Log the response to the console. Make sure that we are using the <code>url</code> parameter instead of the <code>BASE_URL</code> inside the function implementation.</p>
+</li>
+<li>
+<p>Underneath the <code>getMovies</code> implementation call <code>getMovies</code> with the <code>BASE_URL</code>.</p>
+</li>
+<li>
+<p>Save your code, and check to see that you see something simliar in your browser's Developer Console:</p>
+<p><img alt="Part 1 Result" src="../img/part1.png" /></p>
+</li>
+</ol>
+<h3 id="part-2-attaching-the-event-listener">Part 2: Attaching the Event Listener</h3>
+<p>Since the API works properly, let's make it so that whenever the "query" form is submitted, we call our API using the function above.</p>
+<ol>
+<li>
+<p>Delete the <code>getMovies</code> call we wrote in the last part.</p>
+</li>
+<li>
+<p>Add a "submit" event listener to the "query" form, and provide it with an event handler function that calls the <code>getMovies</code> function whenever the form is submitted.</p>
+<ul>
+<li>Don't forget to prevent the default behavior of submitting a form! Otherwise, the website will refresh every time you submit the form, and you won't see any output in the Developer Console!</li>
+</ul>
+</li>
+<li>
+<p>Save your code, and check to make sure that every time you click the "Search!" button, a new line appears in your Developer Console. In this example, I clicked the button 3 times:</p>
+<p><img alt="Part 2 Result" src="../img/part2result.png" /></p>
+</li>
+</ol>
+<h3 id="part-3-set-movie-posters-using-response">Part 3: Set Movie Posters using Response</h3>
+<p>After testing the above functionality, let's utilize the API data to change the placeholder images that we are displaying on the web page.</p>
+<ol>
+<li>
+<p>Implement the <code>setMoviePosters</code> function so that it loops over the first 9 results in <code>movies</code> and changes the corresponding <code>&lt;img&gt;</code> element's <code>src</code> attribute to the poster URL. Take note that:</p>
+<ul>
+<li>
+<p>The image url to set the movie poster image isn't fully stored in each <code>movie</code> object. Instead, a <code>poster_path</code> property contains the end portion of the URL.</p>
+</li>
+<li>
+<p>For more information on how this works, check out this <a href="https://developer.themoviedb.org/docs/image-basics">documentation</a> about it.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Make sure to check out the comments above the <code>setMoviePosters</code> function to get a bit of pseudocode and explanation on how to implement it.</p>
+</li>
+<li>
+<p>Edit <code>getMovies</code> so that instead of logging the data to the console, we get the <code>results</code> array of movies it contains, and pass that array to the <code>setMoviePosters</code> function to display the movie posters.</p>
+</li>
+<li>
+<p>Ensure that when you click the "Search!" button, you see 9 movies on your screen:</p>
+<p><img alt="Part 3 Result" src="../img/part3result.png" /></p>
+</li>
+<li>
+<p>Since we haven't implemented any query parameters yet, if you click the "Search!" button multiple times, you will see the same results.</p>
+</li>
+</ol>
+<h3 id="part-4-add-the-genre-query-parameter">Part 4: Add the "Genre" Query Parameter</h3>
+<p>Pressing "Search!" and getting the exact same results every time isn't very useful to the user, so let's introduce the "Genre" Query Parameter.</p>
+<p>From the <a href="https://developer.themoviedb.org/reference/discover-movie">API Documentation</a> at the top, you should have seen that there is a query parameter "with_genres", which takes a list of <code>genre ID</code> values.</p>
+<p>To save you the trouble, here's the list of Genre IDs we use in the select box:</p>
+<ul>
+<li>Action = 28</li>
+<li>Adventure = 12</li>
+<li>Animation = 16</li>
+<li>Comedy = 35</li>
+<li>Crime = 80</li>
+<li>Documentary = 99</li>
+<li>Drama = 18</li>
+<li>Family = 10751</li>
+<li>Fantasy = 14</li>
+<li>History = 36</li>
+<li>Horror = 27</li>
+<li>Music = 10402</li>
+</ul>
+<p>In <code>index.html</code>, the dropdown selection already maps each genre name to genre ID. But, if you'd like, you can look at the list of genres <a href="https://developer.themoviedb.org/reference/genre-movie-list">here</a> by clicking "Try It!".</p>
+<p>Remember that to add query parameters to our API URL, we need to add a <code>"?"</code> to the end of our base URL first:</p>
+<pre><code>"https://example.com/api/?query=value"
+</code></pre>
+<ol>
+<li>
+<p>Scroll to the bottom and look at the <code>constructURL</code> function, which takes a <code>genre</code> and <code>year</code>, and constructs a URL with them.</p>
+</li>
+<li>
+<p>Implement <code>constructURL</code> so that it appends the <code>genre</code> query parameter to the <code>BASE_URL</code> and returns it.</p>
+<ul>
+<li>Take note that in the <code>&lt;select&gt;</code> dropdown, there is no "Any" option, which means that selecting a <code>genre</code> is REQUIRED. Do you need a conditional to check if <code>genre</code> is an empty string?</li>
+</ul>
+</li>
+<li>
+<p>Verify that the function is working correctly by uncommenting the 2 example <code>console.log</code> statements for Part 4, and inspecting the output in the Developer Console. Once you have verified that it is correct, re-comment the example calls:</p>
+<p><img alt="Part 4 Example output" src="../img/part4examples.png" /></p>
+</li>
+<li>
+<p>In the "submit" event handler, get the genre selection from the DOM, and save it to a variable. Call <code>constructURL</code> with this variable, and save it to a new variable.</p>
+</li>
+<li>
+<p>Instead of calling <code>getMovies</code> with the <code>BASE_URL</code>, call it with the result of <code>constructURL</code> above.</p>
+</li>
+<li>
+<p>Save your code, and in Live Server, select some genres from the dropdown and click "Search!". Finally, select "Music" as your genre, and make sure that the result looks like this:</p>
+<p><img alt="Part 4 Result" src="../img/part4result.png" /></p>
+</li>
+</ol>
+<h3 id="part-5-add-the-year-query-parameter">Part 5: Add the "Year" Query Parameter</h3>
+<p>Finally, we want to allow our user to filter movies not only by genre, but optionally the Release Year of the movie, as well.</p>
+<p>Back in the <a href="https://developer.themoviedb.org/reference/discover-movie">documentation</a> link, you should have seen a parameter called "primary_release_year". This is the query parameter we will be using.</p>
+<p>Remember that to add multiple query parameters, we need to separate them using <code>"&amp;"</code> symbols:</p>
+<pre><code>"https://example.com/api/?query1=value1&amp;query2=value2&amp;..."
+</code></pre>
+<ol>
+<li>
+<p>Head back to <code>constructURL</code>, and re-implement it by adding in the release year as well.</p>
+</li>
+<li>
+<p>Note that since "Year Released" is a text box and can be left empty, it is NOT required, which means that we will need to check if it exists prior to adding it in.</p>
+</li>
+<li>
+<p>Verify that the function is working correctly by uncommenting the 2 example <code>console.log</code> statements for Part 5, and inspecting the output in the Developer Console. Once you have verified that it is correct, re-comment the example calls:</p>
+<p><img alt="Part 5 Examples" src="../img/part5examples.png" /></p>
+</li>
+<li>
+<p>In the "submit" event handler, get the value of the "Year Released" text input, and save that to a variable as well.</p>
+</li>
+<li>
+<p>Now, pass both the genre and year to the <code>constructURl</code> call.</p>
+</li>
+<li>
+<p>Save, and test your code. Provide several different genres and release years to test on your own, then, provide "Fantasy" as the genre, and "2011" as the release year:</p>
+<p><img alt="Part 5 Result" src="../img/part5result.png" /></p>
+</li>
+</ol>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../../unit-6/json-apis/" class="btn btn-neutral float-left" title="JSON APIs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../bonus/PREP/" class="btn btn-neutral float-right" title="PREP">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../creative-opportunities/" class="btn btn-neutral float-right" title="Creative Opportunities">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -177,7 +400,7 @@
       <span><a href="../../unit-6/json-apis/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../bonus/PREP/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../creative-opportunities/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

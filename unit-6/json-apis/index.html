@@ -105,6 +105,36 @@
                 <li class="toctree-l2"><a class="reference internal" href="../dynamic-content/">Dynamic Content</a>
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">JSON APIs</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#json">JSON</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getjsonurl-callback">$.getJSON(url, callback)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#api-application-progamming-interface">API (Application Progamming Interface)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#json-apis-assignment">JSON APIs Assignment</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#json-modeling-background">JSON Modeling Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#apis-background">APIs Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#calling-apis-with-jquery">Calling APIs with JQuery</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#json-apis-exercise">JSON APIs Exercise</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#get-tmdb-api-key">Get TMDB API Key</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#submitting">Submitting</a>
+    </li>
+    </ul>
                 </li>
     </ul>
                   </li>
@@ -113,12 +143,16 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../capstone/top9/">Top 9 Movies</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capstone/creative-opportunities/">Creative Opportunities</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Bonus</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../bonus/PREP/">PREP</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="../../bonus/css-layouts.md">CSS Layouts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bonus/next-steps/">Next Steps</a>
                   </li>
               </ul>
       </div>
@@ -146,7 +180,131 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="json-apis">JSON APIs</h1>
+<h2 id="objectives">Objectives</h2>
+<h2 id="key-terms">Key Terms</h2>
+<h4 id="json">JSON</h4>
+<p>JavaScript Object Notation; a JavaScript-like standard for representing data; useful for sharing data between programs, including programs that are not using JavaScript</p>
+<pre><code>{
+    "name": "Mickey",
+    "animalType": "mouse"
+    "earCount": 2
+}
+</code></pre>
+<h4 id="getjsonurl-callback">$.getJSON(url, callback)</h4>
+<p>JQuery function used to retrieve JSON data asynchronously from a remote server</p>
+<pre><code>$.getJSON("http://example.com/words.json", function(data){
+    console.log(data.length);
+})
+</code></pre>
+<h4 id="api-application-progamming-interface">API (Application Progamming Interface)</h4>
+<p>a way for different applications to communicate with one another. Usually transfers data using JSON data format.</p>
+<h2 id="json-apis-assignment">JSON APIs Assignment</h2>
+<h3 id="json-modeling-background">JSON Modeling Background</h3>
+<p><a href="#json">JavaScript Object Notation (JSON)</a> is a standardized format for representing data.</p>
+<p>Prior to JSON, XML was the most popular standard for representing data. JSON has mostly won this formatting war due to how easy it is to read for both humans and computers.</p>
+<p>The syntax for JSON was inspired by the JavaScript Object literal notation (a long way of saying "the way you normally instantiate objects in JavaScript"), but there are a few notable differences:</p>
+<ul>
+<li>All properties/keys in JSON must be in quotes.</li>
+<li>All JSON strings must use double quotes.</li>
+<li>
+<p>A few more not worth mentioning here.</p>
+<p>Here's an example of some JSON data representing cocktail descriptions:</p>
+<pre><code>[
+    {
+        "name": "mojito",
+        "image_url": "https://d2sf2a832xqb4v.cloudfront.net/detail_Skinny_Mojito_4.png?mtime=20151201224540",
+        "description": "A delicious sweet drink with fresh mint. Best enjoyed on a beach!",
+        "ingredients": [
+            "rum",
+            "mint",
+            "cane sugar"
+        ]
+    },
+    {
+        "name": "martini",
+        "image_url": "http://www.uvvodka.com/wp-content/uploads/2013/01/recipelarge_uvmartini.png",
+        "description": "A classy, classic drink that you'll love if you're into olives.",
+        "ingredients": [
+            "olives",
+            "vermouth",
+            "gin"
+        ]
+    }
+]
+</code></pre>
+</li>
+</ul>
+<p>If this looks familiar to you, that's because all JSON is valid JavaScript code for representing an object literal. However, not all JavaScript is valid JSON.</p>
+<p>Take a minute and read through a quick description of JSON in <a href="https://www.w3schools.com/js/js_json.asp">W3 Schools</a></p>
+<h3 id="apis-background">APIs Background</h3>
+<p>In order for any application to communicate with another, it must set up an API, or <code>Application Programming Interface</code>.</p>
+<p>If you imagine an application as a secure building, an API is like a doorway into the building. It acts as a controlled opening into the building and the services and data inside. APIs can regulate who enters (makes a request) and what data they can access.</p>
+<p>Here’s a video that does a good job of summarizing what an API is:</p>
+<p><a href="http://www.youtube.com/watch?v=tgbRY96q-KM" title="What is an API?"><img alt="What is an API?" src="http://img.youtube.com/vi/tgbRY96q-KM/0.jpg" /></a></p>
+<h4 id="important-takeaways">Important Takeaways</h4>
+<ol>
+<li>
+<p>APIs allow for two applications to communicate (transfer data) with each other.</p>
+</li>
+<li>
+<p>APIs are like a menu of information that an application exposes to the public. This allows an application to pick and choose what information they want to expose to the world, which keeps the rest of it's data secure.</p>
+</li>
+<li>
+<p><strong>REST APIs</strong> are web APIs that allow two applications to communicate over the internet. These are the most common APIs, and are what we will be working with in this course.</p>
+</li>
+</ol>
+<h3 id="calling-apis-with-jquery">Calling APIs with JQuery</h3>
+<p>When applications use REST APIs, the data that they transfer is often in JSON format. There are a number of ways a JavaScript application can make an API call to a server, but the simplest way is to use a JQuery function called <code>getJSON()</code>.</p>
+<p>Just like our earlier asynchronous examples with events, the function for loading JSON is also asynchronous.</p>
+<p>The reason for this is that loading data from an external source takes a (relatively) long time. The application has to wait for another server that may be located far away to respond.</p>
+<p>This is where the "asynchronous" part comes in. If an application simply locked up while waiting for data to come back from another server, then it wouldn't be able to do anything else in the meantime. By using an asynchronous callback, the application is able to perform other operations while it waits.</p>
+<p>Here's an example of how you could use <a href="#getjsonurl-callback"><code>getJSON()</code></a> to load data with a bunch of animal names and simply log the length of the list:</p>
+<pre><code>$.getJSON( 'https://raw.githubusercontent.com/boennemann/animals/master/words.json', function( data ) {
+    console.log(data.length); // This will be logged later, after the data is loaded asynchronously.
+})
+
+console.log('Hello'); // This will be logged first.
+</code></pre>
+<p>You can find more examples of getJSON() usage on the official <a href="http://api.jquery.com/jQuery.getJSON/">JQuery API Documentation page</a></p>
+<p>Complete <strong>JSON APIs Exercise</strong> and <strong>Get TMDB API Key</strong> before continuing.</p>
+<h3 id="json-apis-exercise">JSON APIs Exercise</h3>
+<p><strong>Introduce Query Parameters in this exercise</strong></p>
+<h3 id="get-tmdb-api-key">Get TMDB API Key</h3>
+<p>Not all APIs are "public", meaning that anyone can access and call them without identifying themselves first.</p>
+<p>In fact, most useful APIs out there are "private". So, we will need to identify or <strong>authenticate</strong> ourselves in some way when we call the API, so that the server knows who we are and can make sure we're authorized to use the API.</p>
+<p>One of the ways to authenticate ourselves is by using an <strong>API Key</strong>.</p>
+<p>To prepare for our capstone project, we need an API Key from The Movie Database (TMDB) and call a few APIs to search for some movies. Follow the instructions below to get your API key.</p>
+<ol>
+<li>
+<p>Head to <a href="https://www.themoviedb.org/">TMDB</a>, and create an account by hitting "Join TMDB" at the top right corner.</p>
+<p><img alt="" src="../img/join.png" /></p>
+</li>
+<li>
+<p>Fill in your account details, and after hitting "Sign Up", you should see a page like this:</p>
+<p><img alt="" src="../img/verify.png" /></p>
+</li>
+<li>
+<p>Head to your email, and find the email from "The Movie Database" with the subject "Email verification required" to verify your email.</p>
+</li>
+<li>
+<p>After you click the button to verify your email, sign in to TMDB with your login details, and you should see an account page like this:</p>
+<p><img alt="" src="../img/account.png" /></p>
+</li>
+<li>
+<p>Navigate to "Overview" &gt; "Edit Profile", and hit "API" on the side-menu. Find the "Request an API Key" heading and click to request a new key.</p>
+<p><img alt="" src="../img/newKey.png" /></p>
+</li>
+<li>
+<p>Choose "Developer", Accept the Terms of Service, and fill out the form like below. The bottom portion will be your own personal information.:</p>
+<p><img alt="" src="../img/appInfo.png" /></p>
+</li>
+<li>
+<p>After submitting, you should see a page that contains your API Key. Remember where this is. We'll need to use this for our Capstone Project.</p>
+</li>
+</ol>
+<h2 id="submitting">Submitting</h2>
+<p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
               
             </div>
           </div><footer>

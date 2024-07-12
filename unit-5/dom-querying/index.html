@@ -97,6 +97,30 @@
                 <li class="toctree-l2"><a class="reference internal" href="../html-and-css/">HTML and CSS</a>
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Dom Querying</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#the-dom">The DOM</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dom-query">DOM query</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#jquery">JQuery</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dom-querying-assignment">DOM Querying Assignment</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#dom-background">DOM Background</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dom-querying-exercise">DOM Querying Exercise</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#submitting">Submitting</a>
+    </li>
+    </ul>
                 </li>
     </ul>
                   </li>
@@ -113,12 +137,16 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../capstone/top9/">Top 9 Movies</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capstone/creative-opportunities/">Creative Opportunities</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Bonus</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../bonus/PREP/">PREP</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="../../bonus/css-layouts.md">CSS Layouts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bonus/next-steps/">Next Steps</a>
                   </li>
               </ul>
       </div>
@@ -146,7 +174,131 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="dom-querying">DOM Querying</h1>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>Describe the what the DOM is and its relationship to HTML and CSS</li>
+<li>Utilize CSS selectors to access the content of HTML elements using JavaScript</li>
+<li>Use JQuery to look up an element by class or id and read its attributes</li>
+</ul>
+<h2 id="key-terms">Key Terms</h2>
+<h4 id="the-dom">The DOM</h4>
+<h4 id="dom-query">DOM query</h4>
+<h4 id="jquery">JQuery</h4>
+<h2 id="dom-querying-assignment">DOM Querying Assignment</h2>
+<h3 id="dom-background">DOM Background</h3>
+<h4 id="websites-are-displayed-using-a-javascript-object"><strong><em>Websites are displayed using a JavaScript Object.</em></strong></h4>
+<p>But, wait! Didn't we just learn about how HTML and CSS create the structure and looks of a website?</p>
+<p>Well, you're right. But your browser isn't actually able to understand HTML and CSS directly. After HTML and CSS files are loaded into a browser, the browser then uses those HTML and CSS files to generate a JavaScript Object to reprsent them. This all happens behind the scenes, so it gives the illusion that your browser actually understands HTML and CSS.</p>
+<p>The <strong><em>Document Object Model</em></strong>, or <strong><em>DOM</em></strong> for short, is how JavaScript sees your webpage. When you write HTML and CSS, your browser turns them into a JavaScript object, which is the DOM.</p>
+<p><img alt="DOM Diagram" src="../img/DOMdiagram.png" /></p>
+<h4 id="the-dom-tree">The DOM Tree</h4>
+<p>Recall that HTML documents are composed of <strong>elements</strong>, which are composed of <strong>tags</strong>.</p>
+<p>Tags usually come in pairs, with an opening tag and closing tag.</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;This is the Main Header&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>In the code above, you can identify the closing tags because they start with <code>&lt;/</code> instead of just <code>&lt;</code>.</p>
+<p>The <code>&lt;h1&gt;</code> tag starts the header, and then the <code>&lt;/h1&gt;</code> indicates the end of the header section.</p>
+<p>Notice that the <code>h1</code> tag both opens and closes "inside of" the body tag. When one tag is placed directly inside of another tag in this way, we say that the outer tag is the <strong>parent</strong> of the inner tag. So in this case, we'd say: the body tag is the <strong>parent</strong> of the <code>h1</code> tag.</p>
+<p>Inversely, we'd also say that the <code>h1</code> tag is a <strong>child</strong> of the body tag.</p>
+<p>Note: the <code>&lt;h1&gt;</code> tag above is also fully enclosed within the <code>&lt;html&gt;</code> tag. However, it's not accurate to say that the <code>&lt;html&gt;</code> tag is the parent of the <code>&lt;h1&gt;</code> tag. The <code>&lt;html&gt;</code> is the parent of the <code>&lt;body&gt;</code> tag, and it's more like a "grandparent" to the <code>&lt;h1&gt;</code> tag. More generally, we would describe the <code>&lt;h1&gt;</code> tag as a "descendant" of the <code>&lt;html&gt;</code> tag.</p>
+<p>If you were to draw the relationship between each of the elements in this HTML sample, you'd get a tree like this:</p>
+<pre><code>          o html
+         / \
+        /   \
+       /     \
+      /       \
+     o body    o head
+    / \
+   /   \
+  /     \
+ o h1    o p
+</code></pre>
+<p>This is how the DOM organizes your HTML elements, called the <strong>DOM Tree</strong>. Not completely unlike a family tree!</p>
+<h4 id="accessing-elements-in-the-dom">Accessing Elements in the DOM</h4>
+<p>Recall that the DOM is a JavaScript object that represents all of the HTML elements in your HTML document.</p>
+<p>The DOM provides us with many different ways to interact with it using JavaScript. You can do stuff like:</p>
+<ul>
+<li>Look up an element in the tree and change its style properties, thus changing its appearance.</li>
+<li>Add a new element to the tree using only JavaScript code (instead of HTML)</li>
+</ul>
+<p>To simplify our interactions with the DOM, we're going to use a library called <strong>JQuery</strong>. You can recognize JQuery use in the code anywhere you see a <code>$</code> symbol.</p>
+<p>Let's look at a few examples of how we can interact with the DOM. Suppose our document consists of the following HTML:</p>
+<pre><code>&lt;html&gt;
+    &lt;body&gt;
+        &lt;div class="first-section" id="section1"&gt;
+            &lt;p&gt;First paragraph&lt;/p&gt;
+            &lt;p&gt;Second paragraph&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="second-section"&gt;
+            &lt;p&gt;Third Paragraph&lt;/p&gt;
+            &lt;p&gt;Fourth paragraph&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>We can use JQuery's <code>$</code> function to <strong>query</strong> (search) for elements that match a <strong>CSS selector</strong>.</p>
+<p>CSS selectors are very versatile, but for now we're concerned with just three types:</p>
+<ul>
+<li>
+<p><strong>element selector</strong>. Look up an element based on its tag name. For example: using the selector "p" would select the first <code>&lt;p&gt;</code> element in the document.</p>
+</li>
+<li>
+<p><strong>.class selector</strong>. This selector is used for looking up elements based on CSS classes they are assigned to using their <code>class</code> attribute. To indicate we are using a .class selector, we need to prefix the selector with a period. For example: the selector ".first-section" would select the first <code>&lt;div&gt;</code>.</p>
+</li>
+<li>
+<p><strong>#id selector</strong>. This selector is used for looking up elements based on its <code>id</code> attribute. To indicate we are using an #id selector, we need to prefix the selector with a hashtag (<code>#</code>). For example, the selector "#section1" would also select the first <code>&lt;div&gt;</code>.</p>
+</li>
+</ul>
+<p><code>$("selector")</code> returns an element that comes with its own set of properties and functions you can interact with. Here's an example that looks up the first section above using a .class selector (notice the DOT before the name of the CSS class) and then uses JQuery's <code>attr</code> function to read the <code>id</code> of that element.</p>
+<pre><code>let element = $(".first-section");
+console.log(element.attr("id")); // Logs "section1"
+</code></pre>
+<p>You can learn about more CSS selectors on the <a href="https://www.w3schools.com/cssref/css_selectors.php">W3Schools Reference</a></p>
+<blockquote>
+<p><strong>Note:</strong> sometimes the selector you use will apply to multiple elements. When this happens, you're going get back an object from JQuery that wraps all of these and can be treated in some ways like an array.</p>
+</blockquote>
+<p>Here's an example use:</p>
+<pre><code>let elements = $("p"); // element selector that selects all &lt;p&gt; elements
+
+console.log(elements.length); // prints "4", since there are 4 paragraph elements in the above HTML
+
+for (let i=0; i &lt; elements.length; i++){
+    console.log(elements[i].textContent); // prints the text in each paragraph
+}
+</code></pre>
+<p>Once you have an element that you've looked up, you can also access its children via JQuery's <code>children()</code> function</p>
+<pre><code>let element = $(".second-section"); // select the element.
+
+let children = element.children(); // Access its children elements.
+
+console.log(children.length); // prints 2
+
+for (let i=0; i &lt; children.length; i++){
+    console.log(children[i].textContent); // prints the text for each child paragraph
+}
+</code></pre>
+<p>Complete the <strong>DOM Querying Exercise</strong> before moving forward.</p>
+<h3 id="dom-querying-exercise">DOM Querying Exercise</h3>
+<h4 id="css-diner">CSS Diner</h4>
+<p>Before beginning this exercise, we need to familiarize ourselves a bit more with CSS Selectors. For this, there are 2 things I want you to do before moving on to the next section:</p>
+<ol>
+<li>
+<p>Take a look at the <a href="https://www.w3schools.com/cssref/css_selectors.php">W3 Schools CSS Selector Reference</a> if you haven't already. You don't need to memorize everything, just take a look to get a better idea of how many CSS Selectors there are.</p>
+</li>
+<li>
+<p>Play the <a href="https://flukeout.github.io/">CSS Diner</a> game. Complete at least up to Level 17 (although I would recommend just completing all 32 levels. It shouldn't take too long). Then, when you're finished, take a screenshot of your completed levels for submission, like this:</p>
+</li>
+</ol>
+<p><img alt="Example Completed CSS Diner" src="../img/completed-css-diner.png" /></p>
+<h2 id="submitting">Submitting</h2>
+<p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
               
             </div>
           </div><footer>
