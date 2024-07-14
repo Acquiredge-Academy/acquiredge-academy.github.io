@@ -229,8 +229,19 @@ console.log(animal['legs`]); // =&gt; 4
 </code></pre>
 <h2 id="objects-assignment">Objects Assignment</h2>
 <p>In this assignment, you will learn about how to create, change, and use JavaScript objects.</p>
+<p>Make sure to go through the guide to <a href="../../guides/starting-an-assignment/">starting an assignment</a> before continuing. There will be a folder called "examples" where you can try out the example code below.</p>
 <h3 id="objects-background">Objects Background</h3>
 <p>Objects in JS are similar to Arrays, except the indexes are strings instead of integers. You can think of JavaScript objects as <strong>collections of related data</strong>.</p>
+<p>One of the primary reasons objects are so useful is that it allows for modeling of real world objects. For example, if you wanted to model a person in an object, it could be something like this:</p>
+<pre><code>{
+    firstName: "Paul",
+    lastName: "Atreides",
+    favoriteFood: "pizza",
+    age: 35
+}
+</code></pre>
+<p>From this structure, you can tell that all of this data is related to one another. Specifically, this object represents a 35 year old person named Paul Atreides, who likes to eat pizza.</p>
+<p>This is called an <strong>object literal</strong>.</p>
 <h4 id="initialization">Initialization</h4>
 <p>The following code will initialize a new object representing a cat.</p>
 <pre><code>let myAnimal = {
@@ -294,16 +305,57 @@ console.log( myAnimal );
 </code></pre>
 <p>Complete <strong>Objects Exercise: Basics</strong> Before continuing</p>
 <h3 id="objects-exercise-basics">Objects Exercise: Basics</h3>
+<ol>
+<li>
+<p>Open <code>index.html</code> in Live Server and read the HTML code. Open up the Developer Console. Open <code>script.js</code> in VS Code.</p>
+</li>
+<li>
+<p>Declare an object <code>person</code> and assign to it an object literal with the following 3 properties:</p>
+<ul>
+<li><code>firstName</code></li>
+<li><code>lastName</code></li>
+<li><code>hobby</code></li>
+</ul>
+</li>
+<li>
+<p>Assign each of these properties with appropriate <code>string</code> values. Now, log <code>person</code> to the console with the label: <code>"Initial person:"</code> and check your Developer Console to see the output. It should look something like this:</p>
+<p><img alt="Initial person example output" src="../img/initial-person-example-output.png" /></p>
+</li>
+<li>
+<p>Using <strong>Dot Notation</strong>, log the <code>person</code> object's <code>firstName</code> and <code>lastName</code> property to the console with the label: <code>"This person's name is"</code>.</p>
+</li>
+<li>
+<p>Using <strong>Bracket Notation</strong>, log the <code>person</code> object's <code>hobby</code> property to the console with the label: <code>"This person's hobby is"</code>.</p>
+</li>
+<li>
+<p>Using <strong>Dot Notation</strong>, add a new property called <code>job</code> and assign to it the string <code>"Software Engineer"</code>. Remember, this process has the same syntax as <a href="#updating-properties">updating a property</a>.</p>
+</li>
+<li>
+<p>Recall that bracket notation uses a <code>string</code> value to access or update properties. This means that we can utilize a variable that contains a <code>string</code> value with bracket notation, as well. Delcare a variable <code>propName</code>, and assign to it the string <code>"previousJob"</code>.</p>
+</li>
+<li>
+<p>Using <strong>Bracket Notation</strong> and the variable we just declared, update <code>person</code>'s <code>previousJob</code> property so that it contains an appropriate string value.</p>
+</li>
+<li>
+<p>Using <strong>either dot notation or bracket notation</strong>, log the person's <code>previousJob</code> property to the console with the label: <code>"This person's previous job was"</code>.</p>
+</li>
+<li>
+<p>Log the <code>person</code> object to the console with the label: <code>"Final person:"</code>.</p>
+</li>
+<li>
+<p>In your Developer Console, you should see something like this currently:</p>
+<p><img alt="End of Objects Basics" src="../img/end-objects-basics.png" /></p>
+</li>
+</ol>
 <h3 id="arrays-of-objects-background">Arrays of Objects Background</h3>
 <p>Often times, we want to process a list of similar objects in our program.</p>
 <p>We can group our objects together by including them all in an array.</p>
 <p>For example, let's pretend that we're doing some programming for a phone, and we need to keep track of a list of contacts.</p>
 <p>Here are four properties we might want to track about each contact:</p>
 <ul>
-<li>firstName</li>
-<li>lastName</li>
-<li>phoneNumber</li>
-<li>momsName (so we can ask about her)</li>
+<li>First and last name</li>
+<li>Phone number</li>
+<li>Mom's name (so we can ask about her)</li>
 </ul>
 <h4 id="initialization_1">Initialization</h4>
 <pre><code>let contacts = [
@@ -389,6 +441,44 @@ for (let i=0; i&lt;contacts.length; i++){
 </code></pre>
 <p>Please complete the <strong>Objects Exercise: Arrays of Objects</strong> before moving forward.</p>
 <h3 id="objects-exercise-arrays-of-objects">Objects Exercise: Arrays of Objects</h3>
+<ol>
+<li>
+<p>Head back to Google Chome and make sure that <code>index.html</code> is still opened with Live Server. Make sure that <code>script.js</code> is still opened in the code editor.</p>
+</li>
+<li>
+<p>Declare an array <code>shapes</code> that contains 3 object literals that each represent a shape. Each object should have the properties:</p>
+<ul>
+<li><code>name</code></li>
+<li><code>sides</code></li>
+<li>For example: <code>{ name: "square", sides: 4}</code></li>
+</ul>
+</li>
+<li>
+<p>Declare a variable <code>circle</code> and assign to it an object literal like the ones you just declared.</p>
+<blockquote>
+<p><strong>Note:</strong> if you already have a "circle" shape in your array, just choose another shape instead of a circle that you don't already have in the <code>shapes</code> array.</p>
+</blockquote>
+</li>
+<li>
+<p>Using <code>push</code>, add the <code>circle</code> object to the end of your <code>shapes</code> array.</p>
+</li>
+<li>
+<p>Using a for loop, iterate over the <code>shapes</code> array and log a statement to the console for each shape object in this format:</p>
+<pre><code>A (name of shape) has (number of sides) sides.
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> Replace <code>(name of shape)</code> and <code>(number of sides)</code> with each object's property values.</p>
+<p><strong>Note:</strong> You can accomplish this through string concatenation using the <code>+</code> operator.</p>
+</blockquote>
+</li>
+<li>
+<p>Log the <code>shapes</code> array to the console with the label: <code>"Final shapes array:"</code>.</p>
+</li>
+<li>
+<p>Verify that your console output looks similar to this:</p>
+<p><img alt="End of Arrays of Objects" src="../img/end-arrays-of-objects.png" /></p>
+</li>
+</ol>
 <h3 id="searching-arrays-of-objects-background">Searching Arrays of Objects Background</h3>
 <p>Let's return to our list of contacts from the previous section.</p>
 <pre><code>let contacts = [
@@ -485,6 +575,30 @@ if (foundContact === null){
 </ul>
 <p>Complete <strong>Objects Exercise: Searching arrays of objects</strong> before continuing.</p>
 <h3 id="objects-exercise-searching-arrays-of-objects">Objects Exercise: Searching Arrays of Objects</h3>
+<ol>
+<li>
+<p>Return to where we left off with our <code>shapes</code> array. In this exercise, we will search our <code>shapes</code> array for a shape with the number of sides that the user chooses.</p>
+</li>
+<li>
+<p>At the bottom of our <code>script.js</code> file, add a <code>prompt</code> which asks the user to <code>"Please enter a number of sides you want to search for: "</code> and assign the result to a variable <code>numSides</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> Don't forget! Any response you get from the user will be a <code>string</code> value, but the number of sides you want to search for is a <code>number</code> value.</p>
+</blockquote>
+</li>
+<li>
+<p>Declare a variable <code>foundShape</code> and assign the value <code>null</code> to it.</p>
+</li>
+<li>
+<p>Iterate over the <code>shapes</code> array, and for each shape, check if that shape's <code>sides</code> property matches the <code>numSides</code> response we got from the user. If there's a match, we should assign the current shape to the <code>foundShape</code> variable.</p>
+</li>
+<li>
+<p>After the for loop ends, check if <code>foundShape</code> is still <code>null</code>. If it is, log to the console the message <code>"No matching shape was found."</code>. If it is <strong>NOT</strong> <code>null</code>, log to the console the message <code>"We found a shape! It's the (name of shape)."</code>, replacing <code>(name of shape)</code> with the <code>name</code> property of the shape you found.</p>
+</li>
+<li>
+<p>Finally, save your code and refresh the browser. Search for a shape, and screenshot the final output of your program. It should look something like this:</p>
+<p><img alt="End Objects Exercise" src="../img/end-objects-exercise.png" /></p>
+</li>
+</ol>
 <h2 id="submitting">Submitting</h2>
 <p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
               

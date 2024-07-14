@@ -100,8 +100,6 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#foreach">forEach()</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#map">map()</a>
-    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#higher-order-programming-assignment">Higher Order Programming Assignment</a>
@@ -185,7 +183,6 @@
 <li><strong>Assign functions to variables</strong></li>
 <li><strong>Utilize callback functions as arguments to other functions</strong></li>
 <li><strong>Use forEach() as an alternative to a standard for loop</strong></li>
-<li><strong>Use anonymous functions</strong></li>
 <li><strong>Apply the map() function to solve algorithmic problems</strong></li>
 </ul>
 <h2 id="key-terms">Key Terms</h2>
@@ -207,15 +204,8 @@ let greetFunction = function(person) {
 }
 people.forEach(greetFunction);
 </code></pre>
-<h4 id="map">map()</h4>
-<p>higher order array method that returns a new array with each item transformed by a provided transformation function</p>
-<pre><code>let people = [ 'Alice', 'Bob', 'Candice'];
-let capitalizer = function(person) {
-    return person.toUpperCase();
-}
-let capitalizedPeople = people.map(capitalizer) // ['ALICE', 'BOB', 'CANDICE'];
-</code></pre>
 <h2 id="higher-order-programming-assignment">Higher Order Programming Assignment</h2>
+<p>Make sure to go through the guide to <a href="../../guides/starting-an-assignment/">starting an assignment</a> before continuing. There will be a folder called "examples" where you can try out the example code below.</p>
 <h3 id="higher-order-programming-background">Higher Order Programming Background</h3>
 <p>Recall that a function is simply a block of code.</p>
 <pre><code>// Definition
@@ -244,6 +234,39 @@ console.log(typeof tripleIt); // function
 tripleIt(33);
 </code></pre>
 <p>Notice how we can assign our function to a variable, and we use the variable name as the function's name. This syntax is called a <strong>Function Expression</strong>.</p>
+<h4 id="callback-functions">Callback Functions</h4>
+<p>In the above section, we found out that we can treat our functions themselves as data. This also means that we can <strong>pass functions to other functions as an argument.</strong> Functions that we pass to other functions are called <a href="#callback">callback functions</a>.</p>
+<p>Let's do an example by reusing the functions we declared above:</p>
+<pre><code>let doubleIt = function(num){
+    return num * 2;
+}
+
+let tripleIt = function(num){
+    return num * 3;
+}
+
+function doSomethingTo5(callback) {
+    return callback(5);
+}
+</code></pre>
+<p>The function <code>doSomethingTo5</code> takes a callback function as an argument and stores a reference to it in the parameter <code>callback</code>. Inside the function block, we return the result of calling <code>callback</code> with <code>5</code> as an argument.</p>
+<p>Let's run this code using our 2 functions as callbacks:</p>
+<pre><code>let doubleIt = function(num){
+    return num * 2;
+}
+
+let tripleIt = function(num){
+    return num * 3;
+}
+
+function doSomethingTo5(callback) {
+    return callback(5);
+}
+
+console.log(doSomethingTo5(doubleIt)); // 10
+console.log(doSomethingTo5(tripleIt)); // 15
+</code></pre>
+<p>Run this code in your <code>example</code> directory, and take a look at the output. Does it match the expected?</p>
 <h4 id="arrayforeach">Array.forEach()</h4>
 <p>We won't go into all of the possible ways we can use Higher Order Programming in our code, but one of the most common places to use higher order programming is with arrays.</p>
 <p>Let's pretend we're a bit of a cat hoarder, so decide it's best to store our entire collection of cats in an array.</p>
@@ -259,7 +282,7 @@ for (let i =0; i &lt; cats.length; i++){
 <p>This solution will certainly get the job done. For loops like this are hopefully becoming second nature to us by now, but there are a few details that make our code a bit "wordy". When we're reading this code, we have to manage the <code>i</code> counter ourselves. It's a bit distracting to look at.</p>
 <p>Whenever we are referencing the current cat with an iteration, we have to constantly remind ourselves that we're inside of a loop, and we need to use our counter to say <code>cats[i]</code>.</p>
 <p>Needing to "process" every item in an array is so common that JavaScript includes a built-in function called <a href="#foreach"><code>forEach</code></a> to make this easier for you.</p>
-<p><code>forEach</code> is a <strong>higher order function</strong> that requires a single parameter called a <a href="#callback">callback function</a>.</p>
+<p><code>forEach</code> is a <strong>higher order function</strong> that takes a callback function as an argument.</p>
 <p>The callback function works like a "hint" to <code>forEach</code> to tell it how to process a SINGLE item. In our case, we might use a function like this one to describe how to process a single cat.</p>
 <pre><code>let forOne = function(cat){
     console.log(cat.toUpperCase() + ", IT'S DINNER TIME!");
@@ -278,6 +301,75 @@ cats.forEach(forOne);
 <p>Try running the above code, and you'll notice that it does exactly what our earlier for loop did for us. It just happens to be more concise and readable.</p>
 <p>Complete the <strong>Higher Order Programming Exercise</strong> before continuing.</p>
 <h3 id="higher-order-programming-exercise">Higher Order Programming Exercise</h3>
+<p>Complete the following prompts below:</p>
+<h4 id="calculator-function">Calculator Function</h4>
+<ol>
+<li>Define a function named <code>calculator</code></li>
+<li>This function has three <strong>parameters</strong><ul>
+<li><code>num1</code> - the first number to perform math on</li>
+<li><code>num2</code> - the second number to perform math on</li>
+<li><code>operation</code> - a callback function that performs a mathematical operation on the two input. There are 4 pre-defined functions called <code>addition</code>, <code>subtraction</code>, <code>multiplication</code>, and <code>division</code>.</li>
+</ul>
+</li>
+<li>
+<p>The purpose of this function is to call the <code>operation</code> function on <code>num1</code> and <code>num2</code> and return the result.</p>
+<p>Example Input:</p>
+<pre><code>calculator(3, 5, multiplication)
+</code></pre>
+<p>Expected Output:</p>
+<pre><code>15
+</code></pre>
+</li>
+</ol>
+<p>Implement the <code>calculator</code> function and call it with 3 examples (Just like we did in the Functions Exercise):</p>
+<ul>
+<li>add 7 and 15</li>
+<li>subtract 8 from 35</li>
+<li>divide 681 by 3</li>
+</ul>
+<h4 id="poor-mans-foreach">Poor man's forEach</h4>
+<ol>
+<li>Define a function called <code>forEach</code></li>
+<li>This function has 2 <strong>parameters</strong><ul>
+<li><code>array</code> - an input array</li>
+<li><code>func</code> - a callback function to perform on each element of <code>array</code></li>
+</ul>
+</li>
+<li>
+<p>The purpose of this function is to mimic Array's built-in <code>forEach</code> higher order function</p>
+<p>Example Input:</p>
+<pre><code>let logIt = function(element) {
+    console.log(element);
+}
+
+forEach([1, 3, 5, 7], logIt)
+</code></pre>
+<p>Expected Output:</p>
+<pre><code>1
+3
+5
+7
+</code></pre>
+<p>Use a normal <code>for</code> loop to accomplish this.</p>
+</li>
+<li>
+<p>Declare a variable <code>yellIt</code> and assign to it a function that takes one string parameter <code>str</code>. <code>yellIt</code> will log <code>str</code> in all caps.</p>
+</li>
+<li>
+<p>Declare an array <code>words</code> that contains at least 4 strings, and call your poor man's <code>forEach</code> method with the <code>words</code> array and <code>yellIt</code> function as your arguments.</p>
+</li>
+</ol>
+<h4 id="print-each-song-title">Print Each Song Title</h4>
+<ol>
+<li>
+<p>Examine the <code>exampleSongs</code> array. It is an array of objects that each represent a song.</p>
+</li>
+<li>
+<p>Using the built-in <code>forEach</code> method of arrays, print ONLY the title of each song to the console. You will need to define a callback function <code>printSongTitle</code> that prints out ONE song's title, and pass it to your <code>forEach</code> call.</p>
+</li>
+</ol>
+<p>Once you've completed each of the above exercises, take a screenshot of your Developer Console. It should look similar to the one below, but may contain different values for the "Poor man's forEach" exercise.</p>
+<p><img alt="Higher Order Function Console Result" src="../img/higher-order-function-exercise-result.png" /></p>
 <h2 id="submitting">Submitting</h2>
 <p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
               

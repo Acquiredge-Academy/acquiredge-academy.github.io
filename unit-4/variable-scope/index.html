@@ -197,6 +197,7 @@
 <h4 id="referenceerror">ReferenceError</h4>
 <p>an error that occurs in JavaScript when you try to use a variable that hasn't been declared or is outside of its scope.</p>
 <h2 id="variable-scope-assignment">Variable Scope Assignment</h2>
+<p>Make sure to go through the guide to <a href="../../guides/starting-an-assignment/">starting an assignment</a> before continuing. There will be a folder called "examples" where you can try out the example code below.</p>
 <h3 id="variable-scope-background">Variable Scope Background</h3>
 <p>We learned earlier that every data value in JavaScript has an associated type.</p>
 <p>We also learned that variables are like labels for associated values. We can think of a variable kind of like a named sticky note with its associated value written on the note. Whenever our code mentions the name of that particular sticky note, the JavaScript interpreter basically inserts the associated value into the code in place of the variable when that line executes.</p>
@@ -204,23 +205,27 @@
 <p>Scope is a topic that runs deep, but we're just going to focus on the two most common types of scope in this course: global scope and block scope.</p>
 <h4 id="global-scope_1">Global Scope</h4>
 <p>Consider the following code snippet.</p>
-<pre><code>function doStuff(){
+<pre><code>let globalMessage = "Hello from global scope";
+console.log(globalMessage);
+
+function doStuff(){
     console.log("entering doStuff function.");
     console.log(globalMessage);
     console.log("exiting doStuff function.");
 }
 
-let globalMessage = "Hello from global scope";
-console.log(globalMessage);
 doStuff();
 </code></pre>
 <p><code>globalMessage</code> is a <strong>global variable</strong> because it was declared outside of any code block. The fact that <code>globalMessage</code> is "global" means that the variable can be referenced "globally" - either outside of a function OR within a function like it is here.</p>
 <h4 id="global-scope-quick-exercise">Global Scope Quick Exercise</h4>
 <p>Try to guess what will be logged to the console from the above snippet and write it down. Then, run this code and see if you guessed correctly.</p>
 <h4 id="block-scope_1">Block Scope</h4>
-<p>Block Scope is different from Global Scope because it limits from where a variable can be accessed from. Specifcally, a variable with block scope is only accessible from within the block of code it was declared in. Usually, this is either a function, loop, or conditional statement.</p>
+<p>Block Scope is different from Global Scope because it limits from where a variable can be accessed from. Specifically, a variable with block scope is only accessible from within the block of code it was declared in. Usually, this is either a function, loop, or conditional statement.</p>
 <p>Consider the following code snippet.</p>
-<pre><code>function doStuff(){
+<pre><code>let globalMessage = "Hello from global scope";
+console.log(globalMessage);
+
+function doStuff(){
     console.log("entering doStuff function.");
 
     let localMessage = "Hello from doStuff local scope";
@@ -230,40 +235,17 @@ doStuff();
     console.log("exiting doStuff function.");
 }
 
-let globalMessage = "Hello from global scope";
-console.log(globalMessage);
 doStuff();
 console.log(localMessage);
 </code></pre>
-<p><code>localMessage</code> is a <strong>local variable</strong>, simply because it was declared inside of a code block -- in this case a function. The fact that <code>localMessage</code> is "local" means that the variable can be referenced "locally" within this particular function it was declared in.</p>
+<p><code>localMessage</code> is a <strong>local variable</strong>, meaning it was declared inside of a function. The fact that <code>localMessage</code> is "local" means that the variable can be referenced "locally" within this particular function it was declared in.</p>
 <h4 id="block-scope-exercise">Block Scope Exercise</h4>
-<p>Try to guess what will be logged to the console from the above snippet and write it down. Then, paste the above code into a JavaScript Replit and see if you guessed correctly.</p>
+<p>Try to guess what will be logged to the console from the above snippet and write it down. Then, run the above in your <code>example</code> directory and see if you guessed correctly.</p>
 <p>Did you notice that the last line caused an error? That is what happens when you try to access a variable outside of its associated scope.</p>
 <p><strong>Whenever a line of code references a variable that does not exist or outside of its scope, a ReferenceError is thrown.</strong></p>
 <h3 id="variable-scope-exercise">Variable Scope Exercise</h3>
-<p>Consider the following code snippet:</p>
-<pre><code>function makeSounds(){
-    let dogSound = "Bark";
-    let catSound = "Meow";
-    humanSound = "Hi";
-
-    console.log(humanSound);
-    console.log(dogSound);
-    console.log(catSound);
-}
-
-let humanSound = "Hello";
-let birdSound = "Chirp";
-console.log(birdSound);
-makeSounds();
-console.log(humanSound);
-console.log(dogSound);
-</code></pre>
-<p>Answer the following questions in your <code>quiz.md</code>:</p>
-<ol>
-<li>Without actually running this code yet, write down what you think will be logged to the console.</li>
-<li>Now, run this code snippet and note the output. What differed from your guess if anything at all? Can you see why?</li>
-</ol>
+<p>Generally, the goal is to <strong>avoid using global scope</strong>. There are several reasons for this, but the most important one is that as your programs get larger, global variables can be modified from anywhere in the code, making it difficult to prevent mistakes and errors.</p>
+<p>Because of this, we won't be doing an exercise with code for Varible Scope. However, there are several questions in <code>quiz.md</code> having to do with identifying the scope of a variable or fixing some scoping errors. These will serve as your exericses.</p>
 <h2 id="submitting">Submitting</h2>
 <p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
               

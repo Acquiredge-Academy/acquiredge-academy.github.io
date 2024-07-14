@@ -216,6 +216,7 @@ console.log( colors.length ); // Output =&gt; 3
 <p>e.g. the item previously at the end of an array if provided as a <em>return value</em> from the pop function</p>
 <h2 id="arrays-assignment">Arrays Assignment</h2>
 <p>In this assignment, you will learn about the basics of JavaScript arrays.</p>
+<p>Make sure to go through the guide to <a href="../../guides/starting-an-assignment/">starting an assignment</a> before continuing. There will be a folder called "examples" where you can try out the example code below.</p>
 <h3 id="arrays-background">Arrays Background</h3>
 <p>Arrays are used for storing <strong>ordered lists of items</strong>.</p>
 <h4 id="initializing">Initializing</h4>
@@ -246,20 +247,21 @@ console.log("first item: " + restaurants[0]);
 <p>After doing some coding, you'll start to notice that many times you are performing the same tasks in your programs.</p>
 <p>Languages try to make your life easier by packaging these common tasks into functions or methods you can then use in your programs.</p>
 <p>You've already used at least two built-in functions already: <code>console.log()</code> and <code>prompt()</code></p>
-<p>You also may have already noticed that when you are using (<strong>invoking</strong>) functions, parentheses are part of the syntax, and sometimes you put provide data between the parentheses as an input (<strong>argument</strong>) to the function.</p>
+<p>You also may have already noticed that when you are using (<strong>invoking</strong>) functions, parentheses are part of the syntax, and sometimes allows you put provide data between the parentheses as an input (<strong>argument</strong>) to the function.</p>
 <p>But how do you know if there is already a built-in function for what you want to do?</p>
 <p>The best way is to start getting comfortable reading the language documentation. For JavaScript, Mozilla Developer Network (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN</a>) is going to be your best resource.</p>
+<p>Remember, the goal is not to <em>memorize</em> all the array methods there are, but to get comfortable looking them up and reading about them when you need them.</p>
 <p>Let's take a look at two functions from the documentation that work specifically for arrays.</p>
 <h4 id="push">push()</h4>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push">push()</a> is a convenient way add a single item to the end of an array. As the documentation shows, it must be called on an existing array (not out in the open like you can with console.log() or prompt()).</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push">push()</a> is a convenient way add a single item to the end of an array. As the documentation shows, it must be called on an existing array (not out in the open like you can with <code>console.log()</code> or <code>prompt()</code>).</p>
 <pre><code>let fruits = ["Apple", "Banana"];
 fruits.push("Mango");
 
 console.log(fruits);
 </code></pre>
-<p>Previously, we had an array of two items. By calling fruits.push("Mango"), we have added a third item to the end of the array.</p>
+<p>Previously, we had an array of two items. By calling <code>fruits.push("Mango")</code>, we have added a third item to the end of the array.</p>
 <h4 id="pop">pop()</h4>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">pop()</a> is the opposite of push(). Instead of adding a new item, pop() will remove the top item from the array.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">pop()</a> is the opposite of push(). Instead of adding a new item, <code>pop()</code> will remove the top item from the array.</p>
 <p>Note that push() and pop() will both actually modify the array you invoke them on. When a function modifies the object it's used on, we say that this is a <a href="#key-terms">mutating function</a>.</p>
 <pre><code>let fruits = ["Apple", "Banana"];
 fruits.pop();
@@ -277,6 +279,93 @@ console.log(poppedItem);
 <p>The value that a function gives you back (in this case, the popped item), is referred to as that function's return value.</p>
 <p>Complete <strong>Arrays Exercise</strong> before continuing</p>
 <h3 id="arrays-exercise">Arrays Exercise</h3>
+<ol>
+<li>
+<p>Open <code>index.html</code> in Live Server and read the HTML code. Open up the Developer Console. Open <code>script.js</code> in VS Code.</p>
+</li>
+<li>
+<p>Declare a variable named <code>languages</code>, and assign to it an array that contains the following strings:</p>
+<ul>
+<li><code>"HTML"</code></li>
+<li><code>"CSS"</code></li>
+<li><code>"JavaScript"</code></li>
+<li><code>"React"</code></li>
+<li><code>"Node"</code></li>
+<li><code>"SQL"</code></li>
+</ul>
+</li>
+<li>
+<p>Log the <code>languages</code> array to the console.</p>
+</li>
+<li>
+<p>Declare a variable <code>firstElement</code> and assign to it the first element in the array. Remember to use the element's <strong>index number</strong> to do so.</p>
+</li>
+<li>
+<p>Call <code>console.log</code> with 2 inputs: <code>"The first element of the array is"</code> and <code>firstElement</code>, like this: <code>console.log("The first element of the array is", firstElement);</code></p>
+<ul>
+<li>Moving forward, we will refer to this format as "labeling our message". For example, the above instruction would be rewritten as: Log <code>firstElement</code> to the console with the label: <code>"The first element of the array is"</code>.</li>
+</ul>
+</li>
+<li>
+<p>Declare a variable <code>thirdElement</code> and assign to it the third element in the array.</p>
+</li>
+<li>
+<p>Log <code>thirdElement</code> to the console with the label: <code>"The third element of the array is"</code>.</p>
+</li>
+<li>
+<p>Declare a variable <code>length</code> and assign to it the length of the <code>languages</code> array. Use the array's built-in property for this step.</p>
+</li>
+<li>
+<p>Log <code>length</code> to the console with the label: <code>"The length of the array is"</code>.</p>
+</li>
+<li>
+<p>Declare a variable <code>lastElement</code> and assign to it the last element in the array. Use the <code>length</code> variable or the array's built-in <code>length</code> property for this step.</p>
+</li>
+<li>
+<p>Log <code>lastElement</code> to the console with the label: <code>"The last element of the array is"</code>.</p>
+</li>
+<li>
+<p>Reassign the fourth element of the array to the string <code>"Angular"</code>.</p>
+</li>
+<li>
+<p>Log the <code>languages</code> array to the console with the label: <code>"Final languages array: "</code>.</p>
+</li>
+<li>
+<p>Before moving on, read the documentation for 3 more commonly used Array methods:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift">shift()</a>: Like the opposite <code>pop()</code>. Removes an element from the beginning of an array and returns it.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift">unshift()</a>: The opposite of <code>push()</code>. Adds an element to the beginning of an array.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf">indexOf()</a>: Finds an element and returns its index number</li>
+</ul>
+<p>There may be a few questions on these methods on the quiz...</p>
+</li>
+<li>
+<p>Declare a new variable <code>names</code> and assign to it an array that contains following strings:</p>
+<ul>
+<li><code>"Luke"</code></li>
+<li><code>"Leia"</code></li>
+<li><code>"Han"</code></li>
+<li><code>"Ron"</code></li>
+</ul>
+</li>
+<li>
+<p>Using Array's <code>push()</code>, <code>pop()</code>, and index numbers, complete the following tasks:</p>
+<ul>
+<li>Log the <code>names</code> array to the console with the label: <code>"Initial names array:"</code></li>
+<li>Remove <code>"Ron"</code> from the end of the <code>names</code> array, and assign it to a variable named <code>popped</code></li>
+<li>Add <code>"Chewbacca"</code> to the end of the array.</li>
+<li>Add <code>"Anakin"</code> to the end of the array.</li>
+<li>Add <code>"Jar Jar"</code> to the end of the array.</li>
+<li>Replace <code>"Anakin"</code> with <code>"Darth Vader"</code> using the correct index number. (Hint: Use the <code>indexOf()</code> method to find the index number of <code>"Anakin"</code>)</li>
+<li>Log the <code>names</code> array to the console with the label: <code>"Final names array:"</code></li>
+<li>Log the <code>popped</code> variable to the console with the label: <code>"Popped:"</code></li>
+</ul>
+</li>
+<li>
+<p>Take a screenshot of your Developer Console output. It should look similar to this:</p>
+<p><img alt="Arrays exercise screenshot" src="../img/arrays-exercise-example.png" /></p>
+</li>
+</ol>
 <h2 id="submitting">Submitting</h2>
 <p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
               

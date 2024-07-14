@@ -265,9 +265,13 @@ typeof x
 <p>produces a boolean value based on the relationship between two values</p>
 <pre><code>x &gt;= 5
 </code></pre>
-<p><strong>equality operator</strong></p>
-<p>The triple <code>===</code> sign; produces a boolean value based on if two values are exactly the same</p>
+<p><strong>strict equality operator</strong></p>
+<p>The triple <code>===</code> sign; produces a boolean value based on if two values have the same data value AND data type. Recommended to use strict equality whenever you can.</p>
 <pre><code>x === 5
+</code></pre>
+<p><strong>loose equality operator</strong></p>
+<p>The double <code>==</code> sign; produces a boolean value based on if two values have the same data value. Recommended to avoid loose equality whenever you can.</p>
+<pre><code>x == 5
 </code></pre>
 <p><strong>assignment operator</strong></p>
 <p>The single <code>=</code> sign, used for assigning values to variables</p>
@@ -276,7 +280,8 @@ typeof x
 <p><strong>primitive data types</strong></p>
 <p>The most basic types of data values that can't be broken down into simpler parts. These include numbers, strings (text), booleans (condition), null (nothing), or undefined (no value set)</p>
 <h2 id="variables-and-data-assignment">Variables and Data Assignment</h2>
-<p>In this assignment, we'll go over the basics of variables and data types in JavaScript</p>
+<p>In this assignment, we'll go over the basics of variables and data types in JavaScript.</p>
+<p>Make sure to go through the guide to <a href="../../guides/starting-an-assignment/">starting an assignment</a> before continuing. There will be a folder called "examples" where you can try out the example code below.</p>
 <h3 id="variables-and-data-values-background">Variables and Data Values Background</h3>
 <p>A variable is a label you can reference in your code that points to a value.</p>
 <p>In this first set of examples all of our values are going to be strings. We'll talk more about strings shortly, but for now just know that strings are sets of characters contained by quotes.</p>
@@ -333,6 +338,20 @@ console.log(firstName);
 </code></pre>
 <p>Now, complete the <strong>Variables and Data Exercise: Values and Variables</strong> before moving forward.</p>
 <h3 id="variables-and-data-exercise-values-and-variables">Variables and Data Exercise: Values and Variables</h3>
+<ol>
+<li>
+<p>Open <code>index.html</code> in Live Server and read the HTML code. Open up the Developer Console.</p>
+</li>
+<li>
+<p>Head to <code>script.js</code>. Declare a variable called <code>fullName</code> using <code>let</code> and assign it a string containing the text of your full name.</p>
+</li>
+<li>
+<p>Add a <code>console.log()</code> below your variable declaration that logs the value of <code>fullName</code> to the console.</p>
+</li>
+<li>
+<p>Save your code and take a look at your developer console.</p>
+</li>
+</ol>
 <h3 id="strings-and-numbers-background">Strings and Numbers Background</h3>
 <p>Every value in JavaScript has an associated data type. You can see a value's type by using the <code>typeof</code> operator like this.</p>
 <pre><code>console.log(typoef "Hello World"); // logs "string"
@@ -427,7 +446,56 @@ console.log("In 4 years, you will be " + laterAge);
 <p>This time, we log the correct statement that says "In 4 years, you will be 64"</p>
 <p>Complete the <strong>Variables and Data Exercise: Strings and Numbers</strong> before moving forward.</p>
 <h3 id="variables-and-data-exercise-strings-and-numbers">Variables and Data Exercise: Strings and Numbers</h3>
-<p>(want to introduce toUpperCase, toLowerCase)</p>
+<ol>
+<li>
+<p>Make sure that <code>index.html</code> is still opened with Live Server and open <code>script.js</code> in VS Code if it isn't already.</p>
+</li>
+<li>
+<p>Add another <code>console.log</code> statement below the previous one which logs the <code>typoef</code> the <code>fullName</code> variable, and confirm that when you refresh the page a second statement appears in the console that says <code>"string"</code>.</p>
+</li>
+<li>
+<p>Read about<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase"> toUpperCase()</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase">toLowerCase()</a>.</p>
+</li>
+<li>
+<p>Add 2 more <code>console.log</code> statements below. One with <code>fullName</code> in all upper case, and the other with <code>fullName</code> in all lower case. Verify that the developer console contains the expected output.</p>
+</li>
+<li>
+<p>Declare another variable called <code>stringAge</code> and assign it your current age <strong>AS A STRING</strong>.</p>
+</li>
+<li>
+<p>Declare a new variable <code>ageIn2Years</code> and assign to it <code>stringAge + 2</code>.</p>
+</li>
+<li>
+<p>Write a <code>console.log</code> statement that prints out the value of <code>ageIn2Years</code>. Then write another <code>console.log</code> statement underneath that prints out the <code>typeof</code> <code>ageIn2Years</code>.</p>
+</li>
+<li>
+<p>Save your file and refresh the browser. Does it correctly log your age in 2 years?</p>
+</li>
+<li>
+<p>On the next line, re-assign <code>ageIn2Years</code> using <code>parseInt</code> so that it now contains a number that represents your age in 2 years.</p>
+</li>
+<li>
+<p>Write a <code>console.log</code> statement to log the new value of <code>ageIn2Years</code>, then write another <code>console.log</code> statement to log the new <code>typeof</code> <code>ageIn2Years</code>. Save your code and refresh the browser. Does it now show your correct age in 2 years?</p>
+</li>
+<li>
+<p>Complete this task with what you know about arithmetic operators:</p>
+<ul>
+<li>Declare 2 variables named <code>charge</code> and <code>payment</code> and assign each of them a number value. <code>payment</code> should be a smaller number than <code>charge</code>.</li>
+<li>Subtract <code>payment</code> from <code>charge</code> and assign the result to a new variable named <code>remaining</code>.</li>
+<li>log the value of <code>remaining</code> to the console</li>
+<li>log the <code>typeof</code> <code>remaning</code> to the console</li>
+</ul>
+</li>
+<li>
+<p>Complete this task with what you know about arithmetic operators</p>
+<ul>
+<li>Declare 3 variables named <code>tests</code>, <code>assignments</code> and <code>final</code> and assign each of them a number value.</li>
+<li>Calculate the average of <code>test</code>, <code>assignments</code>, and <code>final</code> in one expression and assign the result to a new variable named <code>grade</code>. <strong>Hint: <code>()</code> parentheses can be used <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping">to group sub-expressions</a></strong>.</li>
+<li>log the value of <code>grade</code> to the console</li>
+<li>log the <code>typoef grade</code> to the console</li>
+</ul>
+</li>
+</ol>
 <h3 id="booleans-and-comparison-operators-background">Booleans and Comparison Operators Background</h3>
 <p>A 3rd type we haven't discussed yet is the <strong>boolean</strong>.</p>
 <p>A boolean type represents a condition of some sort, like whether it's raining outside, or whether a number is even.</p>
@@ -454,7 +522,7 @@ let is Snowing = false;
 <tbody>
 <tr>
 <td><code>==</code></td>
-<td><strong>equal to</strong></td>
+<td><strong>loosely equal to</strong> (only equal value)</td>
 <td><code>x == 8</code></td>
 <td><code>false</code></td>
 </tr>
@@ -472,7 +540,7 @@ let is Snowing = false;
 </tr>
 <tr>
 <td><code>===</code></td>
-<td><strong>equal value and equal type</strong></td>
+<td><strong>strictly equal to</strong> (equal value and type)</td>
 <td><code>x === 5</code></td>
 <td><code>true</code></td>
 </tr>
@@ -484,13 +552,13 @@ let is Snowing = false;
 </tr>
 <tr>
 <td><code>!=</code></td>
-<td><strong>not equal to</strong></td>
+<td><strong>not loosly equal to</strong></td>
 <td><code>x != 8</code></td>
 <td><code>true</code></td>
 </tr>
 <tr>
 <td><code>!==</code></td>
-<td><strong>not equal value OR not equal type</strong></td>
+<td><strong>not strictly equal to</strong></td>
 <td><code>x !== 5</code></td>
 <td><code>false</code></td>
 </tr>
@@ -534,8 +602,9 @@ let is Snowing = false;
 </table>
 <blockquote>
 <p><strong>Note</strong>: Notice that <code>===</code> has a completely different meaning from <code>=</code> by itself. <code>===</code> is a comparison operator that evaluates to <code>true</code> or <code>false</code> based on if two values are exactly equal, while <code>=</code> is used for assignment to a variable only, as you've seen so far.</p>
+<p><strong>IMPORTANT</strong>: Take note of the difference between loose equality (<code>==</code>) and strict equality (<code>===</code>). <code>==</code> checks just the data value, whereas <code>===</code> checks both the data type and the data value. For our course, and when you code beyond this course, it's recommended to <strong>ONLY USE THE <code>===</code> operator</strong>. It's much safer and more precise to use. Assume that whenever we refer to checking equality, we mean strict equality.</p>
+<p><strong>Additional Info:</strong> To read more about strict and loose quality, visit this <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">link</a>.</p>
 </blockquote>
-<p><strong>IMPORTANT</strong>: Take note of the difference between <code>==</code> and <code>===</code>. <code>==</code> checks just the data value, whereas <code>===</code> checks both the data type and the data value. For our course, and when you code beyond this course, it's recommended to ONLY USE THE <code>===</code> operator. It's much safer and more precise to use.</p>
 <p>Using these comparison operators, we can define boolean variables like this:</p>
 <pre><code>let x = 1;
 let y = 2;
@@ -555,6 +624,37 @@ console.log("Is today Friday? " + isFriday); // Logs "Is today Friday? false"
 </code></pre>
 <p>Complete the <strong>Variables and Data Exercise: Booleans and Comparison Operators</strong> before moving forward.</p>
 <h3 id="variables-and-data-exercise-booleans-and-comparison-operators">Variables and Data Exercise: Booleans and Comparison Operators</h3>
+<p>Continue working in <code>script.js</code> with <code>index.html</code> opened with Live Server.</p>
+<ol>
+<li>
+<p>Declare a variable <code>likesVegetables</code> and assign to it a boolean that represents whether you like vegetables or not.</p>
+</li>
+<li>
+<p>On the next 2 lines, log the value of <code>likesVegetables</code> and the <code>typeof likesVegetables</code> to the console.</p>
+</li>
+<li>
+<p>Complete this task using what you know about booleans and comparison operators:</p>
+<ul>
+<li>Declare a variable named <code>pH</code> and assign it a number value between <code>0</code> and <code>14</code>.</li>
+<li>Use a less-than comparison operator to compare <code>pH</code> to <code>7</code> and assign the result to a new variable <code>isAcidic</code>. Something is considered acidic if its pH level is below 7.</li>
+<li>log the value of <code>isAcidc</code> to the console</li>
+<li>log the <code>typeof isAcidic</code> to the console</li>
+</ul>
+</li>
+<li>
+<p>Complete this task using what you know about booleans and comparison operators:</p>
+<ul>
+<li>Declare a variable <code>numberOfSoldiers</code> and assign it a number value.</li>
+<li>Use equality comparison to compare <code>numberOfSoldiers</code> to the number <code>300</code> and assign the result to a new variable named <code>isSparta</code>. Sparta had 300 soldiers in the battle of Thermopylae.</li>
+<li>log the value of <code>isSparta</code> to the console</li>
+<li>log the <code>typeof isSparta</code> to the console.</li>
+</ul>
+</li>
+<li>
+<p>Take a screenshot of your Developer Console. It should look something like this:</p>
+</li>
+</ol>
+<p><img alt="Variables and Data Exercise Result Exapmle" src="../img/vars-and-data-exercise-result-example.png" /></p>
 <h3 id="null-and-undefined-background">Null and Undefined Background</h3>
 <p>There are <strong>2 more</strong> data types that we will go over today: <strong>null</strong> and <strong>undefined</strong>. Both of these data types have only one associated value, <code>null</code>, and <code>undefined</code>, respectively. These two data types are often confused with one another, since they mean close to the same thing, but not exactly.</p>
 <p><code>null</code> represents nothing or an empty value. It is used when we want to specifically assign the value "nothing" to a variable. For example, this is how you would use null to represent someone with no middle name:</p>

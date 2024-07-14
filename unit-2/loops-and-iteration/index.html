@@ -207,7 +207,7 @@
 }
 </code></pre>
 <blockquote>
-<p><strong>Note:</strong> Using <code>i</code> for your loop variable is a common coding convention, where "i" stands for "index".</p>
+<p><strong>Note:</strong> Using <code>i</code> for your loop variable is a common coding convention.</p>
 </blockquote>
 <h4 id="for-loop-initialization">for loop initialization</h4>
 <p>part before the first <code>;</code> that set any initial values</p>
@@ -226,6 +226,7 @@ for (let i = 0; i &lt; colors.length; i++) {
 </code></pre>
 <h2 id="loops-and-iteration-assignment">Loops and Iteration Assignment</h2>
 <p>In this assignment, you will learn about the basics of looping and iteration, a fundamental concept of programming.</p>
+<p>Make sure to go through the guide to <a href="../../guides/starting-an-assignment/">starting an assignment</a> before continuing. There will be a folder called "examples" where you can try out the example code below.</p>
 <h3 id="for-loop-background">For Loop Background</h3>
 <p>Computers are really good at handling our repetitive tasks for us.</p>
 <p>One of the most common ways to tell JavaScript to do something for us several times is to use a For Loop.</p>
@@ -249,6 +250,49 @@ console.log("whew!");
 <p><strong>INCREMENTING STATEMENT</strong>: What should be done after each iteration of the loop? Should we increment a variable? Should we decrease it by 2? This section runs after every iteration.</p>
 </li>
 </ul>
+<p>Let's take a look at a simpler example, and break down exactly what happens in each iteration:</p>
+<pre><code>for(let i = 0; i &lt; 20; i++) {
+  console.log("hello", i);
+}
+</code></pre>
+<p>Try running this in your <code>example</code> folder and see what comes out of the console.</p>
+<h4 id="first-iteration">First Iteration</h4>
+<ol>
+<li><code>i</code> is <strong>initialized</strong> to the number value <code>0</code> with <code>let i = 0</code>. This <strong>only happens on the first iteration</strong>.</li>
+<li>Check the <strong>condition</strong>(<code>i &lt; 20</code>). Since <code>i</code> is currently <code>0</code>, this is <code>true</code>.</li>
+<li>Since the condition above is true, we go into the <a href="#for-loop-body">loop body</a>. On this iteration, we log "<strong>hello 0</strong>" to the console since <code>i = 0</code>.</li>
+<li>Execute the <strong>incrementing statement</strong>. In this case, <code>i++</code> runs, and <code>i</code> becomes <code>1</code>.</li>
+</ol>
+<h4 id="second-iteration">Second Iteration</h4>
+<ol>
+<li>Since this is no longer the first iteration, we go straight to the condition. <code>i</code> is currently <code>1</code>, so <code>i &lt; 20</code> is still <code>true</code>.</li>
+<li>We go into the loop body again, and print out "<strong>hello 1</strong>" this time, since <code>i</code> is <code>1</code>.</li>
+<li>Execute the <strong>incrementing statement</strong> again. <code>i++</code> runs, and <code>i</code> becomes <code>2</code>.</li>
+</ol>
+<h4 id="third-iteration">Third Iteration</h4>
+<ol>
+<li>The condition <code>i &lt; 20</code> is still <code>true</code> because <code>i</code> is currently <code>2</code>.</li>
+<li>We go into the loop body again, and print out "<strong>hello 2</strong>", since <code>i</code> is <code>2</code>.</li>
+<li>Execute the <strong>incrementing statement</strong> again. <code>i++</code> runs, and <code>i</code> becomes <code>3</code>.</li>
+</ol>
+<p>Starting to see a pattern here? Let's skip to the end of the loop to the 19th iteration next.</p>
+<h4 id="nineteenth-iteration">Nineteenth Iteration</h4>
+<ol>
+<li>The condition <code>i &lt; 20</code> is <code>true</code> because <code>i</code> is currently <code>18</code>.</li>
+<li>We go into the loop body, and print out "<strong>hello 18</strong>", since <code>i</code> is <code>18</code>.</li>
+<li>Execute the <strong>incrementing statement</strong> . <code>i++</code> runs, and <code>i</code> becomes <code>19</code>.</li>
+</ol>
+<h4 id="twentieth-iteration">Twentieth Iteration</h4>
+<ol>
+<li>The condition <code>i &lt; 20</code> is <code>true</code> because <code>i</code> is currently <code>19</code>. Note that this is the last number that will return <code>true</code> for the condition <code>i &lt; 20</code>.</li>
+<li>We go into the loop body, and print out "<strong>hello 19</strong>", since <code>i</code> is <code>19</code>.</li>
+<li>Execute the <strong>incrementing statement</strong> . <code>i++</code> runs, and <code>i</code> becomes <code>20</code>.</li>
+</ol>
+<h4 id="twenty-first-iteration">Twenty First Iteration</h4>
+<ol>
+<li>The condition <code>i &lt; 20</code> is <code>false</code> because <code>i</code> is currently <code>20</code>.</li>
+<li>The <code>for</code> loop ends.</li>
+</ol>
 <h3 id="iterating-over-arrays-background">Iterating over Arrays Background</h3>
 <p>Arrays and for loops are often used together so we can perform the same operations to every item in the array.</p>
 <p>This process of looping over arrays is called <a href="#iteration">iteration</a>.</p>
@@ -264,6 +308,77 @@ for ( let i=0; i &lt; petNames.length; i++ ){
 <p>For example, on the first loop <code>i</code> will be <code>0</code>, so <code>petNames[i]</code> becomes <code>petNames[0]</code>, which will give us <code>"Fluffy"</code>.</p>
 <p>Complete the <strong>Loops and Iteration Exercise</strong> before continuing.</p>
 <h3 id="loops-and-iteration-exercise">Loops and Iteration Exercise</h3>
+<ol>
+<li>
+<p>Open <code>index.html</code> in Live Server and read the HTML code. Open up the Developer Console. Open <code>script.js</code> in VS Code.</p>
+<blockquote>
+<p><strong>Note:</strong> For the first for loop below, I will provide you with many of the necessary components of the loop. For the next ones I ask you to write, you won't recieve as much guidance.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Write a for loop that logs each number starting from <code>0</code> and ending at <code>10</code>.</strong> Your for loop should have the following:</p>
+<ul>
+<li><strong>initialization</strong> should be: <code>let i = 0</code> since we're starting from <code>0</code></li>
+<li><strong>condition</strong> should be <code>i &lt;= 10</code> OR <code>i &lt; 11</code>. Both will work here since when <code>i = 11</code>, both conditions will return <code>false</code>.</li>
+<li>
+<p><strong>incrementing statement</strong> should be <code>i++</code> or <code>i = i + 1</code> since we are printing out <strong>each number</strong>.</p>
+<blockquote>
+<p><strong>Hint:</strong> If we were printing out <em>every other number</em>, we would do <code>i = i + 2</code>.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>loop body</strong> would be one line <code>console.log(i)</code> since we are simply <strong>logging each number</strong> for each iteration.</p>
+<blockquote>
+<p><strong>Note</strong>: Feel free to comment out your completed loops as you go to reduce clutter in your console. Just be sure to uncomment them at the end before you submit so you can take a screenshot!</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>Using the same logic as above, write 2 more for loops after the first:</p>
+<ul>
+<li>Write a for loop that logs <strong>every other number</strong> from <strong>3 to 15</strong>.</li>
+<li>Write a for loop that logs <strong>every fifth nuumber</strong> from <strong>50 to 0</strong>.</li>
+</ul>
+</li>
+<li>
+<p>Declare an array <code>fruits</code> that contains the following fruits:</p>
+<ul>
+<li><code>"Apple"</code></li>
+<li><code>"Orange"</code></li>
+<li><code>"Pear"</code></li>
+<li><code>"Plum"</code></li>
+<li><code>"Banana"</code></li>
+</ul>
+</li>
+<li>
+<p>Using a for loop, iterate over the <code>fruits</code> array, and print out each fruit.</p>
+</li>
+<li>
+<p>Declare an array <code>presidents</code> that contains the first 5 presidents of the Untied States:</p>
+<ul>
+<li><code>"Washington"</code></li>
+<li><code>"Adams"</code></li>
+<li><code>"Jefferson"</code></li>
+<li><code>"Madison"</code></li>
+<li><code>"Monroe"</code></li>
+</ul>
+</li>
+<li>
+<p>Using a for loop, iterate over the <code>presidents</code> array, and log each president to the console.</p>
+</li>
+<li>
+<p>Edit the previos for loop you wrote so that it iterates over the <code>presidents</code> array and <strong>logs each president with a label for the number president that they were</strong>.</p>
+<p>For example:</p>
+<blockquote>
+<p><strong>1: Washington</strong>.</p>
+</blockquote>
+</li>
+<li>
+<p>After you are done, take a screenshot of your Developer Console. This exercise has a <strong><em>lot</em></strong> of output. You may need several screenshots. The final one should look something like this:</p>
+<p><img alt="Loops and Iteration Screenshot" src="../img/loops-and-iteration-exercise-example.png" /></p>
+</li>
+</ol>
 <h2 id="submitting">Submitting</h2>
 <p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
               

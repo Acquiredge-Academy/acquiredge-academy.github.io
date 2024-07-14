@@ -92,7 +92,11 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#function-definition">function definition</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-declaration-syntax">function declaration syntax</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#function-name">function name</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-body">function body</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#invoke-call">invoke / call</a>
     </li>
@@ -210,8 +214,12 @@
     return someNumber * 2;
 }
 </code></pre>
+<h4 id="function-declaration-syntax">function declaration syntax</h4>
+<p>the standard and preferred way of defining named functions</p>
 <h4 id="function-name">function <em>name</em></h4>
 <p>the name of our function. This is what we use to invoke or call our function after we define it</p>
+<h4 id="function-body">function <em>body</em></h4>
+<p>the code block associated with a function. It's contained by <code>{}</code> and holds code that will be run each time the function is called.</p>
 <h4 id="invoke-call">invoke / call</h4>
 <p>using the functions name, followed by <code>( )</code> with any required parameters to cause the function to execute</p>
 <pre><code>function doubleIt(someNumber){
@@ -231,6 +239,7 @@ doubleIt(5) // =&gt; returns 10
 <h4 id="stringsplitdelimiter">string.split(delimiter)</h4>
 <p>returns an array of different parts of broken up string based on a provided delimiter (separator) string that it should be broken on</p>
 <h2 id="functions-assignment">Functions Assignment</h2>
+<p>Make sure to go through the guide to <a href="../../guides/starting-an-assignment/">starting an assignment</a> before continuing. There will be a folder called "examples" where you can try out the example code below.</p>
 <h3 id="functions-background">Functions Background</h3>
 <h4 id="what-is-a-function">What is a Function?</h4>
 <p>You can imagine a function as a box with two holes on opposing sides.</p>
@@ -259,12 +268,30 @@ console.log(result); // 8
     return output;
 }
 </code></pre>
+<p>Here's a detailed breakdown of the <strong>function declaration syntax</strong>:</p>
+<pre><code>// [1] [2] [3]
+function example (parameter1, parameter2, parameter3, ...) { // [4]
+    // JavaScript code statements
+    // [5]
+    // return;
+} // [6]
+</code></pre>
 <p>There are a few very important terms to classify:</p>
-<ul>
-<li>"square" is the <a href="#function-name">function name</a></li>
-<li><code>x</code> is our input for the function, which is formally called a <a href="#parameter">parameter</a></li>
-<li>The <a href="#return-value">return statement</a> is where we say <code>return ___;</code> Whatever the <code>___</code> is will be the output of our function. In this case, we are returning/outputting the square of <code>x</code>.</li>
-</ul>
+<ol>
+<li>The <code>function</code> keyword begins the function declaration syntax.</li>
+<li>The <a href="#function-name">function name</a>. In the <code>square</code> example, <code>"square"</code> is our function's name.</li>
+<li>A comma-separated list of <em>zero or more</em> <a href="#parameter">parameters</a>, surrounded by <code>()</code> parentheses. The <code>square</code> function has one parameter <code>x</code>.</li>
+<li>The start of the <a href="#function-body">function body</a> indicated by an <code>{</code> opening curly brace.</li>
+<li>
+<p>An <em>optional</em> <a href="#return-value">return statement</a>. If your function doesn't need to output any values, you may not need a <code>return</code> statement. Our <code>square</code> function needs one since it is calculating and outputing the square of a number.</p>
+<blockquote>
+<p><strong>Note:</strong> A <code>return;</code> on its own will simply end the function and return nothing. When we say <code>return ___;</code> Whatever the <code>___</code> is will be the output of our function. In the <code>square</code> function, we are returning/outputting the square of <code>x</code>.</p>
+</blockquote>
+</li>
+<li>
+<p>The end of the function body indicated by a <code>}</code> closing curly brace.</p>
+</li>
+</ol>
 <h4 id="invoking-a-function">Invoking a function</h4>
 <p>If you just paste in the above function to a program and run it, you won't see any result.</p>
 <p>This is because all we have done so far is written the <a href="#function-definition">function definition</a>. Defining a function is like writing a recipe: it doesn't give you anything to chew on until you actually "use" it!</p>
@@ -282,6 +309,18 @@ console.log(square(6)); // 36
 console.log(square(7)); // 49
 </code></pre>
 <p>Try running the above code, and notice that the three separate results logged to the screen.</p>
+<h4 id="parameters-and-arguments">Parameters and Arguments</h4>
+<p>Let's review the function call that we made above. I've simplified it down to just the first call of <code>square(5)</code>. If you run this code, nothing will happen, so no need to run this code to test it out:</p>
+<pre><code>function square(x){
+    let output = x * x;
+    return output;
+}
+
+square(5); // returns 25
+</code></pre>
+<p>We defined the function <code>square</code> with the parameter <code>x</code>.</p>
+<p>You can think of a <strong>parameter</strong> as a placeholder. It's a variable whose value is not known until we <strong>call or invoke</strong> the function and pass an <strong>argument</strong>. When the function is run, the <strong>parameter</strong> will be holding the value of the <strong>argument</strong>.</p>
+<p>So, when we call <code>square(5)</code>, the <strong>argument</strong> <code>5</code> is stored in the <strong>parameter</strong> <code>x</code>.</p>
 <h4 id="returning-from-a-function">Returning from a Function</h4>
 <p>Whenever we reach a <code>return</code> statement inside of a function, a function will stop executing immediately. <code>return</code> statements are instructions to "immediately stop the function and return this value". It's important to remember this because you don't want to be adding any code statements after writing a <code>return</code> statement.</p>
 <pre><code>function square(x){
@@ -339,6 +378,156 @@ console.log(words);
 </code></pre>
 <p>Complete the <strong>Functions Exercise</strong> before moving forward.</p>
 <h3 id="functions-exercise">Functions Exercise</h3>
+<ol>
+<li>
+<p>Open <code>index.html</code> in Live Server and read the HTML code. Open up the Developer Console. Open <code>script.js</code> in VS Code.</p>
+</li>
+<li>
+<p>There is already an example exercise completed in <code>script.js</code> for you to use as an example of what to do.</p>
+</li>
+<li>
+<p>Below, there are prompts for functions that you should write. For each of these functions, you must <strong>define and test</strong> them. You will be in charge of calling each function 2 times with different arguments to ensure that it's working properly. For example, this is how it was done for the example exercise:</p>
+<pre><code>Prompt:
+
+- Define a function named `addTwoNumbers`
+- This function has 2 parameters:
+    - num1 - the first number to add
+    - num2 - the second number to add
+- The is function will add the numbers contained in the parameters and return the result
+
+    Example call: addTwoNumbers(2, 2);
+
+    Expected return value: 4
+</code></pre>
+<p><img alt="How to Write Function Examples" src="../img/functionsExamplesGif.gif" /></p>
+</li>
+</ol>
+<h4 id="addandmultiplyby5"><code>addAndMultiplyBy5</code></h4>
+<ol>
+<li>Define a function named <code>addAndMultiplyBy5</code></li>
+<li>This function has two <strong>parameter</strong><ul>
+<li><code>num1</code> - receives a number as an argument</li>
+<li><code>num2</code> - receives a number as an argument</li>
+</ul>
+</li>
+<li>
+<p>The purpose of this function is to add the two input numbers and multiply that result by <code>5</code> and return the result.</p>
+<p>Example Input:</p>
+<pre><code>addAndMultiplyBy5(10, 5)
+</code></pre>
+<p>Expected Output:</p>
+<pre><code>75
+</code></pre>
+</li>
+</ol>
+<h4 id="hourstominutes"><code>hoursToMinutes</code></h4>
+<ol>
+<li>Define a function named <code>hoursToMinutes</code></li>
+<li>This function has one <strong>parameter</strong><ul>
+<li><code>hours</code> - receives a number as an argument</li>
+</ul>
+</li>
+<li>
+<p>The purpose of this function is to convert the number of hours received as an argument into minutes and return the result.</p>
+<p>Example Input:</p>
+<pre><code>hoursToMinutes(2)
+</code></pre>
+<p>Expected Output:</p>
+<pre><code>120
+</code></pre>
+</li>
+</ol>
+<h4 id="getgreeting"><code>getGreeting</code></h4>
+<ol>
+<li>Define a function named <code>getGreeting</code></li>
+<li>This function has one <strong>parameter</strong><ul>
+<li><code>name</code> - receives a <code>string</code> as an argument</li>
+</ul>
+</li>
+<li>
+<p>The purpose of this function is to use the argument contained in the <code>name</code> parameter to greet the person.</p>
+<p>Example Input:</p>
+<pre><code>getGreeting("Joe");
+</code></pre>
+<p>Expected Output:</p>
+<pre><code>"Hello Joe!"
+</code></pre>
+</li>
+</ol>
+<h4 id="givemebiggest"><code>giveMeBiggest</code></h4>
+<ol>
+<li>Define a function named <code>giveMeBiggest</code></li>
+<li>This function has two <strong>parameters</strong><ul>
+<li><code>num1</code> - receives a number as an argument</li>
+<li><code>num2</code> - receives a number as an argument</li>
+</ul>
+</li>
+<li>
+<p>The purpose of this function is to find the largest number contained in <code>num1</code> and <code>num2</code> and return it.</p>
+<p>Example Input:</p>
+<pre><code>giveMeBiggest(100, 999)
+</code></pre>
+<p>Expected Output:</p>
+<pre><code>999
+</code></pre>
+</li>
+</ol>
+<h4 id="getlast"><code>getLast</code></h4>
+<ol>
+<li>Define a function named <code>getLast</code></li>
+<li>This function has one <strong>parameter</strong><ul>
+<li><code>arr</code> - an array that contains <em>at least 3 elements</em></li>
+</ul>
+</li>
+<li>
+<p>The purpose of this function is to find and return the <em>last element</em> of the input array referenced by the parameter <code>arr</code>.</p>
+<p>Example Input:</p>
+<pre><code>getLast([67, 7, 1, 5])
+</code></pre>
+<p>Expected Output:</p>
+<pre><code>5
+</code></pre>
+</li>
+</ol>
+<h4 id="multiplyall"><code>multiplyAll</code></h4>
+<ol>
+<li>Define a function named <code>multiplyAll</code></li>
+<li>This function has one <strong>parameter</strong><ul>
+<li><code>arr</code> - an array of <code>numbers</code> that contains <em>at least 4 elements</em></li>
+</ul>
+</li>
+<li>
+<p>The purpose of this function is to find the product of all the numbers in the <code>arr</code> array and return the product.</p>
+<p>Example Input:</p>
+<pre><code>multiplyAll([1, 2, 3, 4]);
+</code></pre>
+<p>Expected Output:</p>
+<pre><code>24
+</code></pre>
+</li>
+</ol>
+<h4 id="getlargest"><code>getLargest</code></h4>
+<ol>
+<li>Define a function named <code>getLargest</code></li>
+<li>This function has one <strong>parameter</strong><ul>
+<li><code>arr</code> - an array of numbers that contains <em>at least 5 elements</em></li>
+</ul>
+</li>
+<li>
+<p>The purpose of this function is to find and return the largest number in the array.</p>
+<p>Example Input:</p>
+<pre><code>getLargest([7, 2, 7, 9, 3, 8, 12])
+</code></pre>
+<p>Expected Output:</p>
+<pre><code>12
+</code></pre>
+<blockquote>
+<p><strong>Hint:</strong> With <code>addAll</code>, we needed to declare a temporary variable to hold the current `sum`` while we iterated through the array. When you are trying to find the largest in an array, you need to declare a temporary variable to hold on to the current <strong>largest number</strong> so that you can use it to compare to each element.</p>
+</blockquote>
+</li>
+</ol>
+<p>At the end, take a screenshot of your function outputs. It should look something like this (of course, the actual values will be different basd on your unique examples):</p>
+<p><img alt="Functions Exercise End Example" src="../img/functions-exercise-end.png" /></p>
 <h2 id="submitting">Submitting</h2>
 <p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
               
