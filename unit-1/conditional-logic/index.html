@@ -291,6 +291,41 @@ else {
 </li>
 </ol>
 <h3 id="logical-operators-and-prompts-background">Logical Operators and Prompts Background</h3>
+<h4 id="prompts">Prompts</h4>
+<p>Prompts are a way that we can receive answers or input from the user. This is important when we want our program to react to a user's actions.</p>
+<p>Sometimes, we will want to ask for input from the user instead of <strong>hard-coding</strong> data into our programs.</p>
+<p>To get input from the user, we can use the <code>prompt()</code> function. The <code>prompt()</code> function takes a question in the form of a <strong>string</strong>, which we provide between the parentheses <code>()</code>, just like the <code>console.log()</code> function.</p>
+<p>Generally, we want to capture the user's response to a prompt, and we can do this by assigning the prompt call to a variable like this:</p>
+<pre><code>let answer = prompt("Hi. What is your name?");
+console.log("Hello " + answer + "!");
+</code></pre>
+<p>If the user responds with "Bill", then our console would log "Hello Bill!" in this case.</p>
+<blockquote>
+<p><strong>Note:</strong> Prompts will ALWAYS return a <strong>string</strong> value for the user's answer, so sometimes if you want a <strong>number</strong> value, you would need to call <code>parseInt</code> to convert the string to a number.</p>
+</blockquote>
+<p>Combining this with what we know about <strong>conditional logic</strong>, we can now execute different code based on a user's input:</p>
+<pre><code>// Prompt the user to enter their age
+let age = prompt("Please enter your age:");
+
+// Convert the input to a number
+age = parseInt(age);
+
+// Check the age and log the appropriate message
+if (age &gt;= 65) {
+    console.log("You are a senior.");
+} else if (age &gt;= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a minor.");
+}
+</code></pre>
+<p>In the above example, we store the user's response in <code>age</code>, and then convert <code>age</code> to a number using <code>parseInt</code> with the next code statement.</p>
+<p>Then, based on the age of the user, we print whether they are a <strong>senior</strong>, <strong>adult</strong>, or <strong>minor</strong>.</p>
+<blockquote>
+<p><strong>Note:</strong> Notice how we convert <code>age</code> to a <strong>number</strong> type using <code>parseInt</code> in this example, since <code>prompt()</code> will by default return a <strong>string</strong> type.</p>
+<p><strong>Note:</strong> Try running this code and inputting 70 to the prompt. What do you see in the console? Although the number <code>70</code> is both greater than or equal to <code>65</code> and greater than or equal to <code>18</code>, you only see <code>"You are a senior."</code> in the output because only the FIRST true condition executes it's code block.</p>
+</blockquote>
+<p>Now, let's move on to <strong><em>logical operators.</em></strong></p>
 <p>Often times in our code, we will want to take an action based on more than one boolean condition. We can accomplish this by using <strong>Logical Operators</strong>.</p>
 <h4 id="and-operator">AND Operator</h4>
 <p>For example, we can guess what type of animal we've encountered based on a combination of how many feet it stands on <strong>AND</strong> whether or not it can jump high. The logical AND (<code>&amp;&amp;</code>) operator can help us here.</p>
@@ -487,39 +522,6 @@ if (isKangaroo || isFrog){
 </tr>
 </tbody>
 </table>
-<h4 id="prompts">Prompts</h4>
-<p>Sometimes, we will want to ask for input from the user instead of <strong>hard-coding</strong> data into our programs.</p>
-<p>To get input from the user, we can use the <code>prompt()</code> function. The <code>prompt()</code> function takes a question in the form of a <strong>string</strong>, which we provide between the parentheses <code>()</code>, just like the <code>console.log()</code> function.</p>
-<p>Generally, we want to capture the user's response to a prompt, and we can do this by assigning the prompt call to a variable like this:</p>
-<pre><code>let answer = prompt("Hi. What is your name?");
-console.log("Hello " + answer + "!");
-</code></pre>
-<p>If the user responds with "Bill", then our console would log "Hello Bill!" in this case.</p>
-<blockquote>
-<p><strong>Note:</strong> Prompts will ALWAYS return a <strong>string</strong> value for the user's answer, so sometimes if you want a <strong>number</strong> value, you would need to call <code>parseInt</code> to convert the string to a number.</p>
-</blockquote>
-<p>Combining this with what we know about <strong>conditional logic</strong>, we can now execute different code based on a user's input:</p>
-<pre><code>// Prompt the user to enter their age
-let age = prompt("Please enter your age:");
-
-// Convert the input to a number
-age = parseInt(age);
-
-// Check the age and log the appropriate message
-if (age &gt;= 65) {
-    console.log("You are a senior.");
-} else if (age &gt;= 18) {
-    console.log("You are an adult.");
-} else {
-    console.log("You are a minor.");
-}
-</code></pre>
-<p>In the above example, we store the user's response in <code>age</code>, and then convert <code>age</code> to a number using <code>parseInt</code> with the next code statement.</p>
-<p>Then, based on the age of the user, we print whether they are a <strong>senior</strong>, <strong>adult</strong>, or <strong>minor</strong>.</p>
-<blockquote>
-<p><strong>Note:</strong> Notice how we convert <code>age</code> to a <strong>number</strong> type using <code>parseInt</code> in this example, since <code>prompt()</code> will by default return a <strong>string</strong> type.</p>
-<p><strong>Note:</strong> Try running this code and inputting 70 to the prompt. What do you see in the console? Although the number <code>70</code> is both greater than or equal to <code>65</code> and greater than or equal to <code>18</code>, you only see <code>"You are a senior."</code> in the output because only the FIRST true condition executes it's code block.</p>
-</blockquote>
 <p>Complete the <strong>Logical Operators and Prompts Exercise</strong> before moving forward.</p>
 <h3 id="logical-operators-and-prompts-exercise">Logical Operators and Prompts Exercise</h3>
 <ol>
