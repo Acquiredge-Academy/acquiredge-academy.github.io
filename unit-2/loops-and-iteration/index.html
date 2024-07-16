@@ -246,10 +246,10 @@ console.log("whew!");
 <p><strong>INITIALIZATION</strong>: Where do we start? This is normally where you'll declare a new variable to use in the loop, and you'll also assign it an initial value. The initialization runs only once at the very beginning of the loop.</p>
 </li>
 <li>
-<p><strong>CONDITION</strong>: When do we stop looping? This condition is checked after each iteration to determine whether or not to loop again. Once the condition is no longer true, the loop is finished and JavaScript will move on to the next statement in your program.</p>
+<p><strong>CONDITION</strong>: When do we stop looping? This condition is checked before each iteration to determine whether or not to loop again. Once the condition is no longer true, the loop will end and JavaScript will move on to the next statement in your program.</p>
 </li>
 <li>
-<p><strong>INCREMENTING STATEMENT</strong>: What should be done after each iteration of the loop? Should we increment a variable? Should we decrease it by 2? This section runs after every iteration.</p>
+<p><strong>INCREMENTING STATEMENT</strong>: What should be done after each iteration of the loop? Should we increment a variable? Should we decrease it by 2? This section runs after every iteration to increment the loop variable in some way.</p>
 </li>
 </ul>
 <p>Let's take a look at a simpler example, and break down exactly what happens in each iteration:</p>
@@ -306,8 +306,8 @@ for ( let i=0; i &lt; petNames.length; i++ ){
     console.log(currentPetName.toUpperCase());
 }
 </code></pre>
-<p>Notice above that we're using <code>petNames[i]</code> to access the current <code>petName</code>. This works because the value of <code>i</code> will start at <code>0</code> and increase by <code>1</code> with each iteration.</p>
-<p>For example, on the first loop <code>i</code> will be <code>0</code>, so <code>petNames[i]</code> becomes <code>petNames[0]</code>, which will give us <code>"Fluffy"</code>.</p>
+<p>Notice above that we're using <code>petNames[i]</code> to access the current <code>petName</code>. This works because when we iterate over an array, the loop variable <code>i</code> represents the index number we are currently working with.</p>
+<p>For example, on the first loop <code>i</code> will be <code>0</code>, so <code>petNames[i]</code> becomes <code>petNames[0]</code>, which will give us <code>"Fluffy"</code>. Then, on the second loop, <code>i</code> will be <code>1</code>, so <code>petNames[i]</code> becomes <code>petNames[1]</code>, which will give us <code>"Fido"</code>.</p>
 <p>Complete the <strong>Loops and Iteration Exercise</strong> before continuing.</p>
 <h3 id="loops-and-iteration-exercise">Loops and Iteration Exercise</h3>
 <ol>
@@ -340,7 +340,7 @@ for ( let i=0; i &lt; petNames.length; i++ ){
 <p>Using the same logic as above, write 2 more for loops after the first:</p>
 <ul>
 <li>Write a for loop that logs <strong>every other number</strong> from <strong>3 to 15</strong>, <strong>including</strong> 15.</li>
-<li>Write a for loop that logs <strong>every fifth nuumber</strong> from <strong>0 to 50</strong>, <strong>not including</strong> 50.</li>
+<li>Write a for loop that logs <strong>every fifth number</strong> from <strong>0 to 50</strong>, <strong>not including</strong> 50.</li>
 </ul>
 </li>
 <li>
