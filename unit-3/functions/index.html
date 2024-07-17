@@ -128,9 +128,9 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Unit 4</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/higher-order-programming/">Higher Order Programming</a>
-                </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../unit-4/variable-scope/">Variable Scope</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/higher-order-programming/">Higher Order Programming</a>
                 </li>
     </ul>
                   </li>
@@ -244,6 +244,8 @@ doubleIt(5) // =&gt; returns 10
 <p>Make sure to go through the guide to <a href="../../guides/starting-an-assignment/">starting an assignment</a> before continuing. There will be a folder called "examples" where you can try out the example code below.</p>
 <h3 id="functions-background">Functions Background</h3>
 <h4 id="what-is-a-function">What is a Function?</h4>
+<p>A function is a way to store and reuse code, allowing us to write more dynamic and DRY code.</p>
+<h4 id="box-analogy">Box Analogy</h4>
 <p>You can imagine a function as a box with two holes on opposing sides.</p>
 <p><img alt="Function Image" src="../img/function-image.png" /></p>
 <p>The first hole in the box is for accepting an input of some kind. In the example above, our input is a number.</p>
@@ -506,6 +508,9 @@ console.log(words);
 <p>Expected Output:</p>
 <pre><code>24
 </code></pre>
+<blockquote>
+<p><strong>Hint:</strong> Similar to the <code>addAll</code> function we implemented in the examples.</p>
+</blockquote>
 </li>
 </ol>
 <h4 id="getlargest"><code>getLargest</code></h4>
@@ -524,7 +529,7 @@ console.log(words);
 <pre><code>12
 </code></pre>
 <blockquote>
-<p><strong>Hint:</strong> With <code>addAll</code>, we needed to declare a temporary variable to hold the current `sum`` while we iterated through the array. When you are trying to find the largest in an array, you need to declare a temporary variable to hold on to the current <strong>largest number</strong> so that you can use it to compare to each element.</p>
+<p><strong>Hint:</strong> Take a look at the <code>longestWord</code> example in the <a href="../../bonus/PREP/"><strong>PREP</strong></a> lesson under the <strong>Bonus</strong> section.</p>
 </blockquote>
 </li>
 </ol>
@@ -537,7 +542,7 @@ console.log(words);
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../objects/" class="btn btn-neutral float-left" title="Objects"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../unit-4/higher-order-programming/" class="btn btn-neutral float-right" title="Higher Order Programming">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../unit-4/variable-scope/" class="btn btn-neutral float-right" title="Variable Scope">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -563,7 +568,7 @@ console.log(words);
       <span><a href="../objects/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../unit-4/higher-order-programming/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../unit-4/variable-scope/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

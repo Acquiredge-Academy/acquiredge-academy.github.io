@@ -124,9 +124,9 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Unit 4</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/higher-order-programming/">Higher Order Programming</a>
-                </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../unit-4/variable-scope/">Variable Scope</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../unit-4/higher-order-programming/">Higher Order Programming</a>
                 </li>
     </ul>
                   </li>
@@ -208,10 +208,11 @@
 };
 </code></pre>
 <h4 id="object-property">(object) property</h4>
-<p>string-based index that is linked to some value</p>
+<p>key-value pairs where the key is a string and the value is a data value associated with the key.</p>
+<p>Similar to <strong>index numbers</strong> for arrays.</p>
 <p><code>name</code> and <code>legs</code> are both <em>properties</em> of the object in the above example</p>
 <h4 id="object-value">(object) value</h4>
-<p>value of some type that is linked to a property</p>
+<p>value of some data that is linked to a property</p>
 <p>in the above animal example, <code>"dog"</code> is a value associated with the <code>legs</code> property</p>
 <h4 id="object-dot-notation">(object) dot notation</h4>
 <p>syntax for looking up a value in an object that places the property after a dot; can only be used when the exact name of the key is used (i.e. not a variable); preferred way to access a value, as long as the literal value of the key is known</p>
@@ -233,7 +234,7 @@ console.log(animal['legs`]); // =&gt; 4
 <p>In this assignment, you will learn about how to create, change, and use JavaScript objects.</p>
 <p>Make sure to go through the guide to <a href="../../guides/starting-an-assignment/">starting an assignment</a> before continuing. There will be a folder called "examples" where you can try out the example code below.</p>
 <h3 id="objects-background">Objects Background</h3>
-<p>Objects in JS are similar to Arrays, except the indexes are strings instead of integers. You can think of JavaScript objects as <strong>collections of related data</strong>.</p>
+<p>Objects in JS are similar to Arrays, except the indexes are strings instead of integers. We primarily use JavaScript objects to store <strong>collections of related data</strong>.</p>
 <p>One of the primary reasons objects are so useful is that it allows for modeling of real world objects. For example, if you wanted to model a person in an object, it could be something like this:</p>
 <pre><code>{
     firstName: "Paul",
@@ -454,12 +455,12 @@ for (let i=0; i&lt;contacts.length; i++){
 <li><code>sides</code></li>
 <li>For example: <code>{ name: "square", sides: 4}</code></li>
 </ul>
+<blockquote>
+<p><strong>Note:</strong> Make sure that each shape has a different <code>sides</code> property greater than 0.</p>
+</blockquote>
 </li>
 <li>
-<p>Declare a variable <code>circle</code> and assign to it an object literal like the ones you just declared.</p>
-<blockquote>
-<p><strong>Note:</strong> if you already have a "circle" shape in your array, just choose another shape instead of a circle that you don't already have in the <code>shapes</code> array.</p>
-</blockquote>
+<p>Declare a variable <code>circle</code> and assign to it an object literal like the ones you just declared that represents a circle. (A circle has zero sides)</p>
 </li>
 <li>
 <p>Using <code>push</code>, add the <code>circle</code> object to the end of your <code>shapes</code> array.</p>
@@ -568,7 +569,7 @@ if (foundContact === null){
 }
 </code></pre>
 <blockquote>
-<p><strong>Note:</strong>, you may notice a <code>break;</code> statement in the <code>for</code> loop above. A <code>break;</code> statement ends a loop early. You can read about 2 special reserved keywords <code>break</code> and <code>continue</code> <a href="https://www.w3schools.com/js/js_break.asp">here</a>.</p>
+<p><strong>Note:</strong> you may notice a <code>break;</code> statement in the <code>for</code> loop above. A <code>break;</code> statement ends a loop early. You can read about 2 special reserved keywords <code>break</code> and <code>continue</code> <a href="https://www.w3schools.com/js/js_break.asp">here</a>.</p>
 </blockquote>
 <p><strong>Questions for consideration</strong></p>
 <ul>
