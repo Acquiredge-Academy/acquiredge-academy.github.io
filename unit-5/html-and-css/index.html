@@ -112,13 +112,11 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#full-stack-development">full stack development</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#html">HTML</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#html-attribute">HTML attribute</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#element-id">element id</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#parent">parent</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#child">child</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#css-selector">CSS selector</a>
     </li>
@@ -142,9 +140,11 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#submitting">Submitting</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#final-note-web-design-vs-web-development">Final Note: Web Design vs Web Development</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#submitting">Submitting</a>
+    <li class="toctree-l3"><a class="reference internal" href="#optional-html-block-vs-inline-elements">Optional: HTML Block vs Inline Elements</a>
     </li>
     </ul>
                 </li>
@@ -213,18 +213,42 @@
 </ul>
 <h2 id="key-terms">Key Terms</h2>
 <h4 id="client">client</h4>
+<p>a device or program that requests information from a server. For example, your web browser is a client when it asks for a website's files from a server.</p>
 <h4 id="server">server</h4>
+<p>a computer or program that provides information or services to clients. It responds to requests from clients with data or resources that they need.</p>
 <h4 id="front-end-development">front end development</h4>
+<p>Part of web development that primiarly focuses on the client-side. Front end developers build the visual and interactive aspets of a website using languages like HTML, CSS, and JavaScript</p>
 <h4 id="back-end-development">back end development</h4>
+<p>Part of web development that primarily focuses on the server-side. Back end developers build and maintain servers and databases that are required for a web application to work properly.</p>
 <h4 id="full-stack-development">full stack development</h4>
+<p>Involves both front-end and back-end development, meaning a full stack developer can work on both the visual part of a website and the server side that powers it.</p>
+<h4 id="html">HTML</h4>
+<p>HyperText Markup Languages; language used to define "nouns" in a webpage like buttons, links, headings, and paragraphs.</p>
 <h4 id="html-attribute">HTML attribute</h4>
+<p>extra information added to an HTML element that gives more details or instructions, like specifying a link's destination URL</p>
+<pre><code>&lt;a href="https://google.com"&gt;
+</code></pre>
 <h4 id="element-id">element id</h4>
-<h4 id="parent">parent</h4>
-<h4 id="child">child</h4>
+<p>an optional unique identifier added as an HTML attribute that can be referenced by CSS selectors</p>
+<pre><code>&lt;p id="myFavoriteParagraph"&gt;This is a paragraph&lt;/p&gt;
+</code></pre>
 <h4 id="css-selector">CSS selector</h4>
+<p>a string used to refer to elements in the DOM based on many possible properties like their id, class, element tag, and nesting</p>
 <h4 id="element-selector">element selector</h4>
+<p>a simple CSS selector that matches all elements of that tag type. <code>h1</code> is an element selector in this example:</p>
+<pre><code>h1 { color: red }
+</code></pre>
+<p>It would match all <code>&lt;h1&gt;</code> elements.</p>
 <h4 id="class-selector">.class selector</h4>
+<p>selector preceded by a <code>.</code> that matches elements assigned to this <code>class</code> attribute. <code>myClass</code> is a class selector in this example:</p>
+<pre><code>.myClass { font-size: 24px }
+</code></pre>
+<p>This would match all elements with the attribute <code>class="myClass"</code></p>
 <h4 id="id-selector">#id selector</h4>
+<p>selector preceded by a <code>#</code> that matches the element assigned to this <code>id</code> attribute. <code>h1</code> is an element selector in this example:</p>
+<pre><code>#myHeader { text-align: center }
+</code></pre>
+<p>This would match the element with the attribute <code>id="myHeader"</code></p>
 <h2 id="html-and-css-assignment">HTML and CSS Assignment</h2>
 <p>Make sure to go through the guide to <a href="../../guides/starting-an-assignment/">starting an assignment</a> before continuing. There will be a folder called "examples" where you can try out the example code below.</p>
 <h3 id="web-development-background">Web Development Background</h3>
@@ -271,13 +295,6 @@
 <blockquote>
 <p><strong>Note</strong>: You only need to read the "<strong>Images</strong>" section. The "<strong>Image Map</strong>", "<strong>Background Images</strong>", and "<strong>The Picture Element</strong>" sections aren't required.</p>
 </blockquote>
-<h4 id="block-vs-inline-elements">Block vs Inline Elements</h4>
-<p>By default, HTML elements are displayed as either block-level elements, or inline-level elements. <strong>Block-level elements</strong> always start on a new line and take up an entire line in your HTML document, so it will always take up the entire width of the website. <strong>Inline-level elements</strong>, on the other hand, will only take up as much width as it requires.</p>
-<p><a href="https://www.w3schools.com/html/html_blocks.asp">HTML Block and Inline Elements</a></p>
-<p><strong><code>&lt;div&gt;</code></strong> and <strong><code>&lt;span&gt;</code></strong> are container elements. <strong><code>&lt;div&gt;</code></strong> is a block-level container, while <strong><code>&lt;span&gt;</code></strong> is a inline-level container. These container elements are mainly used as parent elements to group together related elements and apply CSS styles to them.</p>
-<p>The <strong><code>&lt;div&gt;</code></strong> element is a very flexible element that is used very often in many websites. If you inspect the HTML of most web pages, they’ll be filled with tons of <strong><code>&lt;div&gt;</code></strong> elements with different class attributes.</p>
-<p>For example, check out the screenshot below:</p>
-<p><img alt="screenshot full of divs" src="../img/full-of-divs.png" /></p>
 <h4 id="contratulations-you-now-know-html-lets-move-on-to-css">Contratulations! You now know HTML! Let's move on to CSS.</h4>
 <h3 id="css-background">CSS Background</h3>
 <p>By the end of the previous section, you were able to use HTML to create the basic structure and content of your "About Me" page: Headings, text, lists, and images.</p>
@@ -315,6 +332,85 @@
 <p><strong>And that's all you need to know about CSS for now!</strong></p>
 <p>Complete the <strong>About Me Exercise</strong> before moving forward.</p>
 <h3 id="html-and-css-exercise-about-me-page">HTML and CSS Exercise: About Me Page</h3>
+<p>To put it all together, you're going to build a simple "About Me" page that's all about you!</p>
+<p>In the html-and-css-exercise folder, open <code>index.html</code> and build an HTML Skeleton. Provide your page with a <code>&lt;title&gt;</code> of <strong>"About [your-name-goes-here]"</strong>. Then, open it up with <strong>Live Server</strong>.</p>
+<h4 id="about-me-html">About Me HTML</h4>
+<p>In <code>index.html</code>, give your web page the following elements:</p>
+<ol>
+<li>Your name as the overall website heading</li>
+<li>A short 1 - 2 sentence description of yourself in a paragraph element.<ul>
+<li>Ideas: What kind of person are you? Do you wear glasses? What do you do for a living? Where are you from? Describe yourself with 3 adjectives.</li>
+</ul>
+</li>
+<li>A <code>&lt;hr&gt;</code> element to separate your Website Heading and description from the following sections:</li>
+<li>A section with the subheading "My Hobbies", and provide a list 3 of your hobbies. Order does not matter here.</li>
+<li>A section with a subheading "Favorite Movies". Create a list of your favorite movies IN ORDER. For each movie in the list, include at least one link to an interesting site about that movie, such as its IMDB page.<ul>
+<li>if you don't watch movies, consider changing the section to "Favorite Books" or "Favorite TV Shows" instead.</li>
+</ul>
+</li>
+<li>A section called "My Moods", which includes 2 images. One that represents when you're happy, and another to represent when you're sad, or unhappy.<ul>
+<li>These can be any images you like. Consider searching for images on Google Images.</li>
+</ul>
+</li>
+<li>A section for "Fun Facts", and include a list of at least 1 fun fact about yourself.</li>
+</ol>
+<p>In summary, your website should have:</p>
+<ul>
+<li>a Main heading + description with a <code>&lt;hr /&gt;</code> "horizontal rule" element</li>
+<li>a section for your hobbies</li>
+<li>a section for your 3 favorite movies (or books/tv shows) with at least 1 relevant link each</li>
+<li>a section with 2 images that represents your happy/sad moods</li>
+<li>a section for 1 or more fun facts about you.</li>
+</ul>
+<p>Save, and inspect the results.
+If you're having errors, visit this <a href="https://validator.w3.org/#validate_by_input">link</a>, and paste your HTML markup into the input, and click "Check".
+If there is anything that is labeled "Error", fix it!</p>
+<p>For example, your About Me page should look something like this:</p>
+<p><img alt="Example &quot;About Me&quot; Page" src="../img/Example-About-Me.png" /></p>
+<h4 id="about-me-css">About Me CSS</h4>
+<p>Now, let's add some CSS to make our "About Me" Page more presentable. For the exercise instructions below, only add CSS to your <code>styles.css</code> file as external CSS.</p>
+<p>In our lesson above about CSS, we didn't go over a lot of specific CSS Styles. If you run into a style that you're not sure how to implement, this is your opportunity to look online and read documentation on the CSS properties needed to do certain things.</p>
+<p>Remember to:</p>
+<ul>
+<li>use <code>id</code> or <code>class</code> attributes to help your CSS select the correct elements when needed.</li>
+<li>
+<p>refresh the page after adding each style to look at it's effect on your webpage.</p>
+</li>
+<li>
+<p>In <code>index.html</code>, add a <code>&lt;link&gt;</code> element in the <code>&lt;head&gt;</code> of your document and link <code>styles.css</code> to it.</p>
+</li>
+<li>
+<p>Give your <code>&lt;body&gt;</code> element a light blue background.</p>
+</li>
+<li>
+<p>Give your overall website heading (<code>&lt;h1&gt;</code> element) the following styles:</p>
+<ul>
+<li>A solid black border <code>1px</code> in thickness</li>
+<li><code>20px</code> of padding</li>
+<li><code>50px</code> of margin only at the bottom.</li>
+</ul>
+</li>
+<li>
+<p>Now, throughout your page, do the following:</p>
+<ul>
+<li>Change the color of at least 2 elements.</li>
+<li>Choose 3 words or phrases from your description and make them bold.<ul>
+<li>Look into the <code>&lt;span&gt;</code> element for this task.</li>
+</ul>
+</li>
+<li>Change the background color of your site to something other than <code>lightBlue</code>.</li>
+<li>Change the font family of your entire web page.<ul>
+<li>Here are some standard fonts you can use: Arial, Arial Black, Verdana, Trebuchet MS, Georgia, Tahoma, Courier New, Times New Roman</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Finally, validate your HTML and CSS using:</p>
+<p><a href="https://validator.w3.org/#validate_by_input">HTML VALIDATOR</a></p>
+<p><a href="https://jigsaw.w3.org/css-validator/#validate_by_input">CSS VALIDATOR</a></p>
+<p>Just to make sure there are no errors! Now, your "About Me" Page should look something like this:</p>
+<p><img alt="Example Styled &quot;About Me&quot; Page" src="../img/Example-styled-about-me.png" /></p>
 <h4 id="optional-advanced-styling">Optional Advanced Styling</h4>
 <p>The following tasks were not covered in this Reading, use Google, or a CSS reference such as <a href="http://www.w3schools.com/css/css_reference.asp">W3Schools</a> to figure it out!</p>
 <ol>
@@ -331,13 +427,21 @@
 <p><img alt="DropCap Example" src="../img/DropCap%20Example.png" /></p>
 </li>
 </ol>
+<h2 id="submitting">Submitting</h2>
+<p>Complete the questions in <code>quiz.md</code> if you haven't already.</p>
+<p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
 <h2 id="final-note-web-design-vs-web-development">Final Note: Web Design vs Web Development</h2>
 <p>One thing to keep in mind is that Web Design and Web Development are 2 different fields.</p>
 <p>Web design focuses on designing a websites look and feel, going into colors, fonts, images, and how to make a website visually appealing.</p>
 <p>Web Development, which is what you're learning with HTML and CSS, focuses on bringing a website's design to life using code, making sure it works properly and effectively.</p>
 <p>All of this to say: <strong>Don't worry if your website doesn't look perfect after learning CSS! That's not your job as a developer.</strong></p>
-<h2 id="submitting">Submitting</h2>
-<p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
+<h2 id="optional-html-block-vs-inline-elements">Optional: HTML Block vs Inline Elements</h2>
+<p>By default, HTML elements are displayed as either block-level elements, or inline-level elements. <strong>Block-level elements</strong> always start on a new line and take up an entire line in your HTML document, so it will always take up the entire width of the website. <strong>Inline-level elements</strong>, on the other hand, will only take up as much width as it requires.</p>
+<p><a href="https://www.w3schools.com/html/html_blocks.asp">HTML Block and Inline Elements</a></p>
+<p><strong><code>&lt;div&gt;</code></strong> and <strong><code>&lt;span&gt;</code></strong> are container elements. <strong><code>&lt;div&gt;</code></strong> is a block-level container, while <strong><code>&lt;span&gt;</code></strong> is a inline-level container. These container elements are mainly used as parent elements to group together related elements and apply CSS styles to them.</p>
+<p>The <strong><code>&lt;div&gt;</code></strong> element is a very flexible element that is used very often in many websites. If you inspect the HTML of most web pages, they’ll be filled with tons of <strong><code>&lt;div&gt;</code></strong> elements with different class attributes.</p>
+<p>For example, check out the screenshot below:</p>
+<p><img alt="screenshot full of divs" src="../img/full-of-divs.png" /></p>
               
             </div>
           </div><footer>

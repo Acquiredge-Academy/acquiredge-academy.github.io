@@ -104,11 +104,21 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#the-dom">The DOM</a>
+    <li class="toctree-l4"><a class="reference internal" href="#dom">DOM</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#dom-query">DOM query</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#jquery">JQuery</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parent">parent</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#child">child</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#element-selector">element selector</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#class-selector">.class selector</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#id-selector">#id selector</a>
     </li>
         </ul>
     </li>
@@ -184,9 +194,38 @@
 <li>Use JQuery to look up an element by class or id and read its attributes</li>
 </ul>
 <h2 id="key-terms">Key Terms</h2>
-<h4 id="the-dom">The DOM</h4>
+<h4 id="dom">DOM</h4>
+<p>Document Object Model; the programmable interface for interacting with elements on an HTML page</p>
 <h4 id="dom-query">DOM query</h4>
+<p>a search through the DOM for elements that match a specific CSS selector</p>
 <h4 id="jquery">JQuery</h4>
+<p>a JavaScript library that eases interacting with the DOM; often used with a $</p>
+<pre><code>$("p") // selects all paragraphs
+</code></pre>
+<h4 id="parent">parent</h4>
+<p>an element's parent is the element directly "containing" it. <code>&lt;ol&gt;</code> is the parent in this example:</p>
+<pre><code>&lt;ol&gt;
+    &lt;li&gt;child&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<h4 id="child">child</h4>
+<p>an element nested directly beneath an outer parent element. <code>&lt;li&gt;</code> is the child in this example:</p>
+<pre><code>&lt;ol&gt;
+    &lt;li&gt;child&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<h4 id="element-selector">element selector</h4>
+<p>a simple CSS selector that matches all elements of that type. In JQuery, we could query element selectors like:</p>
+<pre><code>$("h1") // matches all h1 elements on the page
+</code></pre>
+<h4 id="class-selector">.class selector</h4>
+<p>selector preceded by a . that matches elements assigned to this class attribute. In JQuery, we could query .class selectors like:</p>
+<pre><code>$(".loud") // matches all elements where class="loud"
+</code></pre>
+<h4 id="id-selector">#id selector</h4>
+<p>selector preceded by a # that matches the element assigned to this id attribute. In JQuery, we could query #id selectors like:</p>
+<pre><code>$("#myFavoriteParagraph") // matches the element where id="myFavoriteParagraph"
+</code></pre>
 <h2 id="dom-querying-assignment">DOM Querying Assignment</h2>
 <p>Make sure to go through the guide to <a href="../../guides/starting-an-assignment/">starting an assignment</a> before continuing. There will be a folder called "examples" where you can try out the example code below.</p>
 <h3 id="dom-background">DOM Background</h3>
@@ -301,6 +340,7 @@ for (let i=0; i &lt; children.length; i++){
 </ol>
 <p><img alt="Example Completed CSS Diner" src="../img/completed-css-diner.png" /></p>
 <h2 id="submitting">Submitting</h2>
+<p>Complete the questions in <code>quiz.md</code> if you haven't already.</p>
 <p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
               
             </div>
