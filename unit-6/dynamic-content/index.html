@@ -110,9 +110,11 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#elementcss">element.css()</a>
+    <li class="toctree-l4"><a class="reference internal" href="#elementtext">element.text()</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#dom-elements">DOM elements</a>
+    <li class="toctree-l4"><a class="reference internal" href="#elementattr">element.attr()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#elementcss">element.css()</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#synchronous">synchronous</a>
     </li>
@@ -125,6 +127,8 @@
     <li class="toctree-l4"><a class="reference internal" href="#event-listener">event listener</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#elementoneventtype-listener">element.on(eventType, listener)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#elementval">element.val()</a>
     </li>
         </ul>
     </li>
@@ -194,11 +198,18 @@
 <li><strong>Connect the click of a button to executing a JavaScript function</strong></li>
 </ul>
 <h2 id="key-terms">Key Terms</h2>
+<h4 id="elementtext">element.text()</h4>
+<p>JQuery function that can be used to get and set an HTML Element's text dynamically on an HTML Element</p>
+<pre><code>$("h1").text("New Header") // changes text in all h1 elements to "New Header"
+</code></pre>
+<h4 id="elementattr">element.attr()</h4>
+<p>JQuery function that can be used to get and set an HTML attribute dynamically on an HTML Element</p>
+<pre><code>$("#my-img").attr("src", "/new/img/path") // changes the src path for the #my-img element to "/new/img/path"
+</code></pre>
 <h4 id="elementcss">element.css()</h4>
-<p>JQuery function that can be used to set a CSS property dynamically on a wrapped</p>
+<p>JQuery function that can be used to get and set a CSS property dynamically on an HTML Element</p>
 <pre><code>$("p").css("color", "blue") // changes font color in all paragraphs to blue
 </code></pre>
-<h4 id="dom-elements">DOM elements</h4>
 <h4 id="synchronous">synchronous</h4>
 <p>a process that completes its work and returns before the next line of code is executed; this is the common scenario we've seen so far</p>
 <h4 id="event">event</h4>
@@ -217,6 +228,10 @@
     console.log("A button was clicked!");
 }
 $("button").on("click", handleButtonClicked);
+</code></pre>
+<h4 id="elementval">element.val()</h4>
+<p>JQuery function that can be used to get an input value dynamically on an HTML Element</p>
+<pre><code>let inputValue = $("#my-input").val() // saves the input value from #my-input into a variable called "inputValue"
 </code></pre>
 <h2 id="dynamic-content-assignment">Dynamic Content Assignment</h2>
 <p>Make sure to go through the guide to <a href="../../guides/starting-an-assignment/">starting an assignment</a> before continuing. There will be a folder called "examples" where you can try out the example code below.</p>
@@ -241,6 +256,39 @@ let h1Element = $("h1");
 h1Element.css("color", "blue") // or "#0000ff" works too
 </code></pre>
 <h4 id="modifying-html-dynamically">Modifying HTML Dynamically</h4>
+<p>With HTML Elements, there are a few things we need to be able to retrieve and modify:</p>
+<ol>
+<li>an element's text</li>
+<li>an element's attributes</li>
+</ol>
+<p>For the following examples, consider the HTML below:</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1 id="title"&gt;Original Title&lt;/h1&gt;
+        &lt;img id="image" src="images/cake-1.jpg" alt="Cake Image"&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>When working with an <strong>element's text</strong>, we use the <code>.text()</code> function.</p>
+<p>To <strong>retrieve</strong> an HTML Element's text, we use <code>.text()</code> like this:</p>
+<pre><code>let text = $("#title").text();
+console.log("Text: " + text); // Text: Original Title
+</code></pre>
+<p>If we want to <strong>modify</strong> the text instead, we would provide a string argument to the <code>.text()</code> call:</p>
+<pre><code>$("#title").text("New Title"); // The heading text changes to "New Title"
+</code></pre>
+<p>When working with an <strong>element's attributes</strong> instead of text, we use the <code>.attr()</code> function.</p>
+<p>To <strong>retrieve</strong> an element's attribute value, we use <code>.attr(attribute_name)</code>:</p>
+<pre><code>let altText = $("#image").attr("alt");
+console.log("Image Alt Text: " + altText); // Image Alt Text: Cake Image
+</code></pre>
+<p>To <strong>modify</strong> an element's attribute instead, we use <code>.attr(attribute_name, attribute_value)</code>:</p>
+<pre><code>$("#image").attr("src", "images/donut-1.jpg"); // The image changes to an image of donuts instead of cake
+$("#image").attr("alt", "Donut Image"); // The alt text changes from "Cake Image" to "Donut Image"
+let newAltText = $("#image").attr("alt");
+console.log("New Image Alt Text: " + newAltText); // New Image Alt Text: Donut Image
+</code></pre>
 <h4 id="event-handling">Event Handling</h4>
 <p>Up to this point in our lessons, our programs have been <a href="#synchronous">synchronous</a>. This just means that they have executed from one line to the next through to the end of the program when we ran it.</p>
 <p>In a real-world web application, much of what the application does is actually in response to <a href="#event">events</a>. To name a few example events:</p>
@@ -256,13 +304,14 @@ h1Element.css("color", "blue") // or "#0000ff" works too
 </ul>
 <p><strong>A helpful metaphor is that an event is like a sound.</strong></p>
 <p>We can programmatically "hook in" to events by listening for them.</p>
+<p>Quickly take a look at the basics of HTML <code>&lt;button&gt;</code> elements here: <a href="https://www.w3schools.com/tags/tag_button.asp">HTML &lt;button&gt; Tag</a></p>
 <p>Let's say we have a button defined in our HTML like this:</p>
-<pre><code>&lt;input class="main-button" type="button" value="Main Button"/&gt;
+<pre><code>&lt;button class="main-button" type="button"&gt;Main Button&lt;/button&gt;
 </code></pre>
 <p>We'd like to listen for clicks on this button and then respond by showing an alert. Here's how we could do it:</p>
 <pre><code>// Create the listener function that we want to be called when the button is clicked.
 function afterClicked(event){
-    alert("The main button was clicked.");
+    console.log("The main button was clicked.");
 }
 
 // Look up the target element
@@ -271,12 +320,77 @@ var mainButton = $(".main-button");
 // Listen for clicks on mainButton, and call our listener function when they happen.
 mainButton.on("click", afterClicked );
 </code></pre>
-<p>You won't see an immediate result when you run the above code, but if you click the button, the afterClicked() function will be invoked, and then you'll see an <a href="https://www.w3schools.com/jsref/met_win_alert.asp">alert</a>. This is called <strong>event-driven programming</strong>.</p>
+<p>You won't see an immediate result when you run the above code, but if you click the button, the afterClicked() function will be invoked, and then you'll see a message logged to the developer console. This is called <strong>event-driven programming</strong>.</p>
 <p>Does the concept of <em>listeners</em> remind you of anything we encountered before?</p>
 <p>Remember <strong>callbacks</strong> from when the section on higher order programming? <strong>A listener is really just a callback function that gets invoked after an event.</strong></p>
+<h4 id="getting-form-values">Getting Form Values</h4>
+<p>Another useful feature of jQuery is it's ability to work with Forms and Inputs. Read about the basics of HTML forms here:</p>
+<ul>
+<li><a href="https://www.w3schools.com/html/html_forms.asp">HTML Forms</a></li>
+</ul>
+<p>The most important elements in a form are the <code>&lt;input&gt;</code> elements, since these are the elements that actually capture a user's input. When a user inputs some data into an <code>&lt;input&gt;</code> element, it gets captured in its <code>value</code> attribute. We can use jQuery to access is <code>value</code> attribute using the <code>.val()</code> function. Consider the HTML below:</p>
+<pre><code>&lt;label for="fname"&gt;First name:&lt;/label&gt;&lt;br&gt;
+&lt;input type="text" id="fname" name="fname"&gt;&lt;br&gt;
+&lt;button type="button" id="log-button"&gt;Log User's Name&lt;/button&gt;
+</code></pre>
+<p>If you paste this HTML in your <code>index.html</code> file under the <strong>examples</strong> directory, you should see this:</p>
+<p><img alt="First Name Input" src="../img/first-name-input-example.png" /></p>
+<p>Let's type in a name.</p>
+<p><img alt="First Name Input with value" src="../img/first-name-input-with-name-example.png" /></p>
+<p>If we want to log the user's input value when we press the "Log User's Name" button, we would do this in <code>script.js</code>:</p>
+<pre><code>// Create the listener function that we want to be called when the button is clicked.
+function afterClicked(event){
+    // Look up the first name input
+    let firstNameInput = $("#fname");
+
+    // Get the user's first name value
+    let userFirstName = firstNameInput.val();
+
+    // Log the user's first name to the console
+    console.log("The user's first name is: " + userFirstName); // The user's first name is: John
+}
+
+// Look up the target element
+var logButton = $("#log-button");
+
+// Listen for clicks on logButton, and call our listener function when they happen.
+logButton.on("click", afterClicked );
+</code></pre>
+<p>Optionally, if you want to do some more readings on the details about HTML Forms, you can do so with these links:</p>
+<ul>
+<li><a href="https://www.w3schools.com/html/html_forms_attributes.asp">HTML Form Attributes</a></li>
+<li><a href="https://www.w3schools.com/html/html_form_elements.asp">HTML Form Elements</a></li>
+<li><a href="https://www.w3schools.com/html/html_form_input_types.asp">HTML Input Types</a></li>
+<li><a href="https://www.w3schools.com/html/html_form_attributes.asp">HTML Input Attributes</a></li>
+<li><a href="https://www.w3schools.com/html/html_form_attributes_form.asp">Input Form Attributes</a></li>
+</ul>
 <p>Complete the <strong>Dynamic Content Exercise</strong> before continuing.</p>
 <h3 id="dynamic-content-exercise">Dynamic Content Exercise</h3>
+<ol>
+<li>
+<p>Open <code>index.html</code> in your <strong>exercise directory</strong> and read the HTML. Open up the Developer Console and open <code>script.js</code> in VS Code.</p>
+</li>
+<li>
+<p>Using jQuery, change the text of the main header from <code>"List"</code> to <code>"Shopping List"</code>.</p>
+</li>
+<li>
+<p>Using jQuery, set the <code>class</code> attribute of all the <code>&lt;li&gt;</code>s to <code>".shopping-list-item"</code>. All the list items should get a light blue background.</p>
+</li>
+<li>
+<p>Using jQuery, change the CSS of the "Log Me" button so that it has a <code>background-color</code> of <code>lightgreen</code>.</p>
+</li>
+<li>
+<p>Currently, the "Log Me" button and "Favorite Food:" inputs do nothing. Use jQuery to implement it so that when the "Log Me" button is pressed, we log a message to the console using the value held in the "Favorite Food" input that says:</p>
+<pre><code>The user's favorite food is [value from Favorite Food Input].
+</code></pre>
+</li>
+<li>
+<p>Input a food into the "Favorite Food" input and click the "Log Me" button. Then, take a screenshot of your developer console. It should look like this:</p>
+<p><img alt="Dynamic Content Exercise" src="../img/dynamic-content-exercise.png" /></p>
+</li>
+</ol>
 <h2 id="submitting">Submitting</h2>
+<p>Complete the questions in <code>quiz.md</code> if you haven't already.</p>
 <p>Please follow the instructions in <a href="../../guides/submitting-an-assignment/">submitting an exercise</a> to submit your assignment solution.</p>
               
             </div>

@@ -110,6 +110,8 @@
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#use-jquery-to-call-an-api-and-load-json-data-from-a-remote-server">Use jQuery to call an API and load JSON data from a remote server</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#key-terms">Key Terms</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#json">JSON</a>
@@ -117,6 +119,10 @@
     <li class="toctree-l4"><a class="reference internal" href="#getjsonurl-callback">$.getJSON(url, callback)</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#api-application-progamming-interface">API (Application Progamming Interface)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#uri">URI</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#query-parameters">Query Parameters</a>
     </li>
         </ul>
     </li>
@@ -184,6 +190,12 @@
               
                 <h1 id="json-apis">JSON APIs</h1>
 <h2 id="objectives">Objectives</h2>
+<ul>
+<li>Read and Design a JSON Model</li>
+<li>
+<h2 id="use-jquery-to-call-an-api-and-load-json-data-from-a-remote-server">Use jQuery to call an API and load JSON data from a remote server</h2>
+</li>
+</ul>
 <h2 id="key-terms">Key Terms</h2>
 <h4 id="json">JSON</h4>
 <p>JavaScript Object Notation; a JavaScript-like standard for representing data; useful for sharing data between programs, including programs that are not using JavaScript</p>
@@ -201,6 +213,13 @@
 </code></pre>
 <h4 id="api-application-progamming-interface">API (Application Progamming Interface)</h4>
 <p>a way for different applications to communicate with one another. Usually transfers data using JSON data format.</p>
+<h4 id="uri">URI</h4>
+<p>Universal Resource Identifier. Used to identify which API you are requesting data from.</p>
+<h4 id="query-parameters">Query Parameters</h4>
+<p>Additional fields added to the end of an API's URI to provide additional information for filtering.</p>
+<pre><code>https://example.com/api/uri?filter=something
+</code></pre>
+<p>In the example, "filter=something" is an example of a query parameter.</p>
 <h2 id="json-apis-assignment">JSON APIs Assignment</h2>
 <p>Make sure to go through the guide to <a href="../../guides/starting-an-assignment/">starting an assignment</a> before continuing. There will be a folder called "examples" where you can try out the example code below.</p>
 <h3 id="json-modeling-background">JSON Modeling Background</h3>
@@ -258,21 +277,55 @@
 </li>
 </ol>
 <h3 id="calling-apis-with-jquery">Calling APIs with JQuery</h3>
-<p>When applications use REST APIs, the data that they transfer is often in JSON format. There are a number of ways a JavaScript application can make an API call to a server, but the simplest way is to use a JQuery function called <code>getJSON()</code>.</p>
-<p>Just like our earlier asynchronous examples with events, the function for loading JSON is also asynchronous.</p>
+<p>When applications use REST APIs, the data that they transfer is often in JSON format. There are a number of ways a JavaScript application can make an API call to a server, but the simplest way is to use a JQuery function called <code>getJSON()</code>. This makes a GET API call to a certain URI and gives us the JSON data to work with in our program.</p>
+<p>Just like our earlier asynchronous examples with events, the function for making an API call to load JSON is also asynchronous.</p>
 <p>The reason for this is that loading data from an external source takes a (relatively) long time. The application has to wait for another server that may be located far away to respond.</p>
-<p>This is where the "asynchronous" part comes in. If an application simply locked up while waiting for data to come back from another server, then it wouldn't be able to do anything else in the meantime. By using an asynchronous callback, the application is able to perform other operations while it waits.</p>
-<p>Here's an example of how you could use <a href="#getjsonurl-callback"><code>getJSON()</code></a> to load data with a bunch of animal names and simply log the length of the list:</p>
-<pre><code>$.getJSON( 'https://raw.githubusercontent.com/boennemann/animals/master/words.json', function( data ) {
-    console.log(data.length); // This will be logged later, after the data is loaded asynchronously.
-})
+<p>This is where the "asynchronous" part comes in. If an application simply locked up while waiting for a response to come back from a server, then it wouldn't be able to do anything else in the meantime. By using an asynchronous callback, the application is able to perform other operations while it waits.</p>
+<p>Here's an example of how you could use <a href="#getjsonurl-callback"><code>getJSON()</code></a> to load data with a bunch of random cat facts and simply log the length of the list:</p>
+<pre><code>$.getJSON("https://catfact.ninja/facts", function (response) {
+    console.log(response); // This logs JSON data that is convereted to a JavaScript object to the console
+});
 
-console.log('Hello'); // This will be logged first.
+console.log("Hello"); // This will be logged first.
 </code></pre>
-<p>You can find more examples of getJSON() usage on the official <a href="http://api.jquery.com/jQuery.getJSON/">JQuery API Documentation page</a></p>
+<p>Try running the above code in you "examples" directory, and inspect the output in your Developer Console. Which property in the response object contains the list of cat facts we are looking for?</p>
+<details>
+<summary><b>Answer: </b></summary>
+The <code>data</code> property. To access the lists of cat facts, we would say <code>response.data</code>. Keep in mind, that every API response is different, and you should read the documentation to find out what to expect.
+</details>
+<p><br>
+You can find more examples of getJSON() usage on the official <a href="http://api.jquery.com/jQuery.getJSON/">JQuery API Documentation page</a></p>
 <p>Complete <strong>JSON APIs Exercise</strong> and <strong>Get TMDB API Key</strong> before continuing.</p>
 <h3 id="json-apis-exercise">JSON APIs Exercise</h3>
-<p><strong>Introduce Query Parameters in this exercise</strong></p>
+<p>In this Exercise we're going to fetch data from a public server API. Head to <a href="https://jsonplaceholder.typicode.com">jsonplaceholder.typicode.com</a> and read the home page documentation. Notice how there are 6 resources: <code>/posts</code>, <code>/comments</code>, <code>/albums</code>, <code>/photos</code>, <code>/todos</code>, and <code>/users</code>.</p>
+<p>Now, head to the <a href="https://jsonplaceholder.typicode.com/guide/">"Guide" page</a>, and read the first section on "Getting a resource" where it shows you how you can get a single record or list all of the records for a resource.</p>
+<p>Note that we are not using the "Fetch API" that the Guide uses, but pay attention to the URIs that are used to get resources. <code>$.getJSON()</code> works a bit differently than <code>fetch()</code>, but the URIs are the same.</p>
+<h4 id="part-1-get-users-using-the-api">Part 1: Get users using the API</h4>
+<ol>
+<li>
+<p>Open <code>index.html</code> in your <strong>exercise directory</strong> and read the HTML. Open up the Developer Console and open <code>script.js</code> in VS Code.</p>
+</li>
+<li>
+<p>Using what we learned in the lesson with <code>$.getJSON()</code>, make an API call to list all of the users from <code>jsonplaceholder</code>, and log them to the console. Refer back to our example <code>$.getJSON()</code> call from the lesson for the format.</p>
+</li>
+<li>
+<p>Notice how the data returned is an array of user objects. Alter the code so that only the user with an <code>id</code> of <code>6</code> is logged to the console. The developer console should look like this:</p>
+<p><img alt="JSON APIs User 6" src="../img/json-apis-user-6.png" /></p>
+</li>
+</ol>
+<h4 id="part-2-turn-the-api-call-into-a-function">Part 2: Turn the API call into a function</h4>
+<ol>
+<li>
+<p>Create a function called <code>getUser</code> that takes one parameter "<code>userId</code>". Move the <code>$.getJSON()</code> call that we created in Part 1 into the <code>getUser</code> function.</p>
+</li>
+<li>
+<p>Alter the <code>$.getJSON()</code> call so that instead of logging the user with an <code>id</code> of <code>6</code> to the console, we log the user with an <code>id</code> of <code>userId</code> to the console.</p>
+</li>
+<li>
+<p>Call the <code>getUser</code> function with <code>3</code> as an argument. YOu should see the following object:</p>
+<p><img alt="JSON APIs User 3" src="../img/json-apis-user-3.png" /></p>
+</li>
+</ol>
 <h3 id="get-tmdb-api-key">Get TMDB API Key</h3>
 <p>Not all APIs are "public", meaning that anyone can access and call them without identifying themselves first.</p>
 <p>In fact, most useful APIs out there are "private". So, we will need to identify or <strong>authenticate</strong> ourselves in some way when we call the API, so that the server knows who we are and can make sure we're authorized to use the API.</p>
