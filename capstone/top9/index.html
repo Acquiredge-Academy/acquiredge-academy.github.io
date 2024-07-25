@@ -173,9 +173,9 @@
 <ul>
 <li>Reading and Understanding HTML and CSS files.</li>
 <li>Implementing and Calling functions that return values.</li>
-<li>Getting and editing elements using the DOM.</li>
-<li>Event handling with forms using the DOM.</li>
-<li>Calling APIs using <code>fetch</code> and the standard API Promise Chain.</li>
+<li>Getting and editing elements using jQuery.</li>
+<li>Event handling using jQUery.</li>
+<li>Calling APIs using <code>$.getJSON</code>.</li>
 <li>Constructing API URLs with multiple query parameters.</li>
 <li><em>Authenticating API Calls with an API Key</em></li>
 </ul>
@@ -241,7 +241,7 @@
 <p>We want to incrementally add functionality so that we can test and make sure everything works as we go. The first thing that we will do is make sure that our API calls are working before doing things like adding event listeners and query parameters.</p>
 <ol>
 <li>
-<p>Implement the <code>getMovies</code> function with the standard API Promise Chain. Log the response to the console. Make sure that we are using the <code>url</code> parameter instead of the <code>BASE_URL</code> inside the function implementation.</p>
+<p>Implement the <code>getMovies</code> function with <code>$.getJSON</code>. Log the response to the console. Make sure that we are using the <code>url</code> parameter instead of the <code>BASE_URL</code> inside the function implementation.</p>
 </li>
 <li>
 <p>Underneath the <code>getMovies</code> implementation call <code>getMovies</code> with the <code>BASE_URL</code>.</p>
@@ -252,16 +252,13 @@
 </li>
 </ol>
 <h3 id="part-2-attaching-the-event-listener">Part 2: Attaching the Event Listener</h3>
-<p>Since the API works properly, let's make it so that whenever the "query" form is submitted, we call our API using the function above.</p>
+<p>Since the API works properly, let's make it so that whenever the "Search!" button is clicked, we call our API using the function above.</p>
 <ol>
 <li>
 <p>Delete the <code>getMovies</code> call we wrote in the last part.</p>
 </li>
 <li>
-<p>Add a "submit" event listener to the "query" form, and provide it with an event handler function that calls the <code>getMovies</code> function whenever the form is submitted.</p>
-<ul>
-<li>Don't forget to prevent the default behavior of submitting a form! Otherwise, the website will refresh every time you submit the form, and you won't see any output in the Developer Console!</li>
-</ul>
+<p>Add a "click" event listener to the "Search!" button, and provide it with an event handler function that calls the <code>getMovies</code> function whenever the button is clicked.</p>
 </li>
 <li>
 <p>Save your code, and check to make sure that every time you click the "Search!" button, a new line appears in your Developer Console. In this example, I clicked the button 3 times:</p>
@@ -289,7 +286,7 @@
 <p>Edit <code>getMovies</code> so that instead of logging the data to the console, we get the <code>results</code> array of movies it contains, and pass that array to the <code>setMoviePosters</code> function to display the movie posters.</p>
 </li>
 <li>
-<p>Ensure that when you click the "Search!" button, you see 9 movies on your screen:</p>
+<p>Ensure that when you click the "Search!" button, you see 9 movies on your screen (You might see different ones since this API is live, and the data is constantly changing):</p>
 <p><img alt="Part 3 Result" src="../img/part3result.png" /></p>
 </li>
 <li>
@@ -315,9 +312,6 @@
 <li>Music = 10402</li>
 </ul>
 <p>In <code>index.html</code>, the dropdown selection already maps each genre name to genre ID. But, if you'd like, you can look at the list of genres <a href="https://developer.themoviedb.org/reference/genre-movie-list">here</a> by clicking "Try It!".</p>
-<p>Remember that to add query parameters to our API URL, we need to add a <code>"?"</code> to the end of our base URL first:</p>
-<pre><code>"https://example.com/api/?query=value"
-</code></pre>
 <ol>
 <li>
 <p>Scroll to the bottom and look at the <code>constructURL</code> function, which takes a <code>genre</code> and <code>year</code>, and constructs a URL with them.</p>
@@ -325,7 +319,14 @@
 <li>
 <p>Implement <code>constructURL</code> so that it appends the <code>genre</code> query parameter to the <code>BASE_URL</code> and returns it.</p>
 <ul>
-<li>Take note that in the <code>&lt;select&gt;</code> dropdown, there is no "Any" option, which means that selecting a <code>genre</code> is REQUIRED. Do you need a conditional to check if <code>genre</code> is an empty string?</li>
+<li>
+<p>Take note that in the <code>&lt;select&gt;</code> dropdown, there is no "Any" option, which means that selecting a <code>genre</code> is REQUIRED. Do you need a conditional to check if <code>genre</code> is an empty string?</p>
+</li>
+<li>
+<p>Take note of our <code>BASE_URL</code>. Are we adding the first query parameter? Remember that to add multiple query parameters, we need to separate them using <code>"&amp;"</code> symbols:</p>
+<pre><code>  "https://example.com/api?query1=value1&amp;query2=value2&amp;..."
+</code></pre>
+</li>
 </ul>
 </li>
 <li>
@@ -333,7 +334,7 @@
 <p><img alt="Part 4 Example output" src="../img/part4examples.png" /></p>
 </li>
 <li>
-<p>In the "submit" event handler, get the genre selection from the DOM, and save it to a variable. Call <code>constructURL</code> with this variable, and save it to a new variable.</p>
+<p>In the "click" event handler, get the genre selection from the DOM, and save it to a variable. Call <code>constructURL</code> with this variable, and save it to a new variable.</p>
 </li>
 <li>
 <p>Instead of calling <code>getMovies</code> with the <code>BASE_URL</code>, call it with the result of <code>constructURL</code> above.</p>
@@ -346,9 +347,6 @@
 <h3 id="part-5-add-the-year-query-parameter">Part 5: Add the "Year" Query Parameter</h3>
 <p>Finally, we want to allow our user to filter movies not only by genre, but optionally the Release Year of the movie, as well.</p>
 <p>Back in the <a href="https://developer.themoviedb.org/reference/discover-movie">documentation</a> link, you should have seen a parameter called "primary_release_year". This is the query parameter we will be using.</p>
-<p>Remember that to add multiple query parameters, we need to separate them using <code>"&amp;"</code> symbols:</p>
-<pre><code>"https://example.com/api/?query1=value1&amp;query2=value2&amp;..."
-</code></pre>
 <ol>
 <li>
 <p>Head back to <code>constructURL</code>, and re-implement it by adding in the release year as well.</p>
@@ -361,10 +359,10 @@
 <p><img alt="Part 5 Examples" src="../img/part5examples.png" /></p>
 </li>
 <li>
-<p>In the "submit" event handler, get the value of the "Year Released" text input, and save that to a variable as well.</p>
+<p>In the "click" event handler, get the value of the "Year Released" text input, and save that to a variable as well.</p>
 </li>
 <li>
-<p>Now, pass both the genre and year to the <code>constructURl</code> call.</p>
+<p>Now, pass both the genre and year to the <code>constructURL</code> call.</p>
 </li>
 <li>
 <p>Save, and test your code. Provide several different genres and release years to test on your own, then, provide "Fantasy" as the genre, and "2011" as the release year:</p>
