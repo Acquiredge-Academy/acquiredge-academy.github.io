@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Next Steps - AcquirEdge Academy</title>
+    <title>CSS Layouts - AcquirEdge Academy</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Next Steps";
-        var mkdocs_page_input_path = "bonus\\next-steps.md";
+        var mkdocs_page_name = "CSS Layouts";
+        var mkdocs_page_input_path = "bonus\\css-layouts.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -124,11 +124,13 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../PREP/">PREP</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../css-layouts/">CSS Layouts</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Next Steps</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">CSS Layouts</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
     </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../next-steps/">Next Steps</a>
                   </li>
               </ul>
       </div>
@@ -146,7 +148,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Bonus</li>
-      <li class="breadcrumb-item active">Next Steps</li>
+      <li class="breadcrumb-item active">CSS Layouts</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -155,38 +157,61 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="next-steps">Next Steps</h1>
-<p>If you've made it this far and successfully completed the program, congratulations! At this point you can call yourself "Code Literate" and "Project Ready" but there is much, much more to learn in the world of programming if you want to take your skills further.</p>
-<p>The good news is that there are tons of resources available for you to keep learning.</p>
-<p>Your next steps from this point depend on your goals. Here are a few recommendations:</p>
+                <h1 id="css-layouts">CSS Layouts</h1>
+<h2 id="introduction">Introduction</h2>
+<p>At this point, you should understand the Box Model, and how it can help space out your elements to create some simple layouts, like in our recipe page example. We saw how using basic CSS styles can create pretty presentable website layouts. But, to take our website layouts to the next level, we need to be able to break out of the normal element flow and customize it to our liking.</p>
+<p>To achieve this, we will focus on 2 important concepts:</p>
 <ol>
-<li>
-<p><strong>Keep coding!</strong> Coding is very much a "use it or lose it" skill, so it's extremely important to keep up the practice. <a href="https://www.codewars.com/">CodeWars</a> is a free site loaded with programming challenges, and it's an amazing resources for keeping up the practice. Challenges range from easy to extremely difficult, and when you solve a problem you'll be shown solutions from the community - studying these solutions is an excellent way to sharpen your skills.</p>
-</li>
-<li>
-<p><strong>Customize your Visual Studio Code.</strong> Take a deep dive on the settings and tools made available to you through this tool. It's an extremely popular code editor for both personal and professional purposes, so investing time into understanding VS Code better is a worthwhile endeavor.</p>
-</li>
-<li>
-<p><strong>Learn React.</strong> If front-end development is feeling more interesting to you so far, you should consider learning React. React is an extremely popular framework for building front-end applications, and there are lot of great tutorials. <a href="https://reactjs.org/tutorial/tutorial.html">This one</a> is a nice place to start.</p>
-</li>
-<li>
-<p><strong>Learn Node.</strong> If you're fascinated by back-end development, you've got a lot of options. You'll inevitably need to learn SQL for interfacing with databases, and you'll be well poised to start working with Node (server-side JavaScript). <a href="https://expressjs.com/">Express</a> is a node-based API for building APIs.</p>
-</li>
-<li>
-<p><strong>Build your own project!</strong> One of the most rewarding ways to learn is through building an application you are excited about. The key is to start with small attainable goals and incrementally work up from there. For inspiration, <a href="https://github.com/toddmotto/public-apis">here is a list of free APIs</a> you can leverage to incorporate real data into your project.</p>
-</li>
-<li>
-<p><strong>Consider joining a coding school!</strong> There are plenty of options, and not all of them are equal, but having a structured curriculum and community of similar learners and instructors around you can accelerate your learning process. Of course, self-learning programming is still a great option. If you want to go down the self-learning route, find a structured curriculum to stick to, such as the <a href="https://www.theodinproject.com/">Odin Project</a>.</p>
-</li>
-<li>
-<p><strong>Don't stop learning!</strong> The field of programming is constantly evolving. You will never run out of new things to learn, and this is a good thing! Becoming a developer opens you up to a world of opportunity -- as long as you're constantly learning new things.</p>
-</li>
+<li>The <code>position</code> property</li>
+<li>CSS Flexbox</li>
 </ol>
+<p>By using <code>position</code> and Flexbox, we're able to easily create more complex CSS layouts with less CSS markup!</p>
+<h1 id="position">Position</h1>
+<p>The first one on the list is the <code>position</code> property. Even though it's just one CSS property, it can have a huge impact on how your elements are positioned on the page. So far, all of the HTML elements we've been working with have use default positioning: <code>position: static</code>. But what if we want to have overlapping elements? What about elements that stay on the screen? We can implement these by changing the <code>position</code> of our elements. Linked below is a video that does a great job of explaining the basics of the 5 different <code>position</code> property values available to us in CSS.</p>
+<p><a href="http://www.youtube.com/watch?v=jx5jmI0UlXU" title="Learn CSS Position in 9 Minutes"><img alt="Learn CSS Position in 9 Minutes" src="http://img.youtube.com/vi/jx5jmI0UlXU/0.jpg" /></a></p>
+<p>As a summary for the video, here are the 5 position values that we can use to position our elements:</p>
+<ol>
+<li><code>static</code>: The default position value, meaning it follows the default HTML document flow. All of your HTML elements are positioned <code>static</code> until set to one of the other 4 values below.</li>
+<li><code>relative</code>: No difference on its own, but unlocks the use of <code>top</code>, <code>bottom</code>, <code>left</code>, and <code>right</code> properties to position your element relative to where it would be if it were positioned <code>static</code>. Primarily used as a reference point so that other elements can position themselves relative to the element with <code>position: relative</code>.</li>
+<li><code>absolute</code>: Removes the element from the document flow completely, meaning that other elements in the normal document flow will ignore this element, allowing for overlapping. It will position itself relative to its nearest <strong>non-static positioned parent</strong>, or the <code>&lt;body&gt;</code> element if none exist.</li>
+<li><code>fixed</code>: Works exactly like <code>absolute</code>, except the element is positioned relative to the viewport (browser window). <code>fixed</code> positioned elements will always stay on the same spot on your browser, even if you scroll.</li>
+<li><code>sticky</code>: Works like a combination of <code>relative</code> and <code>fixed</code>. <code>sticky</code> positioned elements will be positioned <code>relative</code>, but will stick to a position on the screen once you scroll past it.</li>
+</ol>
+<h3 id="side-note-z-index">Side Note: <code>z-index</code></h3>
+<p>As you saw in the linked video about CSS Position, with some <code>position</code> values like <code>position: absolute</code>, sometimes multiple elements can overlap. By default, <code>absolute</code> positioned elements are placed over <code>static</code> positioned elements. But there is a way to override this default behavior: by using the <code>z-index</code> property. You can read about it in this page:
+<a href="https://www.w3schools.com/css/css_z-index.asp">The z-index Property</a></p>
+<h1 id="flexbox">Flexbox</h1>
+<p>As you could tell from our previous section, the CSS <code>position</code> property is very useful for positioning individual elements. But, CSS layout tools like Flexbox are much better at creating flexible layouts involving multiple elements.</p>
+<h2 id="bookshelf-analogy">Bookshelf Analogy</h2>
+<p>In a nutshell, Flexbox is a way to organize elements on your webpage similar to how we organize books on a shelf. You place one book after another from left to right, and when you run out of space, you go to the next shelf below it. This is how Flexbox works, but there’s a lot of different things we can do to make our Flexbox layouts more interesting than a bookshelf is. Below is another link to a great video that helps explain Flexbox in a quick and simple manner.</p>
+<p><a href="http://www.youtube.com/watch?v=fYq5PXgSsbE" title="Learn Flexbox in 15 Minutes"><img alt="Learn Flexbox in 15 Minutes" src="http://img.youtube.com/vi/fYq5PXgSsbE/0.jpg" /></a></p>
+<p>Following our bookshelf analogy, Flexbox works by creating a <strong>flex container</strong> (bookshelf), and one or more <strong>flex items</strong> (books). We can configure the bookshelf to have vertical shelves or store books in reverse order. We can also tell our bookshelf how we want to space the books out when there’s extra space, and if we want to create a new shelf if we run out of space. We can even decide how we want to space out our shelves when we have multiple.</p>
+<h3 id="extra-practice">Extra Practice</h3>
+<p>If you're still a bit confused about Flexbox, no worries! It can be a confusing topic. Just like with CSS Selectors, if you would like some extra practice, I got you! Flexbox Froggy is an interactive Flexbox game where you must use Flexbox properties to help frogs get to their correct lily pads. Check it out!</p>
+<p><a href="https://flexboxfroggy.com">Flexbox Froggy</a></p>
+<p>Try and see if you can reach the end!</p>
+<h1 id="more-flexbox-uses">More Flexbox Uses</h1>
+<p>Flexbox is a powerful tool on its own, but we can make it more powerful. Flexbox containers can also contain.... other Flexbox containers!</p>
+<p>Let's see how this works in one final exercise.</p>
+<h1 id="what-about-grid">What about Grid?</h1>
+<p>Flexbox and Grid are more recent additions to CSS, and they help you layout elements in either a 1D or 2D way, respectively. Although Flexbox is extremely powerful and very useful for creating layouts in either rows or columns, you will eventually need to pick up Grid as well.</p>
+<p>Unfortunately, we won't be going into detail on Grid in this class, there's just not enough time. Don't worry, though. Many of the concepts in Flexbox also apply to Grid, so you'll be able to pick it up quickly after gaining experience with Flexbox.</p>
+<h2 id="grid-resources">Grid Resources</h2>
+<p>Here's some amazing CSS Grid resources for those who are interested:</p>
+<ul>
+<li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS Tricks</a></li>
+<li><a href="https://www.w3schools.com/css/css_grid.asp">W3 Schools</a></li>
+</ul>
+<p>And for those who enjoyed Flexbox Froggy, try:</p>
+<ul>
+<li><a href="https://cssgridgarden.com/">Grid Garden</a></li>
+</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../css-layouts/" class="btn btn-neutral float-left" title="CSS Layouts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../PREP/" class="btn btn-neutral float-left" title="PREP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../next-steps/" class="btn btn-neutral float-right" title="Next Steps">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -209,8 +234,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../css-layouts/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../PREP/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../next-steps/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
